@@ -27,11 +27,19 @@ $ ./gradlew build
 import com.github.chessgame.ChessGame;
 
 ChessGame chessGame = new ChessGame();
-// Play one move
-chessGame.playMove(NotationType.SAN, "e4");
+Move move = new Move(Square.E2, Square.E4);
 
-// Play several moves
-chessGame.playMoves(NotationType.SAN, "e5 Nc3");
+// Check whether move is allowed:
+if(chessGame.isLegalMove(move)) {
+  // Execute the move on the board:
+  chessGame.playMove(move);
+}
+
+// Or play a move by supplying the move notation:
+chessGame.playMove(NotationType.SAN, "c5");
+
+// Play several moves, seperate the moves by spaces or commas:
+chessGame.playMoves(NotationType.SAN, "Nf3 d6");
 ```
 
 ## Get board info
@@ -102,9 +110,9 @@ System.out.println(chessGame.getNotationList(NotationType.LAN, "fr"));
 ## Chess Opening
 Determining the opening name of a game:
 ```java
-final ChessGame chessGame = new ChessGame();
+ChessGame chessGame = new ChessGame();
 chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6");
-final ChessOpening chessOpening = chessGame.getChessOpening();
+ChessOpening chessOpening = chessGame.getChessOpening();
 System.out.println(chessOpening.eco); // output: B90
 System.out.println(chessOpening.name); // output: Sicilian
 System.out.println(chessOpening.variation); // output: Najdorf
@@ -116,11 +124,11 @@ To export games in Portable Game Notation (PGN):
 ```java
 import com.github.chessgame.pgn.PGNExporter;
 
-final ChessGame chessGame = new ChessGame();
+ChessGame chessGame = new ChessGame();
 chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3");
 chessGame.setPgnTag(PgnTag.EVENT, "Test Event");
 chessGame.setPgnTag(PgnTag.RESULT, "1/2-1/2");
-final PGNExporter pgnExporter = new PGNExporter(new PrintWriter(System.out));
+PGNExporter pgnExporter = new PGNExporter(new PrintWriter(System.out));
 pgnExporter.write(chessGame);
 // output:
 // [Event "Test Event"]
@@ -136,7 +144,7 @@ To import games in PGN:
 ```java
 import com.github.chessgame.pgn.PGNImporter;
 
-final PGNImporter pgnImporter = new PGNImporter();
+PGNImporter pgnImporter = new PGNImporter();
 pgnImporter.setOnGame((game) -> {
     System.out.println("Imported a game with moves:" + game.getMoves());
 });
