@@ -54,7 +54,7 @@ public class ChessGame implements Serializable, Cloneable {
     }
 
     /**
-     * Constructs a chess game with the starting  given board.
+     * Constructs a chess game with the given board.
      */
     private ChessGame(final Board board) {
         this.board = board;
@@ -81,7 +81,7 @@ public class ChessGame implements Serializable, Cloneable {
     }
 
     /**
-     * @return a set of all the PGN tags available. These are filled then a PGN import has been done.
+     * @return a set of all the PGN tags available. These are filled when a PGN import has been done.
      */
     public Set<PgnTag> getAvailablePgnTags() {
         return pgnTag2Value.keySet();
@@ -117,7 +117,8 @@ public class ChessGame implements Serializable, Cloneable {
     }
 
     /**
-     * A shorter version of FEN, without new lines, slashes and combined empty spaces
+     * A shorter version of FEN, without new lines and slashes and which combines empty squares
+     * across files.
      */
     public String getFenSmall() {
         return board.getFenSmall();
@@ -323,7 +324,7 @@ public class ChessGame implements Serializable, Cloneable {
     }
 
     /**
-     * @return all the squared where the given piece is on the board
+     * @return all the squares where the given piece is on the board
      */
     public Set<Square> getSquares(final Piece piece) {
         return board.getSquares(piece);
@@ -413,7 +414,7 @@ public class ChessGame implements Serializable, Cloneable {
     }
 
     /**
-     * Plays the moves given in the notation type and language .
+     * Plays the moves given in the notation type and language.
      *
      * @param movesArgument the moves space or comma seperated
      * @throws IllegalMoveException if a notation is not correct
@@ -423,7 +424,7 @@ public class ChessGame implements Serializable, Cloneable {
     }
 
     /**
-     * Plays the moves given in the notation type.
+     * Plays the moves given in the notation type and language.
      *
      * @throws IllegalMoveException if a notation is not correct
      */
