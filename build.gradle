@@ -25,6 +25,7 @@ test {
 
 java {
     withSourcesJar()
+    withJavadocJar()
 }
 
 publishing {
