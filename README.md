@@ -24,7 +24,7 @@ $ ./gradlew build
 ## Playing moves
 
 ```java
-import com.github.chessgame.ChessGame;
+import io.github.wolfraam.chessgame.ChessGame;
 
 ChessGame chessGame = new ChessGame();
 Move move = new Move(Square.E2, Square.E4);
@@ -121,36 +121,38 @@ System.out.println(chessOpening.getFullName()); // output: Sicilian / Najdorf (B
 
 ## Export PGN games
 To export games in Portable Game Notation (PGN):
-```java
-import com.github.chessgame.pgn.PGNExporter;
 
-ChessGame chessGame = new ChessGame();
-chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3");
-chessGame.setPgnTag(PgnTag.EVENT, "Test Event");
-chessGame.setPgnTag(PgnTag.RESULT, "1/2-1/2");
-PGNExporter pgnExporter = new PGNExporter(new PrintWriter(System.out));
-pgnExporter.write(chessGame);
+```java
+import io.github.wolfraam.chessgame.pgn.PGNExporter;
+
+ChessGame chessGame=new ChessGame();
+        chessGame.playMoves(NotationType.SAN,"e4 c5 Nf3");
+        chessGame.setPgnTag(PgnTag.EVENT,"Test Event");
+        chessGame.setPgnTag(PgnTag.RESULT,"1/2-1/2");
+        PGNExporter pgnExporter=new PGNExporter(new PrintWriter(System.out));
+        pgnExporter.write(chessGame);
 // output:
 // [Event "Test Event"]
 // [Result "1/2-1/2"]
 // 
 // 1.e4 c5 2.Nf3 1/2-1/2
 
-pgnExporter.write(chessGame2); // etc.
+        pgnExporter.write(chessGame2); // etc.
 ```
 
 ## Import PGN games
 To import games in PGN:
+
 ```java
-import com.github.chessgame.pgn.PGNImporter;
+import io.github.wolfraam.chessgame.pgn.PGNImporter;
 
-PGNImporter pgnImporter = new PGNImporter();
-pgnImporter.setOnGame((game) -> {
-    System.out.println("Imported a game with moves:" + game.getMoves());
-});
-pgnImporter.setOnError(System.out::println);
-pgnImporter.setOnWarning(System.out::println);
+PGNImporter pgnImporter=new PGNImporter();
+        pgnImporter.setOnGame((game)->{
+        System.out.println("Imported a game with moves:"+game.getMoves());
+        });
+        pgnImporter.setOnError(System.out::println);
+        pgnImporter.setOnWarning(System.out::println);
 
-pgnImporter.run(new File("/temp/games.pgn"));
+        pgnImporter.run(new File("/temp/games.pgn"));
 ```
 
