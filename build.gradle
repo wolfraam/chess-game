@@ -1,3 +1,7 @@
+plugins {
+    id 'maven-publish'
+}
+
 apply plugin: 'java'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -17,4 +21,33 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+java {
+    withSourcesJar()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = System.getenv("MAVEN_USERNAME")
+                password = System.getenv("MAVEN_PASSWORD")
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            groupId = 'io.github.wolfraam'
+            artifactId = 'chessgame'
+            version = '0.1'
+
+            from components.java
+            pom {
+                url = 'https://github.com/wolfraam/chess-game.git'
+            }
+        }
+    }
 }
