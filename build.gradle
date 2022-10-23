@@ -1,5 +1,6 @@
 plugins {
     id 'maven-publish'
+    id 'signing'
 }
 
 apply plugin: 'java'
@@ -40,7 +41,7 @@ publishing {
         }
     }
     publications {
-        maven(MavenPublication) {
+        mavenJava(MavenPublication) {
             groupId = 'io.github.wolfraam'
             artifactId = 'chessgame'
             version = System.getenv("GITHUB_REF_NAME")
@@ -71,4 +72,8 @@ publishing {
             }
         }
     }
+}
+
+signing {
+    sign publishing.publications.mavenJava
 }
