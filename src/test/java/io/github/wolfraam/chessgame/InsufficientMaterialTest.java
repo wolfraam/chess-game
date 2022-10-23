@@ -3,7 +3,6 @@ package io.github.wolfraam.chessgame;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
-import io.github.wolfraam.chessgame.ChessGame;
 import io.github.wolfraam.chessgame.result.ChessGameResultType;
 import org.junit.jupiter.api.Test;
 

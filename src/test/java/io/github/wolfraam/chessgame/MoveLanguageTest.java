@@ -2,7 +2,6 @@ package io.github.wolfraam.chessgame;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import io.github.wolfraam.chessgame.ChessGame;
 import io.github.wolfraam.chessgame.notation.NotationType;
 import org.junit.jupiter.api.Test;
 

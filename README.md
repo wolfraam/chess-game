@@ -10,13 +10,26 @@ chess-game is a java chess library which can
 - determine the chess opening of a game
 - import and export games in PGN notation
 
-# Building
-## From source
+## Gradle
 
 ```
-$ git clone https://github.com/wolfraam/chess-game.git
-$ cd chess-game
-$ ./gradlew build
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("io.github.wolfraam:chessgame:0.7.1")
+}
+```
+
+## Maven
+
+```
+<dependency>
+  <groupId>io.github.wolfraam</groupId>
+  <artifactId>chessgame</artifactId>
+  <version>0.7.1</version>
+</dependency>
 ```
 
 # Usage

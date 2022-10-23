@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import io.github.wolfraam.chessgame.ChessGame;
 import io.github.wolfraam.chessgame.board.Piece;
 import io.github.wolfraam.chessgame.board.Square;
 import io.github.wolfraam.chessgame.move.Move;
