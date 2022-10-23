@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.wolfraam:chessgame:0.7.1")
+    implementation("io.github.wolfraam:chessgame:1.0")
 }
 ```
 
@@ -28,7 +28,7 @@ dependencies {
 <dependency>
   <groupId>io.github.wolfraam</groupId>
   <artifactId>chessgame</artifactId>
-  <version>0.7.1</version>
+  <version>1.0</version>
 </dependency>
 ```
 
@@ -138,19 +138,19 @@ To export games in Portable Game Notation (PGN):
 ```java
 import io.github.wolfraam.chessgame.pgn.PGNExporter;
 
-ChessGame chessGame=new ChessGame();
-        chessGame.playMoves(NotationType.SAN,"e4 c5 Nf3");
-        chessGame.setPgnTag(PgnTag.EVENT,"Test Event");
-        chessGame.setPgnTag(PgnTag.RESULT,"1/2-1/2");
-        PGNExporter pgnExporter=new PGNExporter(new PrintWriter(System.out));
-        pgnExporter.write(chessGame);
+ChessGame chessGame = new ChessGame();
+chessGame.playMoves(NotationType.SAN,"e4 c5 Nf3");
+chessGame.setPgnTag(PgnTag.EVENT,"Test Event");
+chessGame.setPgnTag(PgnTag.RESULT,"1/2-1/2");
+PGNExporter pgnExporter = new PGNExporter(new PrintWriter(System.out));
+pgnExporter.write(chessGame);
 // output:
 // [Event "Test Event"]
 // [Result "1/2-1/2"]
 // 
 // 1.e4 c5 2.Nf3 1/2-1/2
 
-        pgnExporter.write(chessGame2); // etc.
+pgnExporter.write(chessGame2); // etc.
 ```
 
 ## Import PGN games
@@ -159,13 +159,13 @@ To import games in PGN:
 ```java
 import io.github.wolfraam.chessgame.pgn.PGNImporter;
 
-PGNImporter pgnImporter=new PGNImporter();
-        pgnImporter.setOnGame((game)->{
-        System.out.println("Imported a game with moves:"+game.getMoves());
-        });
-        pgnImporter.setOnError(System.out::println);
-        pgnImporter.setOnWarning(System.out::println);
+PGNImporter pgnImporter = new PGNImporter();
+pgnImporter.setOnGame((game)->{
+  System.out.println("Imported a game with moves:"+game.getMoves());
+});
+pgnImporter.setOnError(System.out::println);
+pgnImporter.setOnWarning(System.out::println);
 
-        pgnImporter.run(new File("/temp/games.pgn"));
+pgnImporter.run(new File("/temp/games.pgn"));
 ```
 
