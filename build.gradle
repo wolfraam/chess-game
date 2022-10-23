@@ -34,8 +34,8 @@ publishing {
             name = "OSSRH"
             url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
             credentials {
-                username = System.getenv("MAVEN_USERNAME")
-                password = System.getenv("MAVEN_PASSWORD")
+                username = System.getenv("SONATYPE_USERNAME")
+                password = System.getenv("SONATYPE_PASSWORD")
             }
         }
     }
@@ -43,11 +43,31 @@ publishing {
         maven(MavenPublication) {
             groupId = 'io.github.wolfraam'
             artifactId = 'chessgame'
-            version = '0.2'
+            version = System.getenv("GITHUB_REF")
 
             from components.java
             pom {
-                url = 'https://github.com/wolfraam/chess-game.git'
+                name = 'chess-game'
+                description = 'a java chess library'
+                url = 'https://github.com/wolfraam/chess-game/'
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'https://raw.githubusercontent.com/wolfraam/chess-game/main/LICENSE'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'wolfraam'
+                        name = 'Wolfraam'
+                        email = 'wolfraam@users.noreply.github.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/wolfraam/chess-game/'
+                    developerConnection = 'scm:git:ssh://github.com/wolfraam/chess-game/'
+                    url = 'http://github.com/wolfraam/chess-game/'
+                }
             }
         }
     }
