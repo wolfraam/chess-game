@@ -27,5 +27,5 @@ jobs:
         env:
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
-          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_SIGNING_KEY }}
-          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_SIGNING_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEY }}
+          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
