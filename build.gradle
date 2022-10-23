@@ -43,7 +43,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'io.github.wolfraam'
             artifactId = 'chessgame'
-            version = System.getenv("GITHUB_REF")
+            version = System.getenv("GITHUB_REF_NAME")
 
             from components.java
             pom {
