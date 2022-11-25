@@ -101,7 +101,7 @@ chess-game supports 4 move notation types:
 - Short algebraic notation (SAN). For example: Nc3
 - Long algebraic notation (LAN). For example: Nb1-c3
 - Figurine algebraic notation (FAN). For example: ♞c3
-- The notation used the UCI (Universal Chess Interface) protocol, which is
+- The notation used in the UCI (Universal Chess Interface) protocol, which is
   used to communicate with chess engines. For example: b1c3
 
 ```java
