@@ -2,28 +2,23 @@ package io.github.wolfraam.chessgame.opening;
 
 import io.github.wolfraam.chessgame.ChessGame;
 import io.github.wolfraam.chessgame.notation.NotationType;
-import io.github.wolfraam.chessgame.pgn.PGNImporter;
-import io.github.wolfraam.chessgame.pgn.PgnTag;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * Determines the chess opening of a chess game.
  */
 public class ChessOpeningHelper {
-    private static final ChessOpeningElement root = new ChessOpeningElement();
 
-    static {
-        final InputStream inputStream = ChessOpeningHelper.class.getResourceAsStream(
-            "/io/github/wolfraam/chessgame/opening/opening-book.pgn");
-        final PGNImporter pgnImporter = new PGNImporter();
-        pgnImporter.setOnGame(ChessOpeningHelper::addOpeningBookElement);
-        pgnImporter.run(inputStream);
-    }
+    private ChessOpeningElement root;
 
-    private static void addOpeningBookElement(final ChessGame chessGame) {
-        ChessOpeningElement chessOpeningElement = root;
-        for (final String move : chessGame.getNotationList(NotationType.SAN)) {
+    private void addOpeningBookElement(final ChessOpeningElement newRoot, final String eco, final String opening, final String variation, final List<String> sanList) {
+        ChessOpeningElement chessOpeningElement = newRoot;
+        for (final String move : sanList) {
             ChessOpeningElement chessOpeningElementNew = chessOpeningElement.get(move);
             if (chessOpeningElementNew == null) {
                 chessOpeningElementNew = new ChessOpeningElement();
@@ -31,12 +26,15 @@ public class ChessOpeningHelper {
             }
             chessOpeningElement = chessOpeningElementNew;
         }
-        chessOpeningElement.setEco(chessGame.getPgnTagValue(PgnTag.ECO));
-        chessOpeningElement.setName(chessGame.getPgnTagValue(PgnTag.OPENING));
-        chessOpeningElement.setVariation(chessGame.getPgnTagValue(PgnTag.VARIATION));
+        chessOpeningElement.setEco(eco);
+        chessOpeningElement.setName(opening);
+        chessOpeningElement.setVariation(variation);
     }
 
     public ChessOpening getChessOpening(final ChessGame chessGame) {
+        if (root == null) {
+            fillRoot();
+        }
         ChessOpeningElement currentChessOpeningElement = root;
         ChessOpening currentChessOpening = new ChessOpening(null, null, null);
 
@@ -54,5 +52,29 @@ public class ChessOpeningHelper {
             }
         }
         return currentChessOpening;
+    }
+
+    private void fillRoot() {
+        final ChessOpeningElement newRoot = new ChessOpeningElement();
+
+        try (final InputStream inputStream = getOpeningBookCsvInputStream()) {
+            final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                final String[] split = line.split(",");
+                final String eco = split[0];
+                final String opening = split[1];
+                final String variation = split[2].length() == 0 ? null : split[2];
+                final String[] sanMoves = Arrays.copyOfRange(split, 3, split.length);
+                addOpeningBookElement(newRoot, eco, opening, variation, Arrays.asList(sanMoves));
+            }
+            root = newRoot;
+        } catch (final IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    protected InputStream getOpeningBookCsvInputStream() {
+        return ChessOpeningHelper.class.getResourceAsStream("/io/github/wolfraam/chessgame/opening/opening-book.csv");
     }
 }

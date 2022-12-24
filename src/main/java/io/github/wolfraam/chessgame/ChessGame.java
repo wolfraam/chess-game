@@ -32,6 +32,7 @@ import java.util.StringTokenizer;
  */
 public class ChessGame implements Serializable, Cloneable {
 
+    private static final ChessOpeningHelper CHESS_OPENING_HELPER = new ChessOpeningHelper();
     private static final String DEFAULT_LANGUAGE_CODE = "en";
     private static final NotationMapping DEFAULT_NOTATION_MAPPING = LanguageSettings.getNotationMapping(DEFAULT_LANGUAGE_CODE);
     protected final Board board;
@@ -106,7 +107,7 @@ public class ChessGame implements Serializable, Cloneable {
      * @return the chess opening for this game.
      */
     public ChessOpening getChessOpening() {
-        return new ChessOpeningHelper().getChessOpening(this);
+        return CHESS_OPENING_HELPER.getChessOpening(this);
     }
 
     /**
