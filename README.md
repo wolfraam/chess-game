@@ -146,10 +146,10 @@ To export games in Portable Game Notation (PGN):
 import io.github.wolfraam.chessgame.pgn.PGNExporter;
 
 ChessGame chessGame = new ChessGame();
-chessGame.playMoves(NotationType.SAN,"e4 c5 Nf3");
-chessGame.setPgnTag(PgnTag.EVENT,"Test Event");
-chessGame.setPgnTag(PgnTag.RESULT,"1/2-1/2");
-PGNExporter pgnExporter = new PGNExporter(new PrintWriter(System.out));
+chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3");
+chessGame.setPgnTag(PgnTag.EVENT, "Test Event");
+chessGame.setPgnTag(PgnTag.RESULT, "1/2-1/2");
+PGNExporter pgnExporter = new PGNExporter(System.out);
 pgnExporter.write(chessGame);
 // output:
 // [Event "Test Event"]
@@ -168,7 +168,7 @@ import io.github.wolfraam.chessgame.pgn.PGNImporter;
 
 PGNImporter pgnImporter = new PGNImporter();
 pgnImporter.setOnGame((game)->{
-  System.out.println("Imported a game with moves:"+game.getMoves());
+  System.out.println("Imported a game with moves:" + game.getMoves());
 });
 pgnImporter.setOnError(System.out::println);
 pgnImporter.setOnWarning(System.out::println);
