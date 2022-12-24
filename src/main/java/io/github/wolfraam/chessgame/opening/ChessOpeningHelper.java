@@ -16,21 +16,6 @@ public class ChessOpeningHelper {
 
     private ChessOpeningElement root;
 
-    private void addOpeningBookElement(final ChessOpeningElement newRoot, final String eco, final String opening, final String variation, final List<String> sanList) {
-        ChessOpeningElement chessOpeningElement = newRoot;
-        for (final String move : sanList) {
-            ChessOpeningElement chessOpeningElementNew = chessOpeningElement.get(move);
-            if (chessOpeningElementNew == null) {
-                chessOpeningElementNew = new ChessOpeningElement();
-                chessOpeningElement.put(move, chessOpeningElementNew);
-            }
-            chessOpeningElement = chessOpeningElementNew;
-        }
-        chessOpeningElement.setEco(eco);
-        chessOpeningElement.setName(opening);
-        chessOpeningElement.setVariation(variation);
-    }
-
     public ChessOpening getChessOpening(final ChessGame chessGame) {
         if (root == null) {
             fillRoot();
@@ -54,6 +39,25 @@ public class ChessOpeningHelper {
         return currentChessOpening;
     }
 
+    protected InputStream getOpeningBookCsvInputStream() {
+        return ChessOpeningHelper.class.getResourceAsStream("/io/github/wolfraam/chessgame/opening/opening-book.csv");
+    }
+
+    private void addOpeningBookElement(final ChessOpeningElement newRoot, final String eco, final String opening, final String variation, final List<String> sanList) {
+        ChessOpeningElement chessOpeningElement = newRoot;
+        for (final String move : sanList) {
+            ChessOpeningElement chessOpeningElementNew = chessOpeningElement.get(move);
+            if (chessOpeningElementNew == null) {
+                chessOpeningElementNew = new ChessOpeningElement();
+                chessOpeningElement.put(move, chessOpeningElementNew);
+            }
+            chessOpeningElement = chessOpeningElementNew;
+        }
+        chessOpeningElement.setEco(eco);
+        chessOpeningElement.setName(opening);
+        chessOpeningElement.setVariation(variation);
+    }
+
     private void fillRoot() {
         final ChessOpeningElement newRoot = new ChessOpeningElement();
 
@@ -72,9 +76,5 @@ public class ChessOpeningHelper {
         } catch (final IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    protected InputStream getOpeningBookCsvInputStream() {
-        return ChessOpeningHelper.class.getResourceAsStream("/io/github/wolfraam/chessgame/opening/opening-book.csv");
     }
 }
