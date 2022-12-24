@@ -2,6 +2,7 @@ package io.github.wolfraam.chessgame.pgn;
 
 import io.github.wolfraam.chessgame.ChessGame;
 import io.github.wolfraam.chessgame.notation.NotationType;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.List;
@@ -13,12 +14,12 @@ public class PGNExporter {
     private boolean firstGame = true;
     private final PrintWriter printWriter;
 
-    public PGNExporter(final PrintWriter printWriter) {
-        this.printWriter = printWriter;
+    public PGNExporter(final OutputStream outputStream) {
+        printWriter = new PrintWriter(outputStream);
     }
 
     public void write(final ChessGame chessGame) {
-        if(chessGame.getPgnTagValue(PgnTag.RESULT) == null) {
+        if (chessGame.getPgnTagValue(PgnTag.RESULT) == null) {
             throw new IllegalArgumentException("Can't export chess game without PgnTag.RESULT");
         }
         if (firstGame) {

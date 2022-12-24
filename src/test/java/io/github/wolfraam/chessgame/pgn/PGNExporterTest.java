@@ -3,15 +3,13 @@ package io.github.wolfraam.chessgame.pgn;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import io.github.wolfraam.chessgame.ChessGame;
+import io.github.wolfraam.chessgame.notation.NotationType;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.Set;
-
-import io.github.wolfraam.chessgame.notation.NotationType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -41,7 +39,7 @@ class PGNExporterTest {
     @Test
     public void testExport2Games() {
         final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        final PGNExporter pgnExporter = new PGNExporter(new PrintWriter(byteArrayOutputStream));
+        final PGNExporter pgnExporter = new PGNExporter(byteArrayOutputStream);
         for (final ChessGame game : getGames()) {
             pgnExporter.write(game);
         }
@@ -54,9 +52,9 @@ class PGNExporterTest {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3");
         chessGame.setPgnTag(PgnTag.EVENT, "Test Event");
-        final PGNExporter pgnExporter = new PGNExporter(new PrintWriter(System.out));
+        final PGNExporter pgnExporter = new PGNExporter(System.out);
         Assertions.assertThrows(IllegalArgumentException.class, () ->
-            pgnExporter.write(chessGame));
+                pgnExporter.write(chessGame));
     }
 
     private Set<ChessGame> getGames() {
