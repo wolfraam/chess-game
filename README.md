@@ -25,7 +25,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.wolfraam:chessgame:1.1")
+    implementation("io.github.wolfraam:chessgame:1.2")
 }
 ```
 
@@ -35,7 +35,7 @@ dependencies {
 <dependency>
   <groupId>io.github.wolfraam</groupId>
   <artifactId>chessgame</artifactId>
-  <version>1.1</version>
+  <version>1.2</version>
 </dependency>
 ```
 
