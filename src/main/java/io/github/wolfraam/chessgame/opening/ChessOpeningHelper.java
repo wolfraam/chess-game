@@ -2,6 +2,7 @@ package io.github.wolfraam.chessgame.opening;
 
 import io.github.wolfraam.chessgame.ChessGame;
 import io.github.wolfraam.chessgame.notation.NotationType;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +14,8 @@ import java.util.List;
  * Determines the chess opening of a chess game.
  */
 public class ChessOpeningHelper {
+
+    protected static final char SEPARATOR = '|';
 
     private ChessOpeningElement root;
 
@@ -65,12 +68,13 @@ public class ChessOpeningHelper {
             final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                final String[] split = line.split(",");
+                final String[] split = line.split("\\" + SEPARATOR);
                 final String eco = split[0];
                 final String opening = split[1];
                 final String variation = split[2].length() == 0 ? null : split[2];
-                final String[] sanMoves = Arrays.copyOfRange(split, 3, split.length);
-                addOpeningBookElement(newRoot, eco, opening, variation, Arrays.asList(sanMoves));
+                final String[] sanMoves = split[3].split(" ");
+                final List<String> sanList = Arrays.asList(sanMoves);
+                addOpeningBookElement(newRoot, eco, opening, variation, sanList);
             }
             root = newRoot;
         } catch (final IOException e) {

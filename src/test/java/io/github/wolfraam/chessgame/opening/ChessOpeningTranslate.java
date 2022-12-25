@@ -4,6 +4,7 @@ import io.github.wolfraam.chessgame.ChessGame;
 import io.github.wolfraam.chessgame.notation.NotationType;
 import io.github.wolfraam.chessgame.pgn.PGNImporter;
 import io.github.wolfraam.chessgame.pgn.PgnTag;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -11,6 +12,8 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+
+import static io.github.wolfraam.chessgame.opening.ChessOpeningHelper.SEPARATOR;
 
 public class ChessOpeningTranslate {
 
@@ -42,19 +45,28 @@ public class ChessOpeningTranslate {
         final String eco = chessGame.getPgnTagValue(PgnTag.ECO);
         final String opening = chessGame.getPgnTagValue(PgnTag.OPENING);
         final String variation = chessGame.getPgnTagValue(PgnTag.VARIATION);
+        if (eco.contains(String.valueOf(SEPARATOR))) {
+            throw new RuntimeException(eco);
+        }
         printWriter.print(eco);
-        printWriter.print(',');
+        printWriter.print(SEPARATOR);
         if (opening != null) {
+            if (opening.contains(String.valueOf(SEPARATOR))) {
+                throw new RuntimeException(opening);
+            }
             printWriter.print(opening);
         }
-        printWriter.print(',');
+        printWriter.print(SEPARATOR);
         if (variation != null) {
+            if (variation.contains(String.valueOf(SEPARATOR))) {
+                throw new RuntimeException(variation);
+            }
             printWriter.print(variation);
         }
-        printWriter.print(',');
+        printWriter.print(SEPARATOR);
         for (final String san : sanList) {
             printWriter.print(san);
-            printWriter.print(',');
+            printWriter.print(' ');
         }
         printWriter.println();
     }
