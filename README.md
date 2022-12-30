@@ -10,12 +10,17 @@ chess-game is a java chess library which can
 - determine the chess opening of a game
 - import and export games in PGN notation
 
-Features:
+## Features
 - Supports Android 5+
 - Used in the app Chess Analysis
   - Android: https://play.google.com/store/apps/details?id=com.apps23.chess
   - iOS: https://apps.apple.com/app/id1630945324 
   - Web: https://23apps.com/chess-analysis
+
+## Code Quality
+![LINE](https://img.shields.io/badge/line--coverage-99.86%25-brightgreen.svg)
+![BRANCH](https://img.shields.io/badge/branch--coverage-94.78%25-brightgreen.svg)
+![COMPLEXITY](https://img.shields.io/badge/complexity-2.99-brightgreen.svg)
 
 ## Gradle
 
@@ -38,8 +43,6 @@ dependencies {
   <version>1.2</version>
 </dependency>
 ```
-
-# Usage
 
 ## Playing moves
 
