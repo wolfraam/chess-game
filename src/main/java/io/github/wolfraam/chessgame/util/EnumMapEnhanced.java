@@ -4,7 +4,7 @@ import java.util.EnumMap;
 import java.util.Objects;
 
 /**
- * Android 5 doesn't support Map.computeIfAbsentSupport. Therefor backported here.
+ * Android 5 doesn't support Map.computeIfAbsentSupport. Therefor back-ported here.
  */
 public class EnumMapEnhanced<K extends Enum<K>, V> extends EnumMap<K, V> {
 

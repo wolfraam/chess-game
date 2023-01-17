@@ -99,6 +99,35 @@ class PGNImporterTest {
     }
 
     @Test
+    public void testDontAcceptSetup() {
+        final String pgn = "[Event \"\"]\n" +
+                "[Site \"\"]\n" +
+                "[Date \"\"]\n" +
+                "[Round \"\"]\n" +
+                "[White \"\"]\n" +
+                "[Black \"\"]\n" +
+                "[Result \"\"]\n" +
+                "[FEN \"8/K7/8/8/8/1k6/1N1p4/8 w - - 0 1\"]\n" +
+                "[SetUp \"1\"]\n" +
+                "\n" +
+                "Kb8 *";
+
+        final Set<ChessGame> chessGameSet = new HashSet<>();
+        try (final InputStream inputStream = new ByteArrayInputStream(pgn.getBytes())) {
+            final PGNImporter pgnImporter = new PGNImporter();
+            pgnImporter.setOnGame(chessGameSet::add);
+            pgnImporter.setOnError(System.out::println);
+            pgnImporter.setOnWarning(System.out::println);
+            pgnImporter.setAcceptTagsPredicate(pgnTagStringMap -> !pgnTagStringMap.containsKey(PgnTag.SET_UP));
+            pgnImporter.run(inputStream);
+            assertEquals(0, chessGameSet.size());
+        } catch (final IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    @Test
     public void testImportInvalidMoveNumber() {
         final String pgn = "[Event \"?\"]\n" +
                 "[Site \"?\"]\n" +

@@ -5,6 +5,7 @@ import io.github.wolfraam.chessgame.move.IllegalMoveException;
 import io.github.wolfraam.chessgame.notation.NotationType;
 import io.github.wolfraam.chessgame.util.Consumer;
 import io.github.wolfraam.chessgame.util.Function;
+import io.github.wolfraam.chessgame.util.Predicate;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,6 +23,7 @@ import java.util.TreeMap;
  * Imports games in PGN format.
  */
 public class PGNImporter {
+    private Predicate<Map<PgnTag, String>> acceptTagsPredicate = pgnTagStringMap -> true;
     private ChessGame chessGame;
     private File file;
     private int inCommentLevel = 0;
@@ -34,29 +36,55 @@ public class PGNImporter {
     private Consumer<String> onWarning;
     private final Map<PgnTag, String> pgnTag2Value = new EnumMap<>(PgnTag.class);
 
+    /**
+     * Imports the game from the InputStream.
+     */
     public void run(final InputStream inputStream) {
         file = null;
         runWithInputStream(inputStream);
     }
 
+    /**
+     * Imports the game from the File.
+     */
     public void run(final File file) throws FileNotFoundException {
         this.file = file;
         final InputStream inputStream = new FileInputStream(file);
         runWithInputStream(inputStream);
     }
 
+    /**
+     * Sets a Predicate which determines whether the game should be imported, based on the supplied tags.
+     */
+    public void setAcceptTagsPredicate(final Predicate<Map<PgnTag, String>> acceptTagsPredicate) {
+        this.acceptTagsPredicate = acceptTagsPredicate;
+    }
+
+    /**
+     * Sets a Function which generates a ChessGame with the given FEN String. Use this when you want to use
+     * a subclass of ChessGame.
+     */
     public void setFen2NewChessGameFunction(final Function<String, ChessGame> fen2NewChessGameFunction) {
         this.fen2NewChessGameFunction = fen2NewChessGameFunction;
     }
 
+    /**
+     * Sets a Consumer which will be called with import errors.
+     */
     public void setOnError(final Consumer<String> onError) {
         this.onError = onError;
     }
 
+    /**
+     * Sets a Consumer which will be called with the imported ChessGames.
+     */
     public void setOnGame(final Consumer<ChessGame> onGame) {
         this.onGame = onGame;
     }
 
+    /**
+     * Sets a Consumer which will be called with import warnings.
+     */
     public void setOnWarning(final Consumer<String> onWarning) {
         this.onWarning = onWarning;
     }
@@ -159,17 +187,19 @@ public class PGNImporter {
                                 if (fen == null) {
                                     fen = ChessGame.STANDARD_INITIAL_FEN;
                                 }
-                                chessGame = fen2NewChessGameFunction.call(fen);
-                                for (final Map.Entry<PgnTag, String> entry : pgnTag2Value.entrySet()) {
-                                    chessGame.setPgnTag(entry.getKey(), entry.getValue());
-                                }
-                                try {
-                                    for (final String l : lineNr2Line.values()) {
-                                        playMoves(l);
+                                if (acceptTagsPredicate.test(pgnTag2Value)) {
+                                    chessGame = fen2NewChessGameFunction.call(fen);
+                                    for (final Map.Entry<PgnTag, String> entry : pgnTag2Value.entrySet()) {
+                                        chessGame.setPgnTag(entry.getKey(), entry.getValue());
                                     }
-                                    onGame.accept(chessGame);
-                                } catch (final IllegalPgnException | IllegalMoveException e) {
-                                    onError.accept(getContext(lineNumber) + e.getMessage());
+                                    try {
+                                        for (final String l : lineNr2Line.values()) {
+                                            playMoves(l);
+                                        }
+                                        onGame.accept(chessGame);
+                                    } catch (final IllegalPgnException | IllegalMoveException e) {
+                                        onError.accept(getContext(lineNumber) + e.getMessage());
+                                    }
                                 }
                                 reset();
                             }

@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * Android 5 doesn't support Set.removeIf. Therefor backported here.
+ * Android 5 doesn't support Set.removeIf. Therefor back-ported here.
  */
 public class RemoveIfSupport {
     public static <T> void run(final Set<T> set, final Function<T, Boolean> function) {
