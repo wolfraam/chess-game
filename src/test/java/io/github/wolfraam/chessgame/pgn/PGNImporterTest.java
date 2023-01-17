@@ -196,8 +196,8 @@ class PGNImporterTest {
         try (final InputStream inputStream = new ByteArrayInputStream(pgn.getBytes())) {
             final PGNImporter pgnImporter = new PGNImporter();
             pgnImporter.setOnGame((game) -> {
-                chessGameSet.add(game);
                 assertEquals(lastMove, game.getNotationList(NotationType.SAN).get(game.getMoves().size() - 1));
+                chessGameSet.add(game);
             });
             pgnImporter.setOnError(System.out::println);
             pgnImporter.setOnWarning(System.out::println);

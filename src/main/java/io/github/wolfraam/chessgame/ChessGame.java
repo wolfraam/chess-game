@@ -252,7 +252,7 @@ public class ChessGame implements Serializable, Cloneable {
     public List<String> getNotationList(final NotationType notationType, final String languageCode) {
         final List<String> list = new LinkedList<>();
         final NotationMapping notationMapping = getNotationMapping(languageCode);
-        final ChessGame replayChessGame = new ChessGame();
+        final ChessGame replayChessGame = new ChessGame(initialFen);
         final NotationHelper notationHelper = new NotationHelper();
         for (final Move move : moves) {
             list.add(notationHelper.getMoveNotation(notationMapping, replayChessGame.board, notationType, move));
