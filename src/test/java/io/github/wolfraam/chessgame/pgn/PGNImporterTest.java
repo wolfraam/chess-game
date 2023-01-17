@@ -78,6 +78,27 @@ class PGNImporterTest {
     }
 
     @Test
+    public void testImportWithSetup() {
+        final String pgn = "[Event \"\"]\n" +
+                "[Site \"\"]\n" +
+                "[Date \"\"]\n" +
+                "[Round \"\"]\n" +
+                "[White \"\"]\n" +
+                "[Black \"\"]\n" +
+                "[Result \"\"]\n" +
+                "[FEN \"8/K7/8/8/8/1k6/1N1p4/8 w - - 0 1\"]\n" +
+                "[SetUp \"1\"]\n" +
+                "\n" +
+                "Kb8 *";
+
+        final ChessGame chessGame = test(pgn, "Kb8");
+        final ChessGame chessGameStartingPosition = chessGame.getSubset(0);
+
+        assertEquals("8/K7/8/8/8/1k6/1N1p4/8 w - - 0 1", chessGameStartingPosition.getFen());
+        assertEquals("8/K7/8/8/8/1k6/1N1p4/8 w - - 0 1", chessGame.getInitialFen());
+    }
+
+    @Test
     public void testImportInvalidMoveNumber() {
         final String pgn = "[Event \"?\"]\n" +
                 "[Site \"?\"]\n" +
@@ -137,7 +158,7 @@ class PGNImporterTest {
     @Test
     public void testIoException() {
         final PGNImporter pgnImporter = new PGNImporter();
-        pgnImporter.setNewGameSupplier(ChessGame::new);
+        pgnImporter.setFen2NewChessGameFunction(ChessGame::new);
         pgnImporter.setOnGame((game) -> {
         });
         pgnImporter.setOnError(System.out::println);

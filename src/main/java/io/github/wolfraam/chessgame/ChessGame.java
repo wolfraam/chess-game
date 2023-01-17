@@ -32,11 +32,13 @@ import java.util.StringTokenizer;
  */
 public class ChessGame implements Serializable, Cloneable {
 
+    public static final String STANDARD_INITIAL_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
     private static final ChessOpeningHelper CHESS_OPENING_HELPER = new ChessOpeningHelper();
     private static final String DEFAULT_LANGUAGE_CODE = "en";
     private static final NotationMapping DEFAULT_NOTATION_MAPPING = LanguageSettings.getNotationMapping(DEFAULT_LANGUAGE_CODE);
     protected final Board board;
     private final MoveHelper moveHelper;
+    private final String initialFen;
     private final List<Move> moves = new LinkedList<>();
     private final Map<PgnTag, String> pgnTag2Value = new EnumMap<>(PgnTag.class);
 
@@ -44,22 +46,23 @@ public class ChessGame implements Serializable, Cloneable {
      * Constructs a chess game with the initial position.
      */
     public ChessGame() {
-        this(Board.fromInitialPosition());
+        this(STANDARD_INITIAL_FEN);
     }
 
     /**
      * Constructs a chess game with the starting position of the fen argument.
      */
     public ChessGame(final String fen) {
-        this(Board.fromFen(fen));
+        this(STANDARD_INITIAL_FEN.equals(fen) ? Board.fromInitialPosition() : Board.fromFen(fen), fen);
     }
 
     /**
      * Constructs a chess game with the given board.
      */
-    private ChessGame(final Board board) {
+    private ChessGame(final Board board, final String initialFen) {
         this.board = board;
         moveHelper = new MoveHelper(board);
+        this.initialFen = initialFen;
     }
 
     /**
@@ -68,7 +71,7 @@ public class ChessGame implements Serializable, Cloneable {
     @Override
     @SuppressWarnings("all")
     public ChessGame clone() {
-        final ChessGame chessGame = new ChessGame(board.clone());
+        final ChessGame chessGame = new ChessGame(board.clone(), initialFen);
         chessGame.moves.addAll(moves);
         chessGame.pgnTag2Value.putAll(pgnTag2Value);
         return chessGame;
@@ -163,6 +166,13 @@ public class ChessGame implements Serializable, Cloneable {
             return chessGameResult.chessGameResultType;
         }
         return null;
+    }
+
+    /**
+     * The fen of the board before move 1.
+     */
+    public String getInitialFen() {
+        return initialFen;
     }
 
     /**
@@ -342,7 +352,7 @@ public class ChessGame implements Serializable, Cloneable {
      * @return a new chess game which a subset of the moves of this game.
      */
     public ChessGame getSubset(final int moveCount) {
-        final ChessGame chessGame = new ChessGame();
+        final ChessGame chessGame = new ChessGame(initialFen);
         int i = 0;
         for (final Move move : getMoves()) {
             if (i >= moveCount) {

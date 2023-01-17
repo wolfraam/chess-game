@@ -4,7 +4,7 @@ import io.github.wolfraam.chessgame.ChessGame;
 import io.github.wolfraam.chessgame.move.IllegalMoveException;
 import io.github.wolfraam.chessgame.notation.NotationType;
 import io.github.wolfraam.chessgame.util.Consumer;
-import io.github.wolfraam.chessgame.util.Supplier;
+import io.github.wolfraam.chessgame.util.Function;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,7 +28,7 @@ public class PGNImporter {
     private boolean inMoveLines = false;
     private int inVariationLevel = 0;
     private final Map<Integer, String> lineNr2Line = new TreeMap<>();
-    private Supplier<ChessGame> newGameSupplier = ChessGame::new;
+    private Function<String, ChessGame> fen2NewChessGameFunction = ChessGame::new;
     private Consumer<String> onError;
     private Consumer<ChessGame> onGame;
     private Consumer<String> onWarning;
@@ -45,8 +45,8 @@ public class PGNImporter {
         runWithInputStream(inputStream);
     }
 
-    public void setNewGameSupplier(final Supplier<ChessGame> newGameSupplier) {
-        this.newGameSupplier = newGameSupplier;
+    public void setFen2NewChessGameFunction(final Function<String, ChessGame> fen2NewChessGameFunction) {
+        this.fen2NewChessGameFunction = fen2NewChessGameFunction;
     }
 
     public void setOnError(final Consumer<String> onError) {
@@ -155,20 +155,21 @@ public class PGNImporter {
                         } else {
                             lineNr2Line.put(lineNumber, line);
                             if (isLastLine(line)) {
-                                if ((!"1".equals(pgnTag2Value.get(PgnTag.SET_UP))) &&
-                                        pgnTag2Value.get(PgnTag.FEN) == null) {
-                                    chessGame = newGameSupplier.get();
-                                    for (final Map.Entry<PgnTag, String> entry : pgnTag2Value.entrySet()) {
-                                        chessGame.setPgnTag(entry.getKey(), entry.getValue());
+                                String fen = pgnTag2Value.get(PgnTag.FEN);
+                                if (fen == null) {
+                                    fen = ChessGame.STANDARD_INITIAL_FEN;
+                                }
+                                chessGame = fen2NewChessGameFunction.call(fen);
+                                for (final Map.Entry<PgnTag, String> entry : pgnTag2Value.entrySet()) {
+                                    chessGame.setPgnTag(entry.getKey(), entry.getValue());
+                                }
+                                try {
+                                    for (final String l : lineNr2Line.values()) {
+                                        playMoves(l);
                                     }
-                                    try {
-                                        for (final String l : lineNr2Line.values()) {
-                                            playMoves(l);
-                                        }
-                                        onGame.accept(chessGame);
-                                    } catch (final IllegalPgnException | IllegalMoveException e) {
-                                        onError.accept(getContext(lineNumber) + e.getMessage());
-                                    }
+                                    onGame.accept(chessGame);
+                                } catch (final IllegalPgnException | IllegalMoveException e) {
+                                    onError.accept(getContext(lineNumber) + e.getMessage());
                                 }
                                 reset();
                             }

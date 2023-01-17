@@ -68,6 +68,7 @@ class ChessGameTest {
     @Test
     public void testGetFen() {
         assertEquals("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", new ChessGame().getFen());
+        assertEquals("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", new ChessGame().getInitialFen());
     }
 
     @Test
