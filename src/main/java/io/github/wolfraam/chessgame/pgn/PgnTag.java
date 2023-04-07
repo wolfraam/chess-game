@@ -30,6 +30,15 @@ public enum PgnTag {
     ECO("ECO"),
     TIME_CONTROL("TimeControl"),
     TERMINATION("Termination"),
+    CURRENT_POSITION("CurrentPosition"),
+    TIMEZONE("Timezone"),
+    ECO_URL("ECOUrl"),
+    UTC_DATE("UTCDate"),
+    UTC_TIME("UTCTime"),
+    START_TIME("StartTime"),
+    END_DATE("EndDate"),
+    END_TIME("EndTime"),
+    LINK("Link"),
     OPENING("Opening"),
     VARIATION("Variation"),
     FEN("FEN"),
@@ -48,3 +57,4 @@ public enum PgnTag {
         return tag;
     }
 }
+

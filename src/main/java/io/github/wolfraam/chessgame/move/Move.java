@@ -42,6 +42,6 @@ public class Move implements Serializable {
 
     @Override
     public String toString() {
-        return from.name + "-" + to.name + ((promotion == null ? "" : (" " + promotion.name())));
+        return from.name + "-" + to.name + (promotion == null ? "" : (" " + promotion.name()));
     }
 }
