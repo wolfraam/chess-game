@@ -1,5 +1,6 @@
 package io.github.wolfraam.chessgame.board;
 
+import io.github.wolfraam.chessgame.board.visual.BoardVisualizer;
 import io.github.wolfraam.chessgame.move.castle.CastleMoveType;
 import io.github.wolfraam.chessgame.util.Supplier;
 import java.io.Serializable;
@@ -151,6 +152,25 @@ public class Board implements Serializable, Cloneable {
             }
         }
         return stringBuilder.toString();
+    }
+
+    /**
+     * Returns an advanced printable ASCII representation of the board
+     *
+     * @return an advanced printable ASCII representation of the board
+     */
+    public String getBigAscii() {
+        return BoardVisualizer.fenToBigAscii(getFen());
+    }
+
+    /**
+     * Returns an advanced printable ASCII representation of the board from the specified perspective
+     *
+     * @param perspective the perspective of the board (which player is at the bottom)
+     * @return an advanced printable ASCII representation of the board
+     */
+    public String getBigAscii(BoardVisualizer.Perspective perspective){
+        return BoardVisualizer.fenToBigAscii(getFen(), perspective);
     }
 
     public String getFen() {
