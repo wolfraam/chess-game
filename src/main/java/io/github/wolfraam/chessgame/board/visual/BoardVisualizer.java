@@ -13,7 +13,7 @@ public class BoardVisualizer {
     static {
         horizontalLine = "+---+---+---+---+---+---+---+---+\n";
         columnIndexLine = "  a   b   c   d   e   f   g   h\n";
-        flippedColumnIndexLine = "  h   g   f   e   d   c    b  a\n";
+        flippedColumnIndexLine = "  h   g   f   e   d   c   b   a\n";
         lineIndexEndings = new String[]{"  8\n", "  7\n", "  6\n", "  5\n", "  4\n", "  3\n", "  2\n", "  1\n"};
         emptySquare = "   |";
         lineStart = "|";
