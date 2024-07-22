@@ -1,7 +1,23 @@
 package io.github.wolfraam.chessgame.board.visual;
 
+/**
+ * This class provides methods to visualize the board in ASCII format.
+ */
 public class BoardVisualizer {
 
+    /**
+     * The possible perspectives of the board (which player is at the bottom).
+     */
+    public enum Perspective {
+        /** The white player is at the bottom. */
+        WHITE,
+        /** The black player is at the bottom. */
+        BLACK,
+        /** The current player is at the bottom. */
+        CURRENT_PLAYER
+    }
+
+    /** The default perspective for when no perspective is specified. */
     public static final Perspective DEFAULT_PERSPECTIVE = Perspective.WHITE;
     private static final String horizontalLine;
     private static final String columnIndexLine;
@@ -19,10 +35,23 @@ public class BoardVisualizer {
         lineStart = "|";
     }
 
+    /**
+     * Converts a position from fen format into an advanced printable ASCII format.
+     *
+     * @param fen the position in Forsyth–Edwards Notation
+     * @return the ASCII representation of the position
+     */
     public static String fenToBigAscii(String fen) {
         return fenToBigAscii(fen, DEFAULT_PERSPECTIVE);
     }
 
+    /**
+     * Converts a position from fen format into an advanced printable ASCII format from a specific perspective.
+     *
+     * @param fen the position in Forsyth–Edwards Notation
+     * @param perspective the perspective of the board (which player is at the bottom)
+     * @return the ASCII representation of the position
+     */
     public static String fenToBigAscii(String fen, Perspective perspective) {
         String position;
 
@@ -64,13 +93,4 @@ public class BoardVisualizer {
         }
         return asciiBoard.append(lineIndexEndings[lineIndexCounter]).append(horizontalLine).toString();
     }
-
-
-    public enum Perspective {
-        WHITE,
-        BLACK,
-        CURRENT_PLAYER
-    }
-
-
 }
