@@ -11,11 +11,11 @@ public class BoardVisualizer {
     private static final String lineStart;
 
     static {
-        horizontalLine = "+----+----+----+----+----+----+----+----+\n";
-        columnIndexLine = "  a    b    c    d    e    f    g    h\n";
-        flippedColumnIndexLine = "  h    g    f    e    d    c     b   a\n";
+        horizontalLine = "+---+---+---+---+---+---+---+---+\n";
+        columnIndexLine = "  a   b   c   d   e   f   g   h\n";
+        flippedColumnIndexLine = "  h   g   f   e   d   c    b  a\n";
         lineIndexEndings = new String[]{"  8\n", "  7\n", "  6\n", "  5\n", "  4\n", "  3\n", "  2\n", "  1\n"};
-        emptySquare = "    |";
+        emptySquare = "   |";
         lineStart = "|";
     }
 
@@ -58,7 +58,7 @@ public class BoardVisualizer {
                     asciiBoard.append(lineIndexEndings[lineIndexCounter]).append(horizontalLine).append(lineStart);
                     lineIndexCounter += incrementDirection;
                 } else {
-                    asciiBoard.append(" ").append(each).append("  |");
+                    asciiBoard.append(" ").append(each).append(" |");
                 }
             }
         }
