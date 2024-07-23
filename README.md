@@ -12,10 +12,6 @@ chess-game is a java chess library which can
 
 ## Features
 - Supports Android 5+
-- Used in the app Chess Analysis
-  - Android: https://play.google.com/store/apps/details?id=com.apps23.chess
-  - iOS: https://apps.apple.com/app/id1630945324 
-  - Web: https://23apps.com/chess-analysis
 
 ## Code Quality
 ![LINE](https://img.shields.io/badge/line--coverage-99.86%25-brightgreen.svg)
@@ -30,7 +26,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.wolfraam:chessgame:1.4")
+    implementation("io.github.wolfraam:chessgame:1.5")
 }
 ```
 
@@ -40,7 +36,7 @@ dependencies {
 <dependency>
   <groupId>io.github.wolfraam</groupId>
   <artifactId>chessgame</artifactId>
-  <version>1.4</version>
+  <version>1.5</version>
 </dependency>
 ```
 
