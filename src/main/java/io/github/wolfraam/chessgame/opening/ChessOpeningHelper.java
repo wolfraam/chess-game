@@ -2,7 +2,6 @@ package io.github.wolfraam.chessgame.opening;
 
 import io.github.wolfraam.chessgame.ChessGame;
 import io.github.wolfraam.chessgame.notation.NotationType;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -71,7 +70,7 @@ public class ChessOpeningHelper {
                 final String[] split = line.split("\\" + SEPARATOR);
                 final String eco = split[0];
                 final String opening = split[1];
-                final String variation = split[2].length() == 0 ? null : split[2];
+                final String variation = split[2].isEmpty() ? null : split[2];
                 final String[] sanMoves = split[3].split(" ");
                 final List<String> sanList = Arrays.asList(sanMoves);
                 addOpeningBookElement(newRoot, eco, opening, variation, sanList);

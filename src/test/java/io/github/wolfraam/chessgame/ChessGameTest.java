@@ -48,14 +48,16 @@ class ChessGameTest {
     public void testGetASCII() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4 e6");
-        assertEquals("rnbqkbnr\n" +
-                "pppp_ppp\n" +
-                "____p___\n" +
-                "________\n" +
-                "____P___\n" +
-                "________\n" +
-                "PPPP_PPP\n" +
-                "RNBQKBNR\n", chessGame.getASCII());
+        assertEquals("""
+                rnbqkbnr
+                pppp_ppp
+                ____p___
+                ________
+                ____P___
+                ________
+                PPPP_PPP
+                RNBQKBNR
+                """, chessGame.getASCII());
     }
 
     @Test

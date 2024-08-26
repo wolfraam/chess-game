@@ -134,7 +134,7 @@ public class PGNImporter {
                         stringBuilderComment.append(token);
                     }
                     if (indentLevel == 0) {
-                        if (stringBuilderComment.length() != 0) {
+                        if (!stringBuilderComment.isEmpty()) {
                             final Map<Integer, List<PGNComment>> map;
                             if (isBeforeMove) {
                                 map = chessGame.getPGNData().getPGNMove2CommentBefore();

@@ -38,17 +38,17 @@ public class PGNExporter {
         printWriter.println();
         StringBuilder currentLine = new StringBuilder();
         for (final String moveString : getMoveStrings(chessGame)) {
-            final boolean needsLeadingSpace = currentLine.length() != 0;
+            final boolean needsLeadingSpace = !currentLine.isEmpty();
             if (78 < currentLine.length() + moveString.length() + (needsLeadingSpace ? 1 : 0)) {
                 printWriter.println(currentLine);
                 currentLine = new StringBuilder();
             }
-            if (currentLine.length() != 0) {
+            if (!currentLine.isEmpty()) {
                 currentLine.append(" ");
             }
             currentLine.append(moveString);
         }
-        if (0 < currentLine.length()) {
+        if (!currentLine.isEmpty()) {
             printWriter.println(currentLine);
         }
 
