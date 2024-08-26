@@ -4,7 +4,6 @@ import io.github.wolfraam.chessgame.board.Piece;
 import io.github.wolfraam.chessgame.board.PieceType;
 import io.github.wolfraam.chessgame.board.Side;
 import io.github.wolfraam.chessgame.board.Square;
-import io.github.wolfraam.chessgame.util.EnumMapEnhanced;
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.LinkedList;
@@ -16,11 +15,11 @@ import java.util.Set;
  * Contains all possible targets for a piece.
  */
 public class TargetData {
-    private final EnumMapEnhanced<Square, Map<PieceType, Set<Square>>> kingAndKnightMap = new EnumMapEnhanced<>(Square.class);
+    private final EnumMap<Square, Map<PieceType, Set<Square>>> kingAndKnightMap = new EnumMap<>(Square.class);
 
-    private final EnumMapEnhanced<Square, Map<PieceType, List<List<Square>>>> otherMap = new EnumMapEnhanced<>(Square.class);
+    private final EnumMap<Square, Map<PieceType, List<List<Square>>>> otherMap = new EnumMap<>(Square.class);
 
-    private final EnumMapEnhanced<Square, Map<Side, Set<Square>>> pawnMap = new EnumMapEnhanced<>(Square.class);
+    private final EnumMap<Square, Map<Side, Set<Square>>> pawnMap = new EnumMap<>(Square.class);
 
     public Set<Square> getKingOrKnightTargets(final Square square, final Piece piece) {
         return kingAndKnightMap.get(square).get(piece.pieceType);
@@ -49,7 +48,7 @@ public class TargetData {
                                 if (square.y == (side == Side.WHITE ? 1 : 6)) {
                                     addTarget(squareSet, square.x, square.y + (side == Side.WHITE ? 2 : -2));
                                 }
-                                pawnMap.computeIfAbsentSupport(square, k -> (new EnumMap<>(Side.class))).put(side, squareSet);
+                                pawnMap.computeIfAbsent(square, k -> (new EnumMap<>(Side.class))).put(side, squareSet);
                             }
                         }
                         break;
@@ -57,14 +56,14 @@ public class TargetData {
                     case KING:
                         final Set<Square> squareSet = EnumSet.noneOf(Square.class);
                         addKingOrKnightTargets(pieceType, square, squareSet);
-                        kingAndKnightMap.computeIfAbsentSupport(square, k -> (new EnumMap<>(PieceType.class))).put(pieceType, squareSet);
+                        kingAndKnightMap.computeIfAbsent(square, k -> (new EnumMap<>(PieceType.class))).put(pieceType, squareSet);
                         break;
                     case BISHOP:
                     case ROOK:
                     case QUEEN:
                         final List<List<Square>> squareListList = new LinkedList<>();
                         addOtherTargets(pieceType, square, squareListList);
-                        otherMap.computeIfAbsentSupport(square, k -> (new EnumMap<>(PieceType.class))).put(pieceType, squareListList);
+                        otherMap.computeIfAbsent(square, k -> (new EnumMap<>(PieceType.class))).put(pieceType, squareListList);
                         break;
                 }
             }

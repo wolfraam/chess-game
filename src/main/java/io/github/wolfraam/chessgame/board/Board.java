@@ -1,12 +1,12 @@
 package io.github.wolfraam.chessgame.board;
 
 import io.github.wolfraam.chessgame.move.castle.CastleMoveType;
-import io.github.wolfraam.chessgame.util.Supplier;
 import java.io.Serializable;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Supplier;
 
 /**
  * The chess board.

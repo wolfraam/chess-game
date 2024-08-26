@@ -1,6 +1,5 @@
 package io.github.wolfraam.chessgame.board;
 
-import io.github.wolfraam.chessgame.util.EnumMapEnhanced;
 import java.io.Serializable;
 import java.util.EnumMap;
 import java.util.EnumSet;
@@ -12,7 +11,7 @@ import java.util.Set;
  */
 public class BoardData implements Serializable, Cloneable {
 
-    private final EnumMapEnhanced<Piece, EnumSet<Square>> piece2Squares = new EnumMapEnhanced<>(Piece.class);
+    private final EnumMap<Piece, EnumSet<Square>> piece2Squares = new EnumMap<>(Piece.class);
     private final EnumMap<Square, Piece> square2Piece = new EnumMap<>(Square.class);
 
     @Override
@@ -34,7 +33,7 @@ public class BoardData implements Serializable, Cloneable {
     }
 
     public Set<Square> getSquares(final Piece piece) {
-        return piece2Squares.computeIfAbsentSupport(piece, k -> EnumSet.noneOf(Square.class));
+        return piece2Squares.computeIfAbsent(piece, k -> EnumSet.noneOf(Square.class));
     }
 
     public void putPieceOnSquare(final Square square, final Piece piece) {

@@ -1,6 +1,5 @@
 package io.github.wolfraam.chessgame.board;
 
-import io.github.wolfraam.chessgame.util.EnumMapEnhanced;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,11 +22,11 @@ public enum Piece {
     BLACK_KING(Side.BLACK, PieceType.KING, 'k');
 
     private static final Map<Character, Piece> FEN_NOTATION_2_PIECE = new HashMap<>();
-    private static final EnumMapEnhanced<PieceType, Map<Side, Piece>> PIECE_TYPE_2_SIDE_2_PIECE = new EnumMapEnhanced<>(PieceType.class);
+    private static final EnumMap<PieceType, Map<Side, Piece>> PIECE_TYPE_2_SIDE_2_PIECE = new EnumMap<>(PieceType.class);
 
     static {
         for (final Piece piece : Piece.values()) {
-            PIECE_TYPE_2_SIDE_2_PIECE.computeIfAbsentSupport(piece.pieceType, k -> (new EnumMap<>(Side.class))).put(piece.side, piece);
+            PIECE_TYPE_2_SIDE_2_PIECE.computeIfAbsent(piece.pieceType, k -> (new EnumMap<>(Side.class))).put(piece.side, piece);
             FEN_NOTATION_2_PIECE.put(piece.fenCharacter, piece);
         }
     }
