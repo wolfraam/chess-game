@@ -11,7 +11,6 @@ import io.github.wolfraam.chessgame.move.MoveHelper;
 import io.github.wolfraam.chessgame.move.castle.CastleMoveType;
 import io.github.wolfraam.chessgame.notation.lan.LanParser;
 import io.github.wolfraam.chessgame.notation.san.SanParser;
-import io.github.wolfraam.chessgame.util.RemoveIfSupport;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -80,13 +79,13 @@ public class NotationHelper {
 
     private boolean disambiguatesToOneMoveByFile(final Set<Move> legalMoves, final Square from) {
         final Set<Move> moves = new HashSet<>(legalMoves);
-        RemoveIfSupport.run(moves, move -> move.from.name.charAt(0) != from.name.charAt(0));
+        moves.removeIf(move -> move.from.name.charAt(0) != from.name.charAt(0));
         return moves.size() == 1;
     }
 
     private boolean disambiguatesToOneMoveByRow(final Set<Move> legalMoves, final Square from) {
         final Set<Move> moves = new HashSet<>(legalMoves);
-        RemoveIfSupport.run(moves, move -> move.from.name.charAt(1) != from.name.charAt(1));
+        moves.removeIf(move -> move.from.name.charAt(1) != from.name.charAt(1));
         return moves.size() == 1;
     }
 

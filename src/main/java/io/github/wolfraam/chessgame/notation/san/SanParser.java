@@ -9,7 +9,6 @@ import io.github.wolfraam.chessgame.move.IllegalMoveException;
 import io.github.wolfraam.chessgame.move.Move;
 import io.github.wolfraam.chessgame.move.MoveHelper;
 import io.github.wolfraam.chessgame.notation.NotationMapping;
-import io.github.wolfraam.chessgame.util.RemoveIfSupport;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -39,7 +38,7 @@ public class SanParser {
         }
 
         if (sanParseResult.promotionPiece != null) {
-            RemoveIfSupport.run(legalMoves, move -> move.promotion != sanParseResult.promotionPiece);
+            legalMoves.removeIf(move -> move.promotion != sanParseResult.promotionPiece);
         }
 
         if (legalMoves.size() == 1) {
@@ -47,10 +46,10 @@ public class SanParser {
         }
 
         if (sanParseResult.disambiguationFile != null) {
-            RemoveIfSupport.run(legalMoves, move -> !sanParseResult.disambiguationFile.equals(move.from.file));
+            legalMoves.removeIf(move -> !sanParseResult.disambiguationFile.equals(move.from.file));
         }
         if (sanParseResult.disambiguationRow != null) {
-            RemoveIfSupport.run(legalMoves, move -> !sanParseResult.disambiguationRow.equals(move.from.row));
+            legalMoves.removeIf(move -> !sanParseResult.disambiguationRow.equals(move.from.row));
         }
 
         if (legalMoves.size() != 1) {
