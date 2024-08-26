@@ -14,16 +14,15 @@ import io.github.wolfraam.chessgame.notation.NotationMapping;
 import io.github.wolfraam.chessgame.notation.NotationType;
 import io.github.wolfraam.chessgame.opening.ChessOpening;
 import io.github.wolfraam.chessgame.opening.ChessOpeningHelper;
-import io.github.wolfraam.chessgame.pgn.PgnTag;
+import io.github.wolfraam.chessgame.pgn.PGNData;
+import io.github.wolfraam.chessgame.pgn.PGNTag;
 import io.github.wolfraam.chessgame.result.ChessGameResult;
 import io.github.wolfraam.chessgame.result.ChessGameResultType;
 import io.github.wolfraam.chessgame.result.DrawType;
 import java.io.Serializable;
 import java.util.Collections;
-import java.util.EnumMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
 
@@ -32,15 +31,15 @@ import java.util.StringTokenizer;
  */
 public class ChessGame implements Serializable, Cloneable {
 
-    public static final String STANDARD_INITIAL_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
     private static final ChessOpeningHelper CHESS_OPENING_HELPER = new ChessOpeningHelper();
     private static final String DEFAULT_LANGUAGE_CODE = "en";
     private static final NotationMapping DEFAULT_NOTATION_MAPPING = LanguageSettings.getNotationMapping(DEFAULT_LANGUAGE_CODE);
-    protected final Board board;
-    private final MoveHelper moveHelper;
+    public static final String STANDARD_INITIAL_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+    private final Board board;
     private final String initialFen;
+    private final MoveHelper moveHelper;
     private final List<Move> moves = new LinkedList<>();
-    private final Map<PgnTag, String> pgnTag2Value = new EnumMap<>(PgnTag.class);
+    private final PGNData pgnData = new PGNData();
 
     /**
      * Constructs a chess game with the initial position.
@@ -73,7 +72,7 @@ public class ChessGame implements Serializable, Cloneable {
     public ChessGame clone() {
         final ChessGame chessGame = new ChessGame(board.clone(), initialFen);
         chessGame.moves.addAll(moves);
-        chessGame.pgnTag2Value.putAll(pgnTag2Value);
+        chessGame.pgnData.copyFrom(pgnData);
         return chessGame;
     }
 
@@ -87,8 +86,8 @@ public class ChessGame implements Serializable, Cloneable {
     /**
      * @return a set of all the PGN tags available. These are filled when a PGN import has been done.
      */
-    public Set<PgnTag> getAvailablePgnTags() {
-        return pgnTag2Value.keySet();
+    public Set<PGNTag> getAvailablePGNTags() {
+        return pgnData.getPGNTag2Value().keySet();
     }
 
     /**
@@ -269,10 +268,10 @@ public class ChessGame implements Serializable, Cloneable {
     }
 
     /**
-     * @return the value of the given PgnTag, only filled when an PGN import has been done.
+     * @return the PGNData.
      */
-    public String getPgnTagValue(final PgnTag pgnTag) {
-        return pgnTag2Value.get(pgnTag);
+    public PGNData getPGNData() {
+        return pgnData;
     }
 
     /**
@@ -443,13 +442,6 @@ public class ChessGame implements Serializable, Cloneable {
         for (final String move : moveList) {
             playMove(notationType, languageCode, move);
         }
-    }
-
-    /**
-     * Set the PGN tag to a value.
-     */
-    public void setPgnTag(final PgnTag pgnTag, final String value) {
-        pgnTag2Value.put(pgnTag, value);
     }
 
     private NotationMapping getNotationMapping(final String languageCode) {

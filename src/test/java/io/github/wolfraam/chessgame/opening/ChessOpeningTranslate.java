@@ -1,10 +1,11 @@
 package io.github.wolfraam.chessgame.opening;
 
+import static io.github.wolfraam.chessgame.opening.ChessOpeningHelper.SEPARATOR;
+
 import io.github.wolfraam.chessgame.ChessGame;
 import io.github.wolfraam.chessgame.notation.NotationType;
 import io.github.wolfraam.chessgame.pgn.PGNImporter;
-import io.github.wolfraam.chessgame.pgn.PgnTag;
-
+import io.github.wolfraam.chessgame.pgn.PGNTag;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -12,8 +13,6 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-
-import static io.github.wolfraam.chessgame.opening.ChessOpeningHelper.SEPARATOR;
 
 public class ChessOpeningTranslate {
 
@@ -42,9 +41,9 @@ public class ChessOpeningTranslate {
 
     private void writeGame(final ChessGame chessGame, final PrintWriter printWriter) {
         final List<String> sanList = chessGame.getNotationList(NotationType.SAN);
-        final String eco = chessGame.getPgnTagValue(PgnTag.ECO);
-        final String opening = chessGame.getPgnTagValue(PgnTag.OPENING);
-        final String variation = chessGame.getPgnTagValue(PgnTag.VARIATION);
+        final String eco = chessGame.getPGNData().getPGNTagValue(PGNTag.ECO);
+        final String opening = chessGame.getPGNData().getPGNTagValue(PGNTag.OPENING);
+        final String variation = chessGame.getPGNData().getPGNTagValue(PGNTag.VARIATION);
         if (eco.contains(String.valueOf(SEPARATOR))) {
             throw new RuntimeException(eco);
         }

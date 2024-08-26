@@ -15,6 +15,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.EnumMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
@@ -23,18 +25,17 @@ import java.util.TreeMap;
  * Imports games in PGN format.
  */
 public class PGNImporter {
-    private Predicate<Map<PgnTag, String>> acceptTagsPredicate = pgnTagStringMap -> true;
+    private Predicate<Map<PGNTag, String>> acceptTagsPredicate = pgnTagStringMap -> true;
     private ChessGame chessGame;
-    private File file;
-    private int inCommentLevel = 0;
-    private boolean inMoveLines = false;
-    private int inVariationLevel = 0;
-    private final Map<Integer, String> lineNr2Line = new TreeMap<>();
     private Function<String, ChessGame> fen2NewChessGameFunction = ChessGame::new;
+    private File file;
+    private boolean inMoveLines = false;
+    private int indentLevel = 0;
+    private final Map<Integer, String> lineNr2Line = new TreeMap<>();
     private Consumer<String> onError;
     private Consumer<ChessGame> onGame;
     private Consumer<String> onWarning;
-    private final Map<PgnTag, String> pgnTag2Value = new EnumMap<>(PgnTag.class);
+    private final Map<PGNTag, String> pgnTag2Value = new EnumMap<>(PGNTag.class);
 
     /**
      * Imports the game from the InputStream.
@@ -56,7 +57,7 @@ public class PGNImporter {
     /**
      * Sets a Predicate which determines whether the game should be imported, based on the supplied tags.
      */
-    public void setAcceptTagsPredicate(final Predicate<Map<PgnTag, String>> acceptTagsPredicate) {
+    public void setAcceptTagsPredicate(final Predicate<Map<PGNTag, String>> acceptTagsPredicate) {
         this.acceptTagsPredicate = acceptTagsPredicate;
     }
 
@@ -108,38 +109,71 @@ public class PGNImporter {
             line = line.substring(0, line.indexOf("*"));
         }
 
+        final StringBuilder stringBuilderComment = new StringBuilder();
+        boolean isBeforeMove = true;
         final StringTokenizer stringTokenizer = new StringTokenizer(line, " \t(){}", true);
         while (stringTokenizer.hasMoreTokens()) {
             final String token = stringTokenizer.nextToken();
             switch (token) {
                 case " ":
+                case "\t":
+                    if (indentLevel != 0) {
+                        stringBuilderComment.append(token);
+                    }
                     break;
                 case "(":
-                    inVariationLevel++;
+                case "{":
+                    if (indentLevel != 0) {
+                        stringBuilderComment.append(token);
+                    }
+                    indentLevel++;
                     break;
                 case ")":
-                    inVariationLevel--;
-                    break;
-                case "{":
-                    inCommentLevel++;
-                    break;
                 case "}":
-                    inCommentLevel--;
+                    indentLevel--;
+                    if (indentLevel != 0) {
+                        stringBuilderComment.append(token);
+                    }
+                    if (indentLevel == 0) {
+                        if (stringBuilderComment.length() != 0) {
+                            final Map<Integer, List<PGNComment>> map;
+                            if (isBeforeMove) {
+                                map = chessGame.getPGNData().getPGNMove2CommentBefore();
+                            } else {
+                                map = chessGame.getPGNData().getPGNMove2CommentAfter();
+                            }
+                            final PGNComment pgnComment;
+                            if (token.equals(")")) {
+                                pgnComment = new PGNVariation(stringBuilderComment.toString());
+                            } else {
+                                pgnComment = new PGNComment(stringBuilderComment.toString());
+                            }
+                            map.computeIfAbsent(chessGame.getMoves().size() - (isBeforeMove ? 0 : 1), k -> new LinkedList<>())
+                                    .add(pgnComment);
+                            stringBuilderComment.setLength(0);
+                        }
+                    }
                     break;
                 default:
-                    if (inCommentLevel == 0 && inVariationLevel == 0) {
+                    if (indentLevel == 0) {
                         if (token.indexOf('.') != -1) {
                             final String beforeDot = token.substring(0, token.indexOf('.'));
                             final String afterDot = token.substring(token.lastIndexOf('.') + 1);
-                            if (Integer.parseInt(beforeDot) != chessGame.getFullMoveCount()) {
-                                throw new IllegalPgnException("Invalid move number " + beforeDot + " in line: " + line);
+                            final int processedNumber = Integer.parseInt(beforeDot);
+                            if (processedNumber != chessGame.getFullMoveCount()) {
+                                throw new IllegalPGNException("Invalid move number " + beforeDot + " in line: " + line);
                             }
-                            if (0 < afterDot.length()) {
+                            isBeforeMove = true;
+                            if (!afterDot.isEmpty()) {
                                 chessGame.playMove(NotationType.SAN, afterDot);
+                                isBeforeMove = false;
                             }
                         } else {
                             chessGame.playMove(NotationType.SAN, token);
+                            isBeforeMove = false;
                         }
+                    } else {
+                        stringBuilderComment.append(token);
                     }
                     break;
             }
@@ -149,8 +183,7 @@ public class PGNImporter {
     private void reset() {
         chessGame = null;
         inMoveLines = false;
-        inCommentLevel = 0;
-        inVariationLevel = 0;
+        indentLevel = 0;
         pgnTag2Value.clear();
         lineNr2Line.clear();
     }
@@ -163,13 +196,13 @@ public class PGNImporter {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 line = line.trim();
-                if (line.length() != 0) {
+                if (!line.isEmpty()) {
                     if (line.startsWith("[")) {
                         if (inMoveLines) {
                             onError.accept(getContext(lineNumber) + "Error: Previous Game did not end properly");
                             reset();
                         }
-                        final PgnTagAndValue pgnTagAndValue = PgnTagAndValue.fromLine(line);
+                        final PGNTagAndValue pgnTagAndValue = PGNTagAndValue.fromLine(line);
                         if (pgnTagAndValue != null) {
                             pgnTag2Value.put(pgnTagAndValue.pgnTag, pgnTagAndValue.value);
                         } else {
@@ -183,21 +216,19 @@ public class PGNImporter {
                         } else {
                             lineNr2Line.put(lineNumber, line);
                             if (isLastLine(line)) {
-                                String fen = pgnTag2Value.get(PgnTag.FEN);
+                                String fen = pgnTag2Value.get(PGNTag.FEN);
                                 if (fen == null) {
                                     fen = ChessGame.STANDARD_INITIAL_FEN;
                                 }
                                 if (acceptTagsPredicate.test(pgnTag2Value)) {
                                     chessGame = fen2NewChessGameFunction.call(fen);
-                                    for (final Map.Entry<PgnTag, String> entry : pgnTag2Value.entrySet()) {
-                                        chessGame.setPgnTag(entry.getKey(), entry.getValue());
+                                    for (final Map.Entry<PGNTag, String> entry : pgnTag2Value.entrySet()) {
+                                        chessGame.getPGNData().setPGNTag(entry.getKey(), entry.getValue());
                                     }
                                     try {
-                                        for (final String l : lineNr2Line.values()) {
-                                            playMoves(l);
-                                        }
+                                        playMoves(String.join(" ", lineNr2Line.values()));
                                         onGame.accept(chessGame);
-                                    } catch (final IllegalPgnException | IllegalMoveException e) {
+                                    } catch (final IllegalPGNException | IllegalMoveException e) {
                                         onError.accept(getContext(lineNumber) + e.getMessage());
                                     }
                                 }

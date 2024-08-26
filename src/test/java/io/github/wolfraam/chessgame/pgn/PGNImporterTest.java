@@ -16,6 +16,65 @@ import org.junit.jupiter.api.Test;
 class PGNImporterTest {
 
     @Test
+    public void testComments() {
+        final String pgn =
+                "[Event \"Event\"]\n"
+                        + "[Site \"Site\"]\n"
+                        + "[Date \"2023.01.29\"]\n"
+                        + "[Round \"13\"]\n"
+                        + "[White \"Erigaisi Arjun\"]\n"
+                        + "[Black \"Carlsen, Magnus\"]\n"
+                        + "[Result \"0-1\"]\n"
+                        + "\n"
+                        + "1. {comment before move 0} (variation before move 0) Nf3 {comment after move 0} (variation after move 0) \n"
+                        + "1... {comment before move 1} (variation before move 1) Nf6 {comment after move 1} (variation after move 1) \n"
+                        + "2. g3 {[%clk 1:40:41]} 2...b6 {comment after move 3} 3. Bg2 {[%clk 1:41:04]} 3... Bb7 {[%clk 1:37:32]} 0-1";
+
+        final ChessGame chessGame = test(pgn, "Bb7");
+
+        assertEquals("comment before move 0", chessGame.getPGNData().getPGNMove2CommentBefore().get(0).get(0).getText());
+        assertEquals(PGNComment.class, chessGame.getPGNData().getPGNMove2CommentBefore().get(0).get(0).getClass());
+        assertEquals("variation before move 0", chessGame.getPGNData().getPGNMove2CommentBefore().get(0).get(1).getText());
+        assertEquals(PGNVariation.class, chessGame.getPGNData().getPGNMove2CommentBefore().get(0).get(1).getClass());
+
+        assertEquals("comment after move 0", chessGame.getPGNData().getPGNMove2CommentAfter().get(0).get(0).getText());
+        assertEquals(PGNComment.class, chessGame.getPGNData().getPGNMove2CommentAfter().get(0).get(0).getClass());
+        assertEquals("variation after move 0", chessGame.getPGNData().getPGNMove2CommentAfter().get(0).get(1).getText());
+        assertEquals(PGNVariation.class, chessGame.getPGNData().getPGNMove2CommentAfter().get(0).get(1).getClass());
+
+        assertEquals("comment after move 3", chessGame.getPGNData().getPGNMove2CommentAfter().get(3).get(0).getText());
+
+    }
+
+    @Test
+    public void testDontAcceptSetup() {
+        final String pgn = "[Event \"\"]\n" +
+                "[Site \"\"]\n" +
+                "[Date \"\"]\n" +
+                "[Round \"\"]\n" +
+                "[White \"\"]\n" +
+                "[Black \"\"]\n" +
+                "[Result \"\"]\n" +
+                "[FEN \"8/K7/8/8/8/1k6/1N1p4/8 w - - 0 1\"]\n" +
+                "[SetUp \"1\"]\n" +
+                "\n" +
+                "Kb8 *";
+
+        final Set<ChessGame> chessGameSet = new HashSet<>();
+        try (final InputStream inputStream = new ByteArrayInputStream(pgn.getBytes())) {
+            final PGNImporter pgnImporter = new PGNImporter();
+            pgnImporter.setOnGame(chessGameSet::add);
+            pgnImporter.setOnError(System.out::println);
+            pgnImporter.setOnWarning(System.out::println);
+            pgnImporter.setAcceptTagsPredicate(pgnTagStringMap -> !pgnTagStringMap.containsKey(PGNTag.SET_UP));
+            pgnImporter.run(inputStream);
+            assertEquals(0, chessGameSet.size());
+        } catch (final IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
     public void testFile() {
         final PGNImporter pgnImporter = new PGNImporter();
         pgnImporter.setOnGame((game) -> {
@@ -57,8 +116,8 @@ class PGNImporterTest {
 
         final ChessGame chessGame = test(pgn, "Re6");
 
-        assertEquals("Fischer, Robert \"Bobby\" J.", chessGame.getPgnTagValue(PgnTag.WHITE));
-        assertEquals("Spassky \\ Boris V.", chessGame.getPgnTagValue(PgnTag.BLACK));
+        assertEquals("Fischer, Robert \"Bobby\" J.", chessGame.getPGNData().getPGNTagValue(PGNTag.WHITE));
+        assertEquals("Spassky \\ Boris V.", chessGame.getPGNData().getPGNTagValue(PGNTag.BLACK));
 
     }
 
@@ -76,56 +135,6 @@ class PGNImporterTest {
 
         test(pgn, "h6");
     }
-
-    @Test
-    public void testImportWithSetup() {
-        final String pgn = "[Event \"\"]\n" +
-                "[Site \"\"]\n" +
-                "[Date \"\"]\n" +
-                "[Round \"\"]\n" +
-                "[White \"\"]\n" +
-                "[Black \"\"]\n" +
-                "[Result \"\"]\n" +
-                "[FEN \"8/K7/8/8/8/1k6/1N1p4/8 w - - 0 1\"]\n" +
-                "[SetUp \"1\"]\n" +
-                "\n" +
-                "Kb8 *";
-
-        final ChessGame chessGame = test(pgn, "Kb8");
-        final ChessGame chessGameStartingPosition = chessGame.getSubset(0);
-
-        assertEquals("8/K7/8/8/8/1k6/1N1p4/8 w - - 0 1", chessGameStartingPosition.getFen());
-        assertEquals("8/K7/8/8/8/1k6/1N1p4/8 w - - 0 1", chessGame.getInitialFen());
-    }
-
-    @Test
-    public void testDontAcceptSetup() {
-        final String pgn = "[Event \"\"]\n" +
-                "[Site \"\"]\n" +
-                "[Date \"\"]\n" +
-                "[Round \"\"]\n" +
-                "[White \"\"]\n" +
-                "[Black \"\"]\n" +
-                "[Result \"\"]\n" +
-                "[FEN \"8/K7/8/8/8/1k6/1N1p4/8 w - - 0 1\"]\n" +
-                "[SetUp \"1\"]\n" +
-                "\n" +
-                "Kb8 *";
-
-        final Set<ChessGame> chessGameSet = new HashSet<>();
-        try (final InputStream inputStream = new ByteArrayInputStream(pgn.getBytes())) {
-            final PGNImporter pgnImporter = new PGNImporter();
-            pgnImporter.setOnGame(chessGameSet::add);
-            pgnImporter.setOnError(System.out::println);
-            pgnImporter.setOnWarning(System.out::println);
-            pgnImporter.setAcceptTagsPredicate(pgnTagStringMap -> !pgnTagStringMap.containsKey(PgnTag.SET_UP));
-            pgnImporter.run(inputStream);
-            assertEquals(0, chessGameSet.size());
-        } catch (final IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
 
     @Test
     public void testImportInvalidMoveNumber() {
@@ -171,6 +180,27 @@ class PGNImporterTest {
                 "[Site \"?\"]\n";
 
         assertEquals("Line:6 Error: Previous Game did not end properly", testErrors(pgn).iterator().next());
+    }
+
+    @Test
+    public void testImportWithSetup() {
+        final String pgn = "[Event \"\"]\n" +
+                "[Site \"\"]\n" +
+                "[Date \"\"]\n" +
+                "[Round \"\"]\n" +
+                "[White \"\"]\n" +
+                "[Black \"\"]\n" +
+                "[Result \"\"]\n" +
+                "[FEN \"8/K7/8/8/8/1k6/1N1p4/8 w - - 0 1\"]\n" +
+                "[SetUp \"1\"]\n" +
+                "\n" +
+                "Kb8 *";
+
+        final ChessGame chessGame = test(pgn, "Kb8");
+        final ChessGame chessGameStartingPosition = chessGame.getSubset(0);
+
+        assertEquals("8/K7/8/8/8/1k6/1N1p4/8 w - - 0 1", chessGameStartingPosition.getFen());
+        assertEquals("8/K7/8/8/8/1k6/1N1p4/8 w - - 0 1", chessGame.getInitialFen());
     }
 
     @Test

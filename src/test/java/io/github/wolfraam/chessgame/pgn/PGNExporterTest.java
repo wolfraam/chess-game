@@ -37,6 +37,16 @@ class PGNExporterTest {
     private static final String PGN_2_GAMES = PGN + "\n" + PGN;
 
     @Test
+    public void testCheckResult() {
+        final ChessGame chessGame = new ChessGame();
+        chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3");
+        chessGame.getPGNData().setPGNTag(PGNTag.EVENT, "Test Event");
+        final PGNExporter pgnExporter = new PGNExporter(System.out);
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                pgnExporter.write(chessGame));
+    }
+
+    @Test
     public void testExport2Games() {
         final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         final PGNExporter pgnExporter = new PGNExporter(byteArrayOutputStream);
@@ -45,16 +55,6 @@ class PGNExporterTest {
         }
         final String pgn = byteArrayOutputStream.toString();
         assertEquals(PGN_2_GAMES, pgn);
-    }
-
-    @Test
-    public void testCheckResult() {
-        final ChessGame chessGame = new ChessGame();
-        chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3");
-        chessGame.setPgnTag(PgnTag.EVENT, "Test Event");
-        final PGNExporter pgnExporter = new PGNExporter(System.out);
-        Assertions.assertThrows(IllegalArgumentException.class, () ->
-                pgnExporter.write(chessGame));
     }
 
     private Set<ChessGame> getGames() {

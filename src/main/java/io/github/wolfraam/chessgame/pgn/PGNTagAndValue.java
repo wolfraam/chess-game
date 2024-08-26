@@ -3,10 +3,10 @@ package io.github.wolfraam.chessgame.pgn;
 /**
  * A PGN tag with its value.
  */
-public class PgnTagAndValue {
+public class PGNTagAndValue {
 
-    public static PgnTagAndValue fromLine(final String line) {
-        final PgnTag pgnTag = determinePgnTag(line);
+    public static PGNTagAndValue fromLine(final String line) {
+        final PGNTag pgnTag = determinePGNTag(line);
         if (pgnTag == null) {
             return null;
         }
@@ -21,14 +21,14 @@ public class PgnTagAndValue {
             while (value.contains("\\\\")) {
                 value = value.replace("\\\\", "\\");
             }
-            return new PgnTagAndValue(pgnTag, value);
+            return new PGNTagAndValue(pgnTag, value);
         } else {
             return null;
         }
     }
 
-    private static PgnTag determinePgnTag(final String line) {
-        for (final PgnTag pgnTag : PgnTag.values()) {
+    private static PGNTag determinePGNTag(final String line) {
+        for (final PGNTag pgnTag : PGNTag.values()) {
             if (line.startsWith("[" + pgnTag.getTag() + " ")) {
                 return pgnTag;
             }
@@ -36,11 +36,11 @@ public class PgnTagAndValue {
         return null;
     }
 
-    public final PgnTag pgnTag;
+    public final PGNTag pgnTag;
 
     public final String value;
 
-    public PgnTagAndValue(final PgnTag pgnTag, final String value) {
+    public PGNTagAndValue(final PGNTag pgnTag, final String value) {
         this.pgnTag = pgnTag;
         this.value = value;
     }

@@ -19,19 +19,19 @@ public class PGNExporter {
     }
 
     public void write(final ChessGame chessGame) {
-        if (chessGame.getPgnTagValue(PgnTag.RESULT) == null) {
-            throw new IllegalArgumentException("Can't export chess game without PgnTag.RESULT");
+        if (chessGame.getPGNData().getPGNTagValue(PGNTag.RESULT) == null) {
+            throw new IllegalArgumentException("Can't export chess game without PGNTag.RESULT");
         }
         if (firstGame) {
             firstGame = false;
         } else {
             printWriter.println();
         }
-        for (final PgnTag pgnTag : chessGame.getAvailablePgnTags()) {
+        for (final PGNTag pgnTag : chessGame.getAvailablePGNTags()) {
             printWriter.print('[');
             printWriter.print(pgnTag.getTag());
             printWriter.print(" \"");
-            final String unescaped = chessGame.getPgnTagValue(pgnTag);
+            final String unescaped = chessGame.getPGNData().getPGNTagValue(pgnTag);
             printWriter.print(escape(unescaped));
             printWriter.println("\"]");
         }
@@ -84,7 +84,7 @@ public class PGNExporter {
             }
             halfMoveCount++;
         }
-        list.add(chessGame.getPgnTagValue(PgnTag.RESULT));
+        list.add(chessGame.getPGNData().getPGNTagValue(PGNTag.RESULT));
         return list;
     }
 

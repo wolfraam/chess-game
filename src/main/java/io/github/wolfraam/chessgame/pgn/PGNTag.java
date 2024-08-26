@@ -3,7 +3,7 @@ package io.github.wolfraam.chessgame.pgn;
 /**
  * Supported PGN tags.
  */
-public enum PgnTag {
+public enum PGNTag {
     EVENT("Event"),
     EVENT_DATE("EventDate"),
     EVENT_TYPE("EventType"),
@@ -49,7 +49,7 @@ public enum PgnTag {
 
     private final String tag;
 
-    PgnTag(final String tag) {
+    PGNTag(final String tag) {
         this.tag = tag;
     }
 
