@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 class NotationMappingTest {
     @Test
-    public void testException() {
+    void testException() {
         Assertions.assertThrows(NullPointerException.class, () ->
                 new NotationMapping(null, "a", "a", "a", "a"));
     }

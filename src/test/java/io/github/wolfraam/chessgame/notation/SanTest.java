@@ -9,8 +9,16 @@ import org.junit.jupiter.api.Test;
 
 class SanTest {
 
+    private void checkGetMoveNotationIllegal(final Move move) {
+        Assertions.assertThrows(IllegalMoveException.class, () -> new ChessGame().getNotation(NotationType.SAN, move));
+    }
+
+    private void checkPlayMovesIllegal(final String san) {
+        Assertions.assertThrows(IllegalMoveException.class, () -> new ChessGame().playMoves(NotationType.SAN, san));
+    }
+
     @Test
-    public void checkGetMoveNotationIllegal() {
+    void checkGetMoveNotationIllegal() {
         checkGetMoveNotationIllegal(new Move(Square.A3, Square.H6));
         checkGetMoveNotationIllegal(new Move(Square.B1, Square.B3));
         checkGetMoveNotationIllegal(new Move(Square.A2, Square.C3));
@@ -18,18 +26,10 @@ class SanTest {
     }
 
     @Test
-    public void checkPlayMovesIllegal() {
+    void checkPlayMovesIllegal() {
         checkPlayMovesIllegal("e9");
         checkPlayMovesIllegal("Qa0");
         checkPlayMovesIllegal("Nb3");
         checkPlayMovesIllegal("Nc3 e6 e3 Nf6 Ne2");
-    }
-
-    private void checkGetMoveNotationIllegal(final Move move) {
-        Assertions.assertThrows(IllegalMoveException.class, () -> new ChessGame().getNotation(NotationType.SAN, move));
-    }
-
-    private void checkPlayMovesIllegal(final String san) {
-        Assertions.assertThrows(IllegalMoveException.class, () -> new ChessGame().playMoves(NotationType.SAN, san));
     }
 }

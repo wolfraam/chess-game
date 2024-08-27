@@ -17,54 +17,6 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
 class MoveTest {
-    @Test
-    public void testCastling() {
-        testFile("castling/testCastlingAllowedKingSide.txt");
-        testFile("castling/testCastlingAllowedQueenSide.txt");
-        testFile("castling/testCastlingNotAllowedAfterKingMove.txt");
-        testFile("castling/testCastlingNotAllowedAfterRookMove1.txt");
-        testFile("castling/testCastlingNotAllowedAfterRookMove2.txt");
-        testFile("castling/testCastlingNotAllowedCheck.txt");
-        testFile("castling/testCastlingNotAllowedCheckAfterwards.txt");
-        testFile("castling/testCastlingNotAllowedPassThroughFieldAttacked.txt");
-        testFile("castling/testCastlingNotAllowedToGetOutOfMate.txt");
-    }
-
-    @Test
-    public void testCheck() {
-        testFile("testCheck.txt");
-    }
-
-    @Test
-    public void testCheckMate() {
-        testFile("testCheckMate.txt");
-    }
-
-    @Test
-    public void testDisambiguation() {
-        testFile("disambiguation/testDisambiguation1.txt");
-        testFile("disambiguation/testDisambiguation2.txt");
-        testFile("disambiguation/testDisambiguation3.txt");
-    }
-
-    @Test
-    public void testEnPassant() {
-        testFile("enpassant/testEnPassant.txt");
-    }
-
-    @Test
-    public void testPromotion() {
-        testFile("promotion/testPromotionBishop.txt");
-        testFile("promotion/testPromotionCheck.txt");
-        testFile("promotion/testPromotionKnight.txt");
-        testFile("promotion/testPromotionRook.txt");
-    }
-
-    @Test
-    public void testStaleMate() {
-        testFile("testStaleMate.txt");
-    }
-
     private Move parse(final String line) {
         final StringTokenizer stringTokenizer = new StringTokenizer(line, ",");
         final Move move = new Move();
@@ -108,5 +60,53 @@ class MoveTest {
         String fen;
         Set<String> legalMoves = new HashSet<>();
         String san;
+    }
+
+    @Test
+    void testCastling() {
+        testFile("castling/testCastlingAllowedKingSide.txt");
+        testFile("castling/testCastlingAllowedQueenSide.txt");
+        testFile("castling/testCastlingNotAllowedAfterKingMove.txt");
+        testFile("castling/testCastlingNotAllowedAfterRookMove1.txt");
+        testFile("castling/testCastlingNotAllowedAfterRookMove2.txt");
+        testFile("castling/testCastlingNotAllowedCheck.txt");
+        testFile("castling/testCastlingNotAllowedCheckAfterwards.txt");
+        testFile("castling/testCastlingNotAllowedPassThroughFieldAttacked.txt");
+        testFile("castling/testCastlingNotAllowedToGetOutOfMate.txt");
+    }
+
+    @Test
+    void testCheck() {
+        testFile("testCheck.txt");
+    }
+
+    @Test
+    void testCheckMate() {
+        testFile("testCheckMate.txt");
+    }
+
+    @Test
+    void testDisambiguation() {
+        testFile("disambiguation/testDisambiguation1.txt");
+        testFile("disambiguation/testDisambiguation2.txt");
+        testFile("disambiguation/testDisambiguation3.txt");
+    }
+
+    @Test
+    void testEnPassant() {
+        testFile("enpassant/testEnPassant.txt");
+    }
+
+    @Test
+    void testPromotion() {
+        testFile("promotion/testPromotionBishop.txt");
+        testFile("promotion/testPromotionCheck.txt");
+        testFile("promotion/testPromotionKnight.txt");
+        testFile("promotion/testPromotionRook.txt");
+    }
+
+    @Test
+    void testStaleMate() {
+        testFile("testStaleMate.txt");
     }
 }

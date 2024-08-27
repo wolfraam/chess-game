@@ -4,6 +4,7 @@ import io.github.wolfraam.chessgame.ChessGame;
 import io.github.wolfraam.chessgame.notation.NotationType;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -55,6 +56,13 @@ public class PGNExporter {
         printWriter.flush();
     }
 
+    private void addComment(final PGNComment pgnComment, final LinkedList<String> list) {
+        final String s = pgnComment instanceof PGNVariation
+                ? "(" + pgnComment.getText() + ")"
+                : "{" + pgnComment.getText() + "}";
+        list.addAll(Arrays.asList(s.split(" ")));
+    }
+
     private String escape(final String unescaped) {
         if (!unescaped.contains("\"") && !unescaped.contains("\\")) {
             return unescaped;
@@ -76,11 +84,22 @@ public class PGNExporter {
         final LinkedList<String> list = new LinkedList<>();
         int halfMoveCount = 0;
         for (final String move : chessGame.getNotationList(NotationType.SAN)) {
+            final int m = halfMoveCount / 2 + 1;
             if (halfMoveCount % 2 == 0) {
-                final int fullMoveCount = halfMoveCount / 2 + 1;
-                list.add(fullMoveCount + "." + move);
+                list.add(m + ".");
             } else {
-                list.add(move);
+                list.add(m + "...");
+            }
+            if (chessGame.getPGNData().getPGNMove2CommentBefore().get(halfMoveCount) != null) {
+                for (final PGNComment pgnComment : chessGame.getPGNData().getPGNMove2CommentBefore().get(halfMoveCount)) {
+                    addComment(pgnComment, list);
+                }
+            }
+            list.add(move);
+            if (chessGame.getPGNData().getPGNMove2CommentAfter().get(halfMoveCount) != null) {
+                for (final PGNComment pgnComment : chessGame.getPGNData().getPGNMove2CommentAfter().get(halfMoveCount)) {
+                    addComment(pgnComment, list);
+                }
             }
             halfMoveCount++;
         }

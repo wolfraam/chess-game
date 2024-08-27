@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 class LanguageSettingsTest {
     @Test
-    public void testException() {
+    void testException() {
         Assertions.assertThrows(IllegalArgumentException.class, () ->
                 LanguageSettings.addLanguage("en", "a", "b", "c", "d", "e"));
     }

@@ -19,7 +19,7 @@ import org.junit.jupiter.api.Test;
 
 class ChessGameTest {
     @Test
-    public void testClone() {
+    void testClone() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4 e6 d4 d5 Nc3 Nf6 Bg5 dxe4 Nxe4 Be7 Bxf6 gxf6 g3 f5 Nc3 Bf6 Nge2 Nc6 d5 exd5 Nxd5 Bxb2 Bg2 O-O O-O Bh8 Nef4 Ne5 Qh5 Ng6 Rad1 c6 Ne3 Qf6 Kh1 Bg7 Bh3 Ne7 Rd3 Be6 Rfd1 Bh6 Rd4 Bxf4 Rxf4 Rad8 Rxd8 Rxd8 Bxf5 Nxf5 Nxf5 Rd5 g4 Bxf5 gxf5 h6 h3 Kh7 Qe2 Qe5 Qh5 Qf6 Qe2 Re5 Qd3 Rd5");
         final ChessGame chessGame2 = chessGame.clone();
@@ -28,14 +28,14 @@ class ChessGameTest {
     }
 
     @Test
-    public void testFiftyMoveRule1() {
+    void testFiftyMoveRule1() {
         final ChessGame chessGame = new ChessGame("K7/8/7k/8/Bb6/8/8/8 w - - 100 1");
         assertEquals(ChessGameResultType.DRAW, chessGame.getGameResultType());
         assertEquals(DrawType.FIFTY_MOVE_RULE, chessGame.getGameResult().drawType);
     }
 
     @Test
-    public void testFiftyMoveRule2() {
+    void testFiftyMoveRule2() {
         final ChessGame chessGame = new ChessGame("K7/8/7k/8/Bb6/8/8/8 w - - 99 1");
         assertNull(chessGame.getGameResult());
         assertNull(chessGame.getGameResultType());
@@ -45,7 +45,7 @@ class ChessGameTest {
     }
 
     @Test
-    public void testGetASCII() {
+    void testGetASCII() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4 e6");
         assertEquals("""
@@ -61,32 +61,32 @@ class ChessGameTest {
     }
 
     @Test
-    public void testGetCapturedPieces() {
+    void testGetCapturedPieces() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3 d6 d4 cxd4");
         assertTrue(chessGame.getCapturedPieces().contains(Piece.WHITE_PAWN));
     }
 
     @Test
-    public void testGetFen() {
+    void testGetFen() {
         assertEquals("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", new ChessGame().getFen());
         assertEquals("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", new ChessGame().getInitialFen());
     }
 
     @Test
-    public void testGetFenSmall() {
+    void testGetFenSmall() {
         assertEquals("rnbqkbnrpppppppp32PPPPPPPPRNBQKBNRw", new ChessGame().getFenSmall());
     }
 
     @Test
-    public void testGetGameResult() {
+    void testGetGameResult() {
         final ChessGame chessGame = new ChessGame();
         assertNull(chessGame.getGameResult());
         assertNull(chessGame.getGameResultType());
     }
 
     @Test
-    public void testGetGameResultBlackWins() {
+    void testGetGameResultBlackWins() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4 e5 Nc3 Bc5 Nf3 Qh4 Bb5");
         assertNull(chessGame.getGameResult());
@@ -97,7 +97,7 @@ class ChessGameTest {
     }
 
     @Test
-    public void testGetGameResultDrawStaleMate() {
+    void testGetGameResultDrawStaleMate() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e3 a5 Qh5 Ra6 Qxa5 h5 h4 Rah6 Qxc7 f6 Qxd7+ Kf7 Qxb7 Qd3 Qxb8 Qh7 Qxc8 Kg6");
         assertNull(chessGame.getGameResult());
@@ -108,7 +108,7 @@ class ChessGameTest {
     }
 
     @Test
-    public void testGetGameResultDrawThreeFoldRepetition() {
+    void testGetGameResultDrawThreeFoldRepetition() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4 e6 d4 d5 Nc3 Nf6 Bg5 dxe4 Nxe4 Be7 Bxf6 gxf6 g3 f5 Nc3 Bf6 Nge2 Nc6 d5 exd5 Nxd5 Bxb2 Bg2 O-O O-O Bh8 Nef4 Ne5 Qh5 Ng6 Rad1 c6 Ne3 Qf6 Kh1 Bg7 Bh3 Ne7 Rd3 Be6 Rfd1 Bh6 Rd4 Bxf4 Rxf4 Rad8 Rxd8 Rxd8 Bxf5 Nxf5 Nxf5 Rd5 g4 Bxf5 gxf5 h6 h3 Kh7 Qe2 Qe5 Qh5 Qf6 Qe2 Re5 Qd3 Rd5");
         assertNull(chessGame.getGameResult());
@@ -119,7 +119,7 @@ class ChessGameTest {
     }
 
     @Test
-    public void testGetGameResultWhiteWins() {
+    void testGetGameResultWhiteWins() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4 f6 Nc3 g5");
         assertNull(chessGame.getGameResult());
@@ -130,7 +130,7 @@ class ChessGameTest {
     }
 
     @Test
-    public void testGetLastMove() {
+    void testGetLastMove() {
         final ChessGame chessGame = new ChessGame();
         assertNull(chessGame.getLastMove());
         chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3");
@@ -138,19 +138,19 @@ class ChessGameTest {
     }
 
     @Test
-    public void testGetLegalMoves() {
+    void testGetLegalMoves() {
         final ChessGame chessGame = new ChessGame();
         assertEquals("Na3,Nc3,Nf3,Nh3,a3,a4,b3,b4,c3,c4,d3,d4,e3,e4,f3,f4,g3,g4,h3,h4", chessGame.getLegalMoves().stream().map(move -> chessGame.getNotation(NotationType.SAN, move)).sorted().collect(Collectors.joining(",")));
     }
 
     @Test
-    public void testGetLegalMovesForSquare() {
+    void testGetLegalMovesForSquare() {
         final ChessGame chessGame = new ChessGame();
         assertEquals("Na3,Nc3", chessGame.getLegalMoves(Square.B1).stream().map(move -> chessGame.getNotation(NotationType.SAN, move)).sorted().collect(Collectors.joining(",")));
     }
 
     @Test
-    public void testGetOccupiedSquares() {
+    void testGetOccupiedSquares() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4");
         assertTrue(chessGame.getOccupiedSquares().contains(Square.A1));
@@ -158,7 +158,7 @@ class ChessGameTest {
     }
 
     @Test
-    public void testGetPiece() {
+    void testGetPiece() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4");
         assertEquals(Piece.WHITE_ROOK, chessGame.getPiece(Square.A1));
@@ -166,7 +166,7 @@ class ChessGameTest {
     }
 
     @Test
-    public void testGetScore() {
+    void testGetScore() {
         final ChessGame chessGame = new ChessGame();
         assertEquals(0, chessGame.getScore());
         chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3 d6 d4 cxd4");
@@ -174,7 +174,7 @@ class ChessGameTest {
     }
 
     @Test
-    public void testGetSquares() {
+    void testGetSquares() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4");
         assertTrue(chessGame.getSquares(Piece.WHITE_PAWN).contains(Square.A2));
@@ -182,14 +182,14 @@ class ChessGameTest {
     }
 
     @Test
-    public void testGetSquaresAttackingKing() {
+    void testGetSquaresAttackingKing() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4 f6 Qh5+");
         assertEquals(Collections.singleton(Square.H5), chessGame.getSquaresAttackingKing());
     }
 
     @Test
-    public void testGetSubset() {
+    void testGetSubset() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3 g5");
         final ChessGame chessGame2 = chessGame.getSubset(3);
@@ -197,7 +197,7 @@ class ChessGameTest {
     }
 
     @Test
-    public void testIsKingAttacked() {
+    void testIsKingAttacked() {
         final ChessGame chessGame = new ChessGame();
         assertFalse(chessGame.isKingAttacked());
         chessGame.playMoves(NotationType.SAN, "e4 f6 Qh5+");
@@ -205,7 +205,7 @@ class ChessGameTest {
     }
 
     @Test
-    public void testOpeningBenko() {
+    void testOpeningBenko() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "g3 e5 a3 h6");
         final ChessOpening chessOpening = chessGame.getChessOpening();
@@ -216,7 +216,7 @@ class ChessGameTest {
     }
 
     @Test
-    public void testOpeningNajdorf() {
+    void testOpeningNajdorf() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6");
         final ChessOpening chessOpening = chessGame.getChessOpening();
@@ -227,7 +227,7 @@ class ChessGameTest {
     }
 
     @Test
-    public void testOpeningNoMoves() {
+    void testOpeningNoMoves() {
         final ChessGame chessGame = new ChessGame();
         final ChessOpening chessOpening = chessGame.getChessOpening();
         assertNull(chessOpening.eco);
@@ -237,7 +237,7 @@ class ChessGameTest {
     }
 
     @Test
-    public void testOpeningQueensGambit() {
+    void testOpeningQueensGambit() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "d4 d5 c4");
         final ChessOpening chessOpening = chessGame.getChessOpening();
@@ -248,7 +248,7 @@ class ChessGameTest {
     }
 
     @Test
-    public void testPlayMoves() {
+    void testPlayMoves() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, Arrays.asList("e4", "e5"));
         assertEquals(new Move(Square.E7, Square.E5), chessGame.getLastMove());

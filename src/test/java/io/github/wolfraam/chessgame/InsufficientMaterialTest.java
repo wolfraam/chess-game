@@ -7,8 +7,16 @@ import io.github.wolfraam.chessgame.result.ChessGameResultType;
 import org.junit.jupiter.api.Test;
 
 class InsufficientMaterialTest {
+    private void testDraw(final String fen) {
+        assertSame(ChessGameResultType.DRAW, new ChessGame(fen).getGameResult().chessGameResultType);
+    }
+
+    private void testNotDraw(final String fen) {
+        assertNull(new ChessGame(fen).getGameResult());
+    }
+
     @Test
-    public void testInsufficientMaterial() {
+    void testInsufficientMaterial() {
         // King vs King
         testDraw("K7/8/7k/8/8/8/8/8 w - - 0 1");
 
@@ -21,7 +29,7 @@ class InsufficientMaterialTest {
     }
 
     @Test
-    public void testSufficientMaterial() {
+    void testSufficientMaterial() {
         // Pawn
         testNotDraw("K7/8/7k/8/p7/8/8/8 w - - 0 1");
         testNotDraw("K7/8/7k/8/P7/8/8/8 w - - 0 1");
@@ -40,13 +48,5 @@ class InsufficientMaterialTest {
 
         // King and Bishop vs King and Bishop with both bishops on squares of different colors
         testNotDraw("K7/8/7k/8/Bb6/8/8/8 w - - 0 1");
-    }
-
-    private void testDraw(final String fen) {
-        assertSame(ChessGameResultType.DRAW, new ChessGame(fen).getGameResult().chessGameResultType);
-    }
-
-    private void testNotDraw(final String fen) {
-        assertNull(new ChessGame(fen).getGameResult());
     }
 }

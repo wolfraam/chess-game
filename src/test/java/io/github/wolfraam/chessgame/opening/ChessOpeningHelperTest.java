@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 class ChessOpeningHelperTest {
 
     @Test
-    public void testIoException() {
+    void testIoException() {
         final ChessOpeningHelper chessOpeningHelper = new ChessOpeningHelper() {
             @Override
             protected InputStream getOpeningBookCsvInputStream() {
