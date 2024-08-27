@@ -9378,55 +9378,55 @@ O-O O-O 9. Qe2 Ne4 10. g4 *
 1. d4 d5 2. c4 dxc4 *
 
 [ECO "D20"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "3.e4"]
 
 1. d4 d5 2. c4 dxc4 3. e4 *
 
 [ECO "D20"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "Linares variation"]
 
 1. d4 d5 2. c4 dxc4 3. e4 c5 4. d5 Nf6 5. Nc3 b5 *
 
 [ECO "D20"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "Schwartz defence"]
 
 1. d4 d5 2. c4 dxc4 3. e4 f5 *
 
 [ECO "D21"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "3.Nf3"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 *
 
 [ECO "D21"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "Ericson variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 b5 *
 
 [ECO "D21"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "Alekhine defense, Borisenko-Furman variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 a6 4. e4 *
 
 [ECO "D22"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "Alekhine defence"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 a6 *
 
 [ECO "D22"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "Alekhine defence, Alatortsev variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 a6 4. e3 Bg4 5. Bxc4 e6 6. d5 *
 
 [ECO "D22"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "Haberditz variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 a6 4. e3 b5 *
@@ -9437,118 +9437,118 @@ O-O O-O 9. Qe2 Ne4 10. g4 *
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 *
 
 [ECO "D23"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "Mannheim variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Qa4+ *
 
 [ECO "D24"]
-[Opening "QGA, 4.Nc3"]
+[Opening "Queen's Gambit Accepted, 4.Nc3"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 *
 
 [ECO "D24"]
-[Opening "QGA, Bogolyubov variation"]
+[Opening "Queen's Gambit Accepted, Bogolyubov variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 a6 5. e4 *
 
 [ECO "D25"]
-[Opening "QGA, 4.e3"]
+[Opening "Queen's Gambit Accepted, 4.e3"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 *
 
 [ECO "D25"]
-[Opening "QGA, Smyslov variation"]
+[Opening "Queen's Gambit Accepted, Smyslov variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 g6 *
 
 [ECO "D25"]
-[Opening "QGA, Janowsky-Larsen variation"]
+[Opening "Queen's Gambit Accepted, Janowsky-Larsen variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 Bg4 *
 
 [ECO "D25"]
-[Opening "QGA, Flohr variation"]
+[Opening "Queen's Gambit Accepted, Flohr variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 Be6 *
 
 [ECO "D26"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "4...e6"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 *
 
 [ECO "D26"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "classical variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 *
 
 [ECO "D26"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "classical, Furman variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. Qe2 a6 7. dxc5 Bxc5
 8. O-O Nc6 9. e4 b5 10. e5 *
 
 [ECO "D26"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "classical variation, 6.O-O"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O *
 
 [ECO "D26"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "classical, Steinitz variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O cxd4 *
 
 [ECO "D27"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "classical, 6...a6"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O a6 *
 
 [ECO "D27"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "classical, Rubinstein variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O a6 7. a4 *
 
 [ECO "D27"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "classical, Geller variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O a6 7. e4 *
 
 [ECO "D28"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "classical, 7.Qe2"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O a6 7. Qe2 *
 
 [ECO "D28"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "classical, 7...b5"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O a6 7. Qe2 b5 *
 
 [ECO "D28"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "classical, Flohr variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O a6 7. Qe2 b5 8.
 Bb3 Nc6 9. Rd1 c4 10. Bc2 Nb4 11. Nc3 Nxc2 12. Qxc2 Bb7 13. d5 Qc7 *
 
 [ECO "D29"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "classical, 8...Bb7"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O a6 7. Qe2 b5 8.
 Bb3 Bb7 *
 
 [ECO "D29"]
-[Opening "QGA"]
+[Opening "Queen's Gambit Accepted"]
 [Variation "classical, Smyslov variation"]
 
 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O a6 7. Qe2 b5 8.

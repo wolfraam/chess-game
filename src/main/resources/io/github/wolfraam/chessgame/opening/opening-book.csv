@@ -1565,36 +1565,36 @@ D19|Queen's Gambit Declined Slav|Dutch variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4
 D19|Queen's Gambit Declined Slav|Dutch variation, main line|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 e3 e6 Bxc4 Bb4 O-O O-O Qe2 
 D19|Queen's Gambit Declined Slav|Dutch, Saemisch variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 e3 e6 Bxc4 Bb4 O-O O-O Qe2 Ne4 g4 
 D20|Queen's gambit accepted||d4 d5 c4 dxc4 
-D20|QGA|3.e4|d4 d5 c4 dxc4 e4 
-D20|QGA|Linares variation|d4 d5 c4 dxc4 e4 c5 d5 Nf6 Nc3 b5 
-D20|QGA|Schwartz defence|d4 d5 c4 dxc4 e4 f5 
-D21|QGA|3.Nf3|d4 d5 c4 dxc4 Nf3 
-D21|QGA|Ericson variation|d4 d5 c4 dxc4 Nf3 b5 
-D21|QGA|Alekhine defense, Borisenko-Furman variation|d4 d5 c4 dxc4 Nf3 a6 e4 
-D22|QGA|Alekhine defence|d4 d5 c4 dxc4 Nf3 a6 
-D22|QGA|Alekhine defence, Alatortsev variation|d4 d5 c4 dxc4 Nf3 a6 e3 Bg4 Bxc4 e6 d5 
-D22|QGA|Haberditz variation|d4 d5 c4 dxc4 Nf3 a6 e3 b5 
+D20|Queen's Gambit Accepted|3.e4|d4 d5 c4 dxc4 e4 
+D20|Queen's Gambit Accepted|Linares variation|d4 d5 c4 dxc4 e4 c5 d5 Nf6 Nc3 b5 
+D20|Queen's Gambit Accepted|Schwartz defence|d4 d5 c4 dxc4 e4 f5 
+D21|Queen's Gambit Accepted|3.Nf3|d4 d5 c4 dxc4 Nf3 
+D21|Queen's Gambit Accepted|Ericson variation|d4 d5 c4 dxc4 Nf3 b5 
+D21|Queen's Gambit Accepted|Alekhine defense, Borisenko-Furman variation|d4 d5 c4 dxc4 Nf3 a6 e4 
+D22|Queen's Gambit Accepted|Alekhine defence|d4 d5 c4 dxc4 Nf3 a6 
+D22|Queen's Gambit Accepted|Alekhine defence, Alatortsev variation|d4 d5 c4 dxc4 Nf3 a6 e3 Bg4 Bxc4 e6 d5 
+D22|Queen's Gambit Accepted|Haberditz variation|d4 d5 c4 dxc4 Nf3 a6 e3 b5 
 D23|Queen's gambit accepted||d4 d5 c4 dxc4 Nf3 Nf6 
-D23|QGA|Mannheim variation|d4 d5 c4 dxc4 Nf3 Nf6 Qa4+ 
-D24|QGA, 4.Nc3||d4 d5 c4 dxc4 Nf3 Nf6 Nc3 
-D24|QGA, Bogolyubov variation||d4 d5 c4 dxc4 Nf3 Nf6 Nc3 a6 e4 
-D25|QGA, 4.e3||d4 d5 c4 dxc4 Nf3 Nf6 e3 
-D25|QGA, Smyslov variation||d4 d5 c4 dxc4 Nf3 Nf6 e3 g6 
-D25|QGA, Janowsky-Larsen variation||d4 d5 c4 dxc4 Nf3 Nf6 e3 Bg4 
-D25|QGA, Flohr variation||d4 d5 c4 dxc4 Nf3 Nf6 e3 Be6 
-D26|QGA|4...e6|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 
-D26|QGA|classical variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 
-D26|QGA|classical, Furman variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 Qe2 a6 dxc5 Bxc5 O-O Nc6 e4 b5 e5 
-D26|QGA|classical variation, 6.O-O|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O 
-D26|QGA|classical, Steinitz variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O cxd4 
-D27|QGA|classical, 6...a6|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 
-D27|QGA|classical, Rubinstein variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 a4 
-D27|QGA|classical, Geller variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 e4 
-D28|QGA|classical, 7.Qe2|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 Qe2 
-D28|QGA|classical, 7...b5|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 Qe2 b5 
-D28|QGA|classical, Flohr variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 Qe2 b5 Bb3 Nc6 Rd1 c4 Bc2 Nb4 Nc3 Nxc2 Qxc2 Bb7 d5 Qc7 
-D29|QGA|classical, 8...Bb7|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 Qe2 b5 Bb3 Bb7 
-D29|QGA|classical, Smyslov variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 Qe2 b5 Bb3 Bb7 Rd1 Nbd7 Nc3 Bd6 
+D23|Queen's Gambit Accepted|Mannheim variation|d4 d5 c4 dxc4 Nf3 Nf6 Qa4+ 
+D24|Queen's Gambit Accepted, 4.Nc3||d4 d5 c4 dxc4 Nf3 Nf6 Nc3 
+D24|Queen's Gambit Accepted, Bogolyubov variation||d4 d5 c4 dxc4 Nf3 Nf6 Nc3 a6 e4 
+D25|Queen's Gambit Accepted, 4.e3||d4 d5 c4 dxc4 Nf3 Nf6 e3 
+D25|Queen's Gambit Accepted, Smyslov variation||d4 d5 c4 dxc4 Nf3 Nf6 e3 g6 
+D25|Queen's Gambit Accepted, Janowsky-Larsen variation||d4 d5 c4 dxc4 Nf3 Nf6 e3 Bg4 
+D25|Queen's Gambit Accepted, Flohr variation||d4 d5 c4 dxc4 Nf3 Nf6 e3 Be6 
+D26|Queen's Gambit Accepted|4...e6|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 
+D26|Queen's Gambit Accepted|classical variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 
+D26|Queen's Gambit Accepted|classical, Furman variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 Qe2 a6 dxc5 Bxc5 O-O Nc6 e4 b5 e5 
+D26|Queen's Gambit Accepted|classical variation, 6.O-O|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O 
+D26|Queen's Gambit Accepted|classical, Steinitz variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O cxd4 
+D27|Queen's Gambit Accepted|classical, 6...a6|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 
+D27|Queen's Gambit Accepted|classical, Rubinstein variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 a4 
+D27|Queen's Gambit Accepted|classical, Geller variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 e4 
+D28|Queen's Gambit Accepted|classical, 7.Qe2|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 Qe2 
+D28|Queen's Gambit Accepted|classical, 7...b5|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 Qe2 b5 
+D28|Queen's Gambit Accepted|classical, Flohr variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 Qe2 b5 Bb3 Nc6 Rd1 c4 Bc2 Nb4 Nc3 Nxc2 Qxc2 Bb7 d5 Qc7 
+D29|Queen's Gambit Accepted|classical, 8...Bb7|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 Qe2 b5 Bb3 Bb7 
+D29|Queen's Gambit Accepted|classical, Smyslov variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 Qe2 b5 Bb3 Bb7 Rd1 Nbd7 Nc3 Bd6 
 D30|Queen's gambit declined||d4 d5 c4 e6 
 D30|Queen's Gambit Declined Slav||d4 d5 c4 e6 Nf3 Nf6 e3 c6 Nbd2 
 D30|Queen's Gambit Declined|Stonewall variation|d4 d5 c4 e6 Nf3 Nf6 e3 c6 Nbd2 Ne4 Bd3 f5 
