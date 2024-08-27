@@ -78,17 +78,17 @@ class PGNImporterTest {
 
         final ChessGame chessGame = test(pgn, "Bb7");
 
-        assertEquals("comment before move 0", chessGame.getPGNData().getPGNMove2CommentBefore().get(0).get(0).getText());
-        assertEquals(PGNComment.class, chessGame.getPGNData().getPGNMove2CommentBefore().get(0).get(0).getClass());
-        assertEquals("variation before move 0", chessGame.getPGNData().getPGNMove2CommentBefore().get(0).get(1).getText());
-        assertEquals(PGNVariation.class, chessGame.getPGNData().getPGNMove2CommentBefore().get(0).get(1).getClass());
+        assertEquals("comment before move 0", chessGame.getPGNData().getPGNCommentsBefore(0).get(0).getText());
+        assertEquals(PGNComment.class, chessGame.getPGNData().getPGNCommentsBefore(0).get(0).getClass());
+        assertEquals("variation before move 0", chessGame.getPGNData().getPGNCommentsBefore(0).get(1).getText());
+        assertEquals(PGNVariation.class, chessGame.getPGNData().getPGNCommentsBefore(0).get(1).getClass());
 
-        assertEquals("comment after move 0", chessGame.getPGNData().getPGNMove2CommentAfter().get(0).get(0).getText());
-        assertEquals(PGNComment.class, chessGame.getPGNData().getPGNMove2CommentAfter().get(0).get(0).getClass());
-        assertEquals("variation after move 0", chessGame.getPGNData().getPGNMove2CommentAfter().get(0).get(1).getText());
-        assertEquals(PGNVariation.class, chessGame.getPGNData().getPGNMove2CommentAfter().get(0).get(1).getClass());
+        assertEquals("comment after move 0", chessGame.getPGNData().getPGNCommentsAfter(0).get(0).getText());
+        assertEquals(PGNComment.class, chessGame.getPGNData().getPGNCommentsAfter(0).get(0).getClass());
+        assertEquals("variation after move 0", chessGame.getPGNData().getPGNCommentsAfter(0).get(1).getText());
+        assertEquals(PGNVariation.class, chessGame.getPGNData().getPGNCommentsAfter(0).get(1).getClass());
 
-        assertEquals("comment after move 3", chessGame.getPGNData().getPGNMove2CommentAfter().get(3).get(0).getText());
+        assertEquals("comment after move 3", chessGame.getPGNData().getPGNCommentsAfter(3).get(0).getText());
 
     }
 

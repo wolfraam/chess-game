@@ -87,7 +87,7 @@ public class ChessGame implements Serializable, Cloneable {
      * @return a set of all the PGN tags available. These are filled when a PGN import has been done.
      */
     public Set<PGNTag> getAvailablePGNTags() {
-        return pgnData.getPGNTag2Value().keySet();
+        return pgnData.getAvailablePGNTags();
     }
 
     /**

@@ -135,20 +135,18 @@ public class PGNImporter {
                     }
                     if (indentLevel == 0) {
                         if (!stringBuilderComment.isEmpty()) {
-                            final Map<Integer, List<PGNComment>> map;
-                            if (isBeforeMove) {
-                                map = chessGame.getPGNData().getPGNMove2CommentBefore();
-                            } else {
-                                map = chessGame.getPGNData().getPGNMove2CommentAfter();
-                            }
                             final PGNComment pgnComment;
                             if (token.equals(")")) {
                                 pgnComment = new PGNVariation(stringBuilderComment.toString());
                             } else {
                                 pgnComment = new PGNComment(stringBuilderComment.toString());
                             }
-                            map.computeIfAbsent(chessGame.getMoves().size() - (isBeforeMove ? 0 : 1), k -> new LinkedList<>())
-                                    .add(pgnComment);
+                            final int index = chessGame.getMoves().size() - (isBeforeMove ? 0 : 1);
+                            if (isBeforeMove) {
+                                chessGame.getPGNData().addPGNCommentBefore(index, pgnComment);
+                            } else {
+                                chessGame.getPGNData().addPGNCommentAfter(index, pgnComment);
+                            }
                             stringBuilderComment.setLength(0);
                         }
                     }

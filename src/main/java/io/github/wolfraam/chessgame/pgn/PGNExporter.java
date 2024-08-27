@@ -90,16 +90,12 @@ public class PGNExporter {
             } else {
                 list.add(m + "...");
             }
-            if (chessGame.getPGNData().getPGNMove2CommentBefore().get(halfMoveCount) != null) {
-                for (final PGNComment pgnComment : chessGame.getPGNData().getPGNMove2CommentBefore().get(halfMoveCount)) {
-                    addComment(pgnComment, list);
-                }
+            for (final PGNComment pgnComment : chessGame.getPGNData().getPGNCommentsBefore(halfMoveCount)) {
+                addComment(pgnComment, list);
             }
             list.add(move);
-            if (chessGame.getPGNData().getPGNMove2CommentAfter().get(halfMoveCount) != null) {
-                for (final PGNComment pgnComment : chessGame.getPGNData().getPGNMove2CommentAfter().get(halfMoveCount)) {
-                    addComment(pgnComment, list);
-                }
+            for (final PGNComment pgnComment : chessGame.getPGNData().getPGNCommentsAfter(halfMoveCount)) {
+                addComment(pgnComment, list);
             }
             halfMoveCount++;
         }
