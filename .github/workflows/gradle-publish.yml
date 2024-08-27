@@ -12,16 +12,13 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
         with:
-          java-version: '11'
-          distribution: 'adopt'
-      - name: Validate Gradle wrapper
-        uses: gradle/wrapper-validation-action@v1.0.6
-      - name: Build with Gradle
-        uses: gradle/gradle-build-action@v2.4.2
+          java-version: 21
+          distribution: 'adopt-hotspot'
+      - uses: gradle/wrapper-validation-action@v1.0.6
+      - uses: gradle/gradle-build-action@v2.4.2
         with:
           arguments: build
-      - name: Publish package
-        uses: gradle/gradle-build-action@v2.4.2
+      - uses: gradle/gradle-build-action@v2.4.2
         with:
           arguments: publish
         env:
