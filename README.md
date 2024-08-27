@@ -15,8 +15,8 @@ chess-game is a java chess library which can
 
 ## Code Quality
 ![LINE](https://img.shields.io/badge/line--coverage-99.93%25-brightgreen.svg)
-![BRANCH](https://img.shields.io/badge/branch--coverage-94.99%25-brightgreen.svg)
-![COMPLEXITY](https://img.shields.io/badge/complexity-2.92-brightgreen.svg)
+![BRANCH](https://img.shields.io/badge/branch--coverage-94.96%25-brightgreen.svg)
+![COMPLEXITY](https://img.shields.io/badge/complexity-2.88-brightgreen.svg)
 
 ## Gradle
 
