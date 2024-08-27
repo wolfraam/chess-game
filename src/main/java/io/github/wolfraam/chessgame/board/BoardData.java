@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Chess board data, uses two maps for increases performance.
+ * Chess board data, uses two maps for increased performance.
  */
 public class BoardData implements Serializable, Cloneable {
 
@@ -17,11 +17,11 @@ public class BoardData implements Serializable, Cloneable {
     @Override
     @SuppressWarnings("all")
     public BoardData clone() {
-        final BoardData bitBoard = new BoardData();
+        final BoardData boardData = new BoardData();
         for (final Map.Entry<Square, Piece> entry : square2Piece.entrySet()) {
-            bitBoard.putPieceOnSquare(entry.getKey(), entry.getValue());
+            boardData.putPieceOnSquare(entry.getKey(), entry.getValue());
         }
-        return bitBoard;
+        return boardData;
     }
 
     public Set<Square> getOccupiedSquares() {
