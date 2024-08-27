@@ -1,6 +1,5 @@
 chess-game - A Chess Java Library
 ===
-
 chess-game is a java chess library which can
 - generate the legal chess moves of a position 
 - determine check / mate / draw
@@ -10,35 +9,36 @@ chess-game is a java chess library which can
 - determine the chess opening of a game
 - import and export games in PGN notation
 
-## Features
-- Supports Android 5+
-
 ## Code Quality
 ![LINE](https://img.shields.io/badge/line--coverage-99.93%25-brightgreen.svg)
 ![BRANCH](https://img.shields.io/badge/branch--coverage-94.96%25-brightgreen.svg)
 ![COMPLEXITY](https://img.shields.io/badge/complexity-2.88-brightgreen.svg)
 
 ## Gradle
-
 ```
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation("io.github.wolfraam:chessgame:1.5")
+    implementation("io.github.wolfraam:chessgame:2.0")
 }
 ```
 
 ## Maven
-
 ```
 <dependency>
   <groupId>io.github.wolfraam</groupId>
   <artifactId>chessgame</artifactId>
-  <version>1.5</version>
+  <version>2.0</version>
 </dependency>
 ```
+
+## Versions
+| Version | JRE          |
+|---------|--------------|
+| 1.x     | 8 or higher  |
+| 2.x     | 21 or higher |
 
 ## Playing moves
 
