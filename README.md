@@ -166,7 +166,7 @@ To import games in PGN:
 import io.github.wolfraam.chessgame.pgn.PGNImporter;
 
 PGNImporter pgnImporter = new PGNImporter();
-pgnImporter.setOnGame((game)->{
+pgnImporter.setOnGame((game) -> {
   System.out.println("Imported a game with moves:" + game.getMoves());
 });
 pgnImporter.setOnError(System.out::println);
