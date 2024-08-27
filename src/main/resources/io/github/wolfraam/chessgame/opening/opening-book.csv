@@ -1517,53 +1517,53 @@ D05|Queen's pawn game||d4 d5 Nf3 Nf6 e3 e6 Bd3
 D05|Queen's pawn game, Rubinstein (Colle-Zukertort) variation||d4 d5 Nf3 Nf6 e3 e6 Bd3 c5 b3 
 D05|Colle system||d4 d5 Nf3 Nf6 e3 e6 Bd3 c5 c3 
 D06|Queen's Gambit||d4 d5 c4 
-D06|QGD|Grau (Sahovic) defence|d4 d5 c4 Bf5 
-D06|QGD|Marshall defence|d4 d5 c4 Nf6 
-D06|QGD|symmetrical (Austrian) defence|d4 d5 c4 c5 
-D07|QGD|Chigorin defence|d4 d5 c4 Nc6 
-D07|QGD|Chigorin defence, Janowski variation|d4 d5 c4 Nc6 Nc3 dxc4 Nf3 
-D08|QGD|Albin counter-gambit|d4 d5 c4 e5 
-D08|QGD|Albin counter-gambit, Lasker trap|d4 d5 c4 e5 dxe5 d4 e3 Bb4+ Bd2 dxe3 
-D08|QGD|Albin counter-gambit|d4 d5 c4 e5 dxe5 d4 Nf3 
-D08|QGD|Albin counter-gambit, Alapin variation|d4 d5 c4 e5 dxe5 d4 Nf3 Nc6 Nbd2 
-D08|QGD|Albin counter-gambit, Krenosz variation|d4 d5 c4 e5 dxe5 d4 Nf3 Nc6 Nbd2 Bg4 h3 Bxf3 Nxf3 Bb4+ Bd2 Qe7 
-D08|QGD|Albin counter-gambit, Janowski variation|d4 d5 c4 e5 dxe5 d4 Nf3 Nc6 Nbd2 f6 
-D08|QGD|Albin counter-gambit, Balogh variation|d4 d5 c4 e5 dxe5 d4 Nf3 Nc6 Nbd2 Qe7 
-D09|QGD|Albin counter-gambit, 5.g3|d4 d5 c4 e5 dxe5 d4 Nf3 Nc6 g3 
-D10|QGD Slav defence||d4 d5 c4 c6 
-D10|QGD Slav defence, Alekhine variation||d4 d5 c4 c6 Nc3 dxc4 e4 
-D10|QGD Slav|Winawer counter-gambit|d4 d5 c4 c6 Nc3 e5 
-D10|QGD Slav defence|exchange variation|d4 d5 c4 c6 cxd5 
-D11|QGD Slav|3.Nf3|d4 d5 c4 c6 Nf3 
-D11|QGD Slav|Breyer variation|d4 d5 c4 c6 Nf3 Nf6 Nbd2 
-D11|QGD Slav|4.e3|d4 d5 c4 c6 Nf3 Nf6 e3 
-D12|QGD Slav|4.e3 Bf5|d4 d5 c4 c6 Nf3 Nf6 e3 Bf5 
-D12|QGD Slav|Landau variation|d4 d5 c4 c6 Nf3 Nf6 e3 Bf5 cxd5 cxd5 Qb3 Qc8 Bd2 e6 Na3 
-D12|QGD Slav|exchange variation|d4 d5 c4 c6 Nf3 Nf6 e3 Bf5 cxd5 cxd5 Nc3 
-D12|QGD Slav|Amsterdam variation|d4 d5 c4 c6 Nf3 Nf6 e3 Bf5 cxd5 cxd5 Nc3 e6 Ne5 Nfd7 
-D13|QGD Slav|exchange variation|d4 d5 c4 c6 Nf3 Nf6 cxd5 cxd5 
-D14|QGD Slav|exchange variation, 6.Bf4 Bf5|d4 d5 c4 c6 Nf3 Nf6 cxd5 cxd5 Nc3 Nc6 Bf4 Bf5 
-D14|QGD Slav|exchange, Trifunovic variation|d4 d5 c4 c6 Nf3 Nf6 cxd5 cxd5 Nc3 Nc6 Bf4 Bf5 e3 e6 Qb3 Bb4 
-D15|QGD Slav|4.Nc3|d4 d5 c4 c6 Nf3 Nf6 Nc3 
-D15|QGD Slav|Suechting variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 Qb6 
-D15|QGD Slav|Schlechter variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 g6 
-D15|QGD Slav accepted||d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 
-D15|QGD Slav|5.e3 (Alekhine variation)|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 e3 
-D15|QGD Slav|Slav gambit|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 e4 
-D15|QGD Slav|Tolush-Geller gambit|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 e4 b5 e5 
-D16|QGD Slav accepted|Alapin variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 
-D16|QGD Slav|Smyslov variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Na6 e4 Bg4 
-D16|QGD Slav|Soultanbeieff variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 e6 
-D16|QGD Slav|Steiner variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bg4 
-D17|QGD Slav|Czech defence|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 
-D17|QGD Slav|Krause attack|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 Ne5 
-D17|QGD Slav|Carlsbad variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 Ne5 Nbd7 Nxc4 Qc7 g3 e5 
-D17|QGD Slav|Wiesbaden variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 Ne5 e6 
-D18|QGD Slav|Dutch variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 e3 
-D18|QGD Slav|Dutch, Lasker variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 e3 Na6 
-D19|QGD Slav|Dutch variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 e3 e6 Bxc4 Bb4 O-O 
-D19|QGD Slav|Dutch variation, main line|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 e3 e6 Bxc4 Bb4 O-O O-O Qe2 
-D19|QGD Slav|Dutch, Saemisch variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 e3 e6 Bxc4 Bb4 O-O O-O Qe2 Ne4 g4 
+D06|Queen's Gambit Declined|Grau (Sahovic) defence|d4 d5 c4 Bf5 
+D06|Queen's Gambit Declined|Marshall defence|d4 d5 c4 Nf6 
+D06|Queen's Gambit Declined|symmetrical (Austrian) defence|d4 d5 c4 c5 
+D07|Queen's Gambit Declined|Chigorin defence|d4 d5 c4 Nc6 
+D07|Queen's Gambit Declined|Chigorin defence, Janowski variation|d4 d5 c4 Nc6 Nc3 dxc4 Nf3 
+D08|Queen's Gambit Declined|Albin counter-gambit|d4 d5 c4 e5 
+D08|Queen's Gambit Declined|Albin counter-gambit, Lasker trap|d4 d5 c4 e5 dxe5 d4 e3 Bb4+ Bd2 dxe3 
+D08|Queen's Gambit Declined|Albin counter-gambit|d4 d5 c4 e5 dxe5 d4 Nf3 
+D08|Queen's Gambit Declined|Albin counter-gambit, Alapin variation|d4 d5 c4 e5 dxe5 d4 Nf3 Nc6 Nbd2 
+D08|Queen's Gambit Declined|Albin counter-gambit, Krenosz variation|d4 d5 c4 e5 dxe5 d4 Nf3 Nc6 Nbd2 Bg4 h3 Bxf3 Nxf3 Bb4+ Bd2 Qe7 
+D08|Queen's Gambit Declined|Albin counter-gambit, Janowski variation|d4 d5 c4 e5 dxe5 d4 Nf3 Nc6 Nbd2 f6 
+D08|Queen's Gambit Declined|Albin counter-gambit, Balogh variation|d4 d5 c4 e5 dxe5 d4 Nf3 Nc6 Nbd2 Qe7 
+D09|Queen's Gambit Declined|Albin counter-gambit, 5.g3|d4 d5 c4 e5 dxe5 d4 Nf3 Nc6 g3 
+D10|Queen's Gambit Declined Slav defence||d4 d5 c4 c6 
+D10|Queen's Gambit Declined Slav defence, Alekhine variation||d4 d5 c4 c6 Nc3 dxc4 e4 
+D10|Queen's Gambit Declined Slav|Winawer counter-gambit|d4 d5 c4 c6 Nc3 e5 
+D10|Queen's Gambit Declined Slav defence|exchange variation|d4 d5 c4 c6 cxd5 
+D11|Queen's Gambit Declined Slav|3.Nf3|d4 d5 c4 c6 Nf3 
+D11|Queen's Gambit Declined Slav|Breyer variation|d4 d5 c4 c6 Nf3 Nf6 Nbd2 
+D11|Queen's Gambit Declined Slav|4.e3|d4 d5 c4 c6 Nf3 Nf6 e3 
+D12|Queen's Gambit Declined Slav|4.e3 Bf5|d4 d5 c4 c6 Nf3 Nf6 e3 Bf5 
+D12|Queen's Gambit Declined Slav|Landau variation|d4 d5 c4 c6 Nf3 Nf6 e3 Bf5 cxd5 cxd5 Qb3 Qc8 Bd2 e6 Na3 
+D12|Queen's Gambit Declined Slav|exchange variation|d4 d5 c4 c6 Nf3 Nf6 e3 Bf5 cxd5 cxd5 Nc3 
+D12|Queen's Gambit Declined Slav|Amsterdam variation|d4 d5 c4 c6 Nf3 Nf6 e3 Bf5 cxd5 cxd5 Nc3 e6 Ne5 Nfd7 
+D13|Queen's Gambit Declined Slav|exchange variation|d4 d5 c4 c6 Nf3 Nf6 cxd5 cxd5 
+D14|Queen's Gambit Declined Slav|exchange variation, 6.Bf4 Bf5|d4 d5 c4 c6 Nf3 Nf6 cxd5 cxd5 Nc3 Nc6 Bf4 Bf5 
+D14|Queen's Gambit Declined Slav|exchange, Trifunovic variation|d4 d5 c4 c6 Nf3 Nf6 cxd5 cxd5 Nc3 Nc6 Bf4 Bf5 e3 e6 Qb3 Bb4 
+D15|Queen's Gambit Declined Slav|4.Nc3|d4 d5 c4 c6 Nf3 Nf6 Nc3 
+D15|Queen's Gambit Declined Slav|Suechting variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 Qb6 
+D15|Queen's Gambit Declined Slav|Schlechter variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 g6 
+D15|Queen's Gambit Declined Slav accepted||d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 
+D15|Queen's Gambit Declined Slav|5.e3 (Alekhine variation)|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 e3 
+D15|Queen's Gambit Declined Slav|Slav gambit|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 e4 
+D15|Queen's Gambit Declined Slav|Tolush-Geller gambit|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 e4 b5 e5 
+D16|Queen's Gambit Declined Slav accepted|Alapin variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 
+D16|Queen's Gambit Declined Slav|Smyslov variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Na6 e4 Bg4 
+D16|Queen's Gambit Declined Slav|Soultanbeieff variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 e6 
+D16|Queen's Gambit Declined Slav|Steiner variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bg4 
+D17|Queen's Gambit Declined Slav|Czech defence|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 
+D17|Queen's Gambit Declined Slav|Krause attack|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 Ne5 
+D17|Queen's Gambit Declined Slav|Carlsbad variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 Ne5 Nbd7 Nxc4 Qc7 g3 e5 
+D17|Queen's Gambit Declined Slav|Wiesbaden variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 Ne5 e6 
+D18|Queen's Gambit Declined Slav|Dutch variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 e3 
+D18|Queen's Gambit Declined Slav|Dutch, Lasker variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 e3 Na6 
+D19|Queen's Gambit Declined Slav|Dutch variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 e3 e6 Bxc4 Bb4 O-O 
+D19|Queen's Gambit Declined Slav|Dutch variation, main line|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 e3 e6 Bxc4 Bb4 O-O O-O Qe2 
+D19|Queen's Gambit Declined Slav|Dutch, Saemisch variation|d4 d5 c4 c6 Nf3 Nf6 Nc3 dxc4 a4 Bf5 e3 e6 Bxc4 Bb4 O-O O-O Qe2 Ne4 g4 
 D20|Queen's gambit accepted||d4 d5 c4 dxc4 
 D20|QGA|3.e4|d4 d5 c4 dxc4 e4 
 D20|QGA|Linares variation|d4 d5 c4 dxc4 e4 c5 d5 Nf6 Nc3 b5 
@@ -1596,164 +1596,164 @@ D28|QGA|classical, Flohr variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 Qe
 D29|QGA|classical, 8...Bb7|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 Qe2 b5 Bb3 Bb7 
 D29|QGA|classical, Smyslov variation|d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6 Qe2 b5 Bb3 Bb7 Rd1 Nbd7 Nc3 Bd6 
 D30|Queen's gambit declined||d4 d5 c4 e6 
-D30|QGD Slav||d4 d5 c4 e6 Nf3 Nf6 e3 c6 Nbd2 
-D30|QGD|Stonewall variation|d4 d5 c4 e6 Nf3 Nf6 e3 c6 Nbd2 Ne4 Bd3 f5 
-D30|QGD Slav||d4 d5 c4 e6 Nf3 Nf6 e3 c6 Nbd2 Nbd7 
-D30|QGD Slav|Semmering variation|d4 d5 c4 e6 Nf3 Nf6 e3 c6 Nbd2 Nbd7 Bd3 c5 
-D30|QGD|Spielmann variation|d4 d5 c4 e6 Nf3 Nf6 e3 c6 Nbd2 g6 
-D30|QGD||d4 d5 c4 e6 Nf3 Nf6 Bg5 
-D30|QGD|Capablanca variation|d4 d5 c4 e6 Nf3 Nf6 Bg5 Nbd7 e3 c6 Nbd2 
-D30|QGD|Vienna variation|d4 d5 c4 e6 Nf3 Nf6 Bg5 Bb4+ 
-D30|QGD|Capablanca-Duras variation|d4 d5 c4 e6 Nf3 Nf6 Bg5 h6 
-D30|QGD|Hastings variation|d4 d5 c4 e6 Nf3 Nf6 Bg5 h6 Bxf6 Qxf6 Nc3 c6 Qb3 
-D31|QGD|3.Nc3|d4 d5 c4 e6 Nc3 
-D31|QGD|Janowski variation|d4 d5 c4 e6 Nc3 a6 
-D31|QGD|Alapin variation|d4 d5 c4 e6 Nc3 b6 
-D31|QGD|Charousek (Petrosian) variation|d4 d5 c4 e6 Nc3 Be7 
-D31|QGD|semi-Slav|d4 d5 c4 e6 Nc3 c6 
-D31|QGD|semi-Slav, Noteboom variation|d4 d5 c4 e6 Nc3 c6 Nf3 dxc4 
-D31|QGD|semi-Slav, Koomen variation|d4 d5 c4 e6 Nc3 c6 Nf3 dxc4 a4 Bb4 e3 b5 Bd2 Qe7 
-D31|QGD|semi-Slav, Junge variation|d4 d5 c4 e6 Nc3 c6 Nf3 dxc4 a4 Bb4 e3 b5 Bd2 Qb6 
-D31|QGD|semi-Slav, Abrahams variation|d4 d5 c4 e6 Nc3 c6 Nf3 dxc4 a4 Bb4 e3 b5 Bd2 a5 
-D31|QGD|semi-Slav, Marshall gambit|d4 d5 c4 e6 Nc3 c6 e4 
-D32|QGD|Tarrasch defence|d4 d5 c4 e6 Nc3 c5 
-D32|QGD|Tarrasch, von Hennig-Schara gambit|d4 d5 c4 e6 Nc3 c5 cxd5 cxd4 
-D32|QGD|Tarrasch defence, 4.cd ed|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 
-D32|QGD|Tarrasch defence, Tarrasch gambit|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 dxc5 d4 Na4 b5 
-D32|QGD|Tarrasch defence, Marshall gambit|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 e4 
-D32|QGD|Tarrasch defence|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 
-D33|QGD|Tarrasch, Schlechter-Rubinstein system|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 
-D33|QGD|Tarrasch, Folkestone (Swedish) variation|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 c4 
-D33|QGD|Tarrasch, Schlechter-Rubinstein system, Rey Ardid variation|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 c4 e4 
-D33|QGD|Tarrasch, Prague variation|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 
-D33|QGD|Tarrasch, Wagner variation|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 Bg2 Bg4 
-D34|QGD|Tarrasch, Prague variation, 7...Be7|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 Bg2 Be7 
-D34|QGD|Tarrasch, Prague variation, Normal position|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 Bg2 Be7 O-O O-O 
-D34|QGD|Tarrasch, Reti variation|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 Bg2 Be7 O-O O-O dxc5 Bxc5 Na4 
-D34|QGD|Tarrasch, Prague variation, 9.Bg5|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 Bg2 Be7 O-O O-O Bg5 
-D34|QGD|Tarrasch, Bogolyubov variation|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 Bg2 Be7 O-O O-O Bg5 Be6 Rc1 c4 
-D34|QGD|Tarrasch, Stoltz variation|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 Bg2 Be7 O-O O-O Bg5 Be6 Rc1 b6 
-D35|QGD|3...Nf6|d4 d5 c4 e6 Nc3 Nf6 
-D35|QGD|Harrwitz attack|d4 d5 c4 e6 Nc3 Nf6 Bf4 
-D35|QGD|exchange variation|d4 d5 c4 e6 Nc3 Nf6 cxd5 
-D35|QGD|exchange, Saemisch variation|d4 d5 c4 e6 Nc3 Nf6 cxd5 exd5 Nf3 Nbd7 Bf4 
-D35|QGD|exchange, positional line|d4 d5 c4 e6 Nc3 Nf6 cxd5 exd5 Bg5 
-D35|QGD|exchange, chameleon variation|d4 d5 c4 e6 Nc3 Nf6 cxd5 exd5 Bg5 Be7 e3 O-O Bd3 Nbd7 Qc2 Re8 Nge2 Nf8 O-O-O 
-D35|QGD|exchange, positional line, 5...c6|d4 d5 c4 e6 Nc3 Nf6 cxd5 exd5 Bg5 c6 
-D36|QGD|exchange, positional line, 6.Qc2|d4 d5 c4 e6 Nc3 Nf6 cxd5 exd5 Bg5 c6 Qc2 
-D37|QGD|4.Nf3|d4 d5 c4 e6 Nc3 Nf6 Nf3 
-D37|QGD|classical variation (5.Bf4)|d4 d5 c4 e6 Nc3 Nf6 Nf3 Be7 Bf4 
-D38|QGD|Ragozin variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 Bb4 
-D39|QGD|Ragozin, Vienna variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 Bb4 Bg5 dxc4 
-D40|QGD|Semi-Tarrasch defence|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 
-D40|QGD|Semi-Tarrasch, symmetrical variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 e3 Nc6 Bd3 Bd6 O-O O-O 
-D40|QGD|Semi-Tarrasch, Levenfish variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 e3 Nc6 Bd3 Bd6 O-O O-O Qe2 Qe7 dxc5 Bxc5 e4 
-D40|QGD|Semi-Tarrasch defence, Pillsbury variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 Bg5 
-D41|QGD|Semi-Tarrasch, 5.cd|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 cxd5 
-D41|QGD|Semi-Tarrasch, Kmoch variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 cxd5 Nxd5 e4 Nxc3 bxc3 cxd4 cxd4 Bb4+ Bd2 Bxd2+ Qxd2 O-O Bb5 
-D41|QGD|Semi-Tarrasch, San Sebastian variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 cxd5 Nxd5 e4 Nxc3 bxc3 cxd4 cxd4 Bb4+ Bd2 Qa5 
-D41|QGD|Semi-Tarrasch with e3|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 cxd5 Nxd5 e3 
-D42|QGD|Semi-Tarrasch, 7.Bd3|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 cxd5 Nxd5 e3 Nc6 Bd3 
-D43|QGD semi-Slav||d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 
-D43|QGD semi-Slav|Hastings variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 h6 Bxf6 Qxf6 Qb3 
-D44|QGD semi-Slav|5.Bg5 dc|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 dxc4 
-D44|QGD semi-Slav|Botvinnik system (anti-Meran)|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 dxc4 e4 
-D44|QGD semi-Slav|Ekstrom variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 dxc4 e4 b5 e5 h6 Bh4 g5 exf6 gxh4 Ne5 
-D44|QGD semi-Slav|anti-Meran gambit|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 dxc4 e4 b5 e5 h6 Bh4 g5 Nxg5 
-D44|QGD semi-Slav|anti-Meran, Lilienthal variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 dxc4 e4 b5 e5 h6 Bh4 g5 Nxg5 hxg5 Bxg5 Nbd7 g3 
-D44|QGD semi-Slav|anti-Meran, Szabo variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 dxc4 e4 b5 e5 h6 Bh4 g5 Nxg5 hxg5 Bxg5 Nbd7 Qf3 
-D44|QGD semi-Slav|anti-Meran, Alatortsev system|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 dxc4 e4 b5 e5 h6 Bh4 g5 Nxg5 Nd5 
-D45|QGD semi-Slav|5.e3|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 
-D45|QGD semi-Slav|stonewall defence|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Ne4 Bd3 f5 
-D45|QGD semi-Slav|accelerated Meran (Alekhine variation)|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 a6 
-D45|QGD semi-Slav|5...Nd7|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 
-D45|QGD semi-Slav|Stoltz variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Qc2 
-D45|QGD semi-Slav|Rubinstein (anti-Meran) system|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Ne5 
-D46|QGD semi-Slav|6.Bd3|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 
-D46|QGD semi-Slav|Bogolyubov variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 Be7 
-D46|QGD semi-Slav|Romih variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 Bb4 
-D46|QGD semi-Slav|Chigorin defence|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 Bd6 
-D47|QGD semi-Slav|7.Bc4|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 
-D47|QGD semi-Slav|Meran variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 
-D47|QGD semi-Slav|neo-Meran (Lundin variation)|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 b4 
-D47|QGD semi-Slav|Meran, Wade variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 Bb7 
-D48|QGD semi-Slav|Meran, 8...a6|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 
-D48|QGD semi-Slav|Meran, Pirc variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 b4 
-D48|QGD semi-Slav|Meran|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 
-D48|QGD semi-Slav|Meran, Reynolds' variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 d5 
-D48|QGD semi-Slav|Meran, old main line|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 e5 
-D49|QGD semi-Slav|Meran, Blumenfeld variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 e5 cxd4 Nxb5 
-D49|QGD semi-Slav|Meran, Rabinovich variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 e5 cxd4 Nxb5 Ng4 
-D49|QGD semi-Slav|Meran, Sozin variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 e5 cxd4 Nxb5 Nxe5 
-D49|QGD semi-Slav|Meran, Stahlberg variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 e5 cxd4 Nxb5 Nxe5 Nxe5 axb5 Qf3 
-D49|QGD semi-Slav|Meran, Sozin variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 e5 cxd4 Nxb5 Nxe5 Nxe5 axb5 O-O 
-D49|QGD semi-Slav|Meran, Rellstab attack|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 e5 cxd4 Nxb5 Nxe5 Nxe5 axb5 O-O Qd5 Qe2 Ba6 Bg5 
-D50|QGD|4.Bg5|d4 d5 c4 e6 Nc3 Nf6 Bg5 
-D50|QGD|Been-Koomen variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 c5 
-D50|QGD|Semi-Tarrasch, Krause variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 c5 Nf3 cxd4 Nxd4 e5 Ndb5 a6 Qa4 
-D50|QGD|Semi-Tarrasch, Primitive Pillsbury variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 c5 Nf3 cxd4 Qxd4 
-D50|QGD|Semi-Tarrasch|d4 d5 c4 e6 Nc3 Nf6 Bg5 c5 cxd5 
-D50|QGD|Canal (Venice) variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 c5 cxd5 Qb6 
-D51|QGD|4.Bg5 Nbd7|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 
-D51|QGD|Rochlin variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 Nf3 c6 Rc1 Qa5 Bd2 
-D51|QGD|Alekhine variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 Nf3 c6 e4 
-D51|QGD||d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 
-D51|QGD|Manhattan variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 Bb4 
-D51|QGD|5...c6|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 
-D51|QGD|Capablanca anti-Cambridge Springs variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 a3 
-D52|QGD||d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 
-D52|QGD|Cambridge Springs defence|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5 
-D52|QGD|Cambridge Springs defence, Bogoljubow variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5 Nd2 Bb4 Qc2 
-D52|QGD|Cambridge Springs defence, Argentine variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5 Nd2 Bb4 Qc2 O-O Bh4 
-D52|QGD|Cambridge Springs defence, Rubinstein variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5 Nd2 dxc4 
-D52|QGD|Cambridge Springs defence, Capablanca variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5 Bxf6 
-D52|QGD|Cambridge Springs defence, 7.cd|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5 cxd5 
-D52|QGD|Cambridge Springs defence, Yugoslav variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5 cxd5 Nxd5 
-D53|QGD|4.Bg5 Be7|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 
-D53|QGD|Lasker variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 Ne4 
-D53|QGD|4.Bg5 Be7, 5.e3 O-O|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O 
-D54|QGD|Anti-neo-orthodox variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Rc1 
-D55|QGD|6.Nf3|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 
-D55|QGD|Pillsbury attack|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 b6 Bd3 Bb7 cxd5 exd5 Ne5 
-D55|QGD|Neo-orthodox variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 
-D55|QGD|Neo-orthodox variation, 7.Bxf6|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bxf6 
-D55|QGD|Petrosian variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bxf6 Bxf6 Rc1 c6 Bd3 Nd7 O-O dxc4 Bxc4 
-D55|QGD|Neo-orthodox variation, 7.Bh4|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 
-D56|QGD|Lasker defence|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 Ne4 
-D56|QGD|Lasker defence, Teichmann variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 Ne4 Bxe7 Qxe7 Qc2 
-D56|QGD|Lasker defence, Russian variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 Ne4 Bxe7 Qxe7 Qc2 Nf6 Bd3 dxc4 Bxc4 c5 O-O Nc6 Rfd1 Bd7 
-D57|QGD|Lasker defence, main line|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 Ne4 Bxe7 Qxe7 cxd5 Nxc3 bxc3 
-D57|QGD|Lasker defence, Bernstein variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 Ne4 Bxe7 Qxe7 cxd5 Nxc3 bxc3 exd5 Qb3 Qd6 
-D58|QGD|Tartakower (Makagonov-Bondarevsky) system|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 b6 
-D59|QGD|Tartakower (Makagonov-Bondarevsky) system, 8.cd Nxd5|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 b6 cxd5 Nxd5 
-D59|QGD|Tartakower variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 b6 cxd5 Nxd5 Bxe7 Qxe7 Nxd5 exd5 Rc1 Be6 
-D60|QGD|Orthodox defence|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 
-D60|QGD|Orthodox defence, Botvinnik variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Bd3 
-D60|QGD|Orthodox defence, Rauzer variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Qb3 
-D61|QGD|Orthodox defence, Rubinstein variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Qc2 
-D62|QGD|Orthodox defence, 7.Qc2 c5, 8.cd (Rubinstein)|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Qc2 c5 cxd5 
-D63|QGD|Orthodox defence, 7.Rc1|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 
-D63|QGD|Orthodox defence, Pillsbury attack|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 b6 cxd5 exd5 Bd3 
-D63|QGD|Orthodox defence, Capablanca variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 b6 cxd5 exd5 Bb5 
-D63|QGD|Orthodox defence, Swiss (Henneberger) variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 a6 
-D63|QGD|Orthodox defence, Swiss, Karlsbad variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 a6 cxd5 
-D63|QGD|Orthodox defence|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 
-D64|QGD|Orthodox defence, Rubinstein attack (with Rc1)|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Qc2 
-D64|QGD|Orthodox defence, Rubinstein attack, Wolf variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Qc2 Ne4 
-D64|QGD|Orthodox defence, Rubinstein attack, Karlsbad variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Qc2 a6 
-D64|QGD|Orthodox defence, Rubinstein attack, Gruenfeld variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Qc2 a6 a3 
-D65|QGD|Orthodox defence, Rubinstein attack, main line|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Qc2 a6 cxd5 
-D66|QGD|Orthodox defence, Bd3 line|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 
-D66|QGD|Orthodox defence, Bd3 line, fianchetto variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 b5 
-D67|QGD|Orthodox defence, Bd3 line, Capablanca freeing manoevre|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 
-D67|QGD|Orthodox defence, Bd3 line, Janowski variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 h4 
-D67|QGD|Orthodox defence, Bd3 line|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 Bxe7 Qxe7 
-D67|QGD|Orthodox defence, Bd3 line, Alekhine variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 Bxe7 Qxe7 Ne4 
-D67|QGD|Orthodox defence, Bd3 line, 11.O-O|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 Bxe7 Qxe7 O-O 
-D68|QGD|Orthodox defence, classical variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 Bxe7 Qxe7 O-O Nxc3 Rxc3 e5 
-D68|QGD|Orthodox defence, classical, 13.d1b1 (Maroczy)|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 Bxe7 Qxe7 O-O Nxc3 Rxc3 e5 Qb1 
-D68|QGD|Orthodox defence, classical, 13.d1c2 (Vidmar)|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 Bxe7 Qxe7 O-O Nxc3 Rxc3 e5 Qc2 
-D69|QGD|Orthodox defence, classical, 13.de|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 Bxe7 Qxe7 O-O Nxc3 Rxc3 e5 dxe5 Nxe5 Nxe5 Qxe5 
+D30|Queen's Gambit Declined Slav||d4 d5 c4 e6 Nf3 Nf6 e3 c6 Nbd2 
+D30|Queen's Gambit Declined|Stonewall variation|d4 d5 c4 e6 Nf3 Nf6 e3 c6 Nbd2 Ne4 Bd3 f5 
+D30|Queen's Gambit Declined Slav||d4 d5 c4 e6 Nf3 Nf6 e3 c6 Nbd2 Nbd7 
+D30|Queen's Gambit Declined Slav|Semmering variation|d4 d5 c4 e6 Nf3 Nf6 e3 c6 Nbd2 Nbd7 Bd3 c5 
+D30|Queen's Gambit Declined|Spielmann variation|d4 d5 c4 e6 Nf3 Nf6 e3 c6 Nbd2 g6 
+D30|Queen's Gambit Declined||d4 d5 c4 e6 Nf3 Nf6 Bg5 
+D30|Queen's Gambit Declined|Capablanca variation|d4 d5 c4 e6 Nf3 Nf6 Bg5 Nbd7 e3 c6 Nbd2 
+D30|Queen's Gambit Declined|Vienna variation|d4 d5 c4 e6 Nf3 Nf6 Bg5 Bb4+ 
+D30|Queen's Gambit Declined|Capablanca-Duras variation|d4 d5 c4 e6 Nf3 Nf6 Bg5 h6 
+D30|Queen's Gambit Declined|Hastings variation|d4 d5 c4 e6 Nf3 Nf6 Bg5 h6 Bxf6 Qxf6 Nc3 c6 Qb3 
+D31|Queen's Gambit Declined|3.Nc3|d4 d5 c4 e6 Nc3 
+D31|Queen's Gambit Declined|Janowski variation|d4 d5 c4 e6 Nc3 a6 
+D31|Queen's Gambit Declined|Alapin variation|d4 d5 c4 e6 Nc3 b6 
+D31|Queen's Gambit Declined|Charousek (Petrosian) variation|d4 d5 c4 e6 Nc3 Be7 
+D31|Queen's Gambit Declined|semi-Slav|d4 d5 c4 e6 Nc3 c6 
+D31|Queen's Gambit Declined|semi-Slav, Noteboom variation|d4 d5 c4 e6 Nc3 c6 Nf3 dxc4 
+D31|Queen's Gambit Declined|semi-Slav, Koomen variation|d4 d5 c4 e6 Nc3 c6 Nf3 dxc4 a4 Bb4 e3 b5 Bd2 Qe7 
+D31|Queen's Gambit Declined|semi-Slav, Junge variation|d4 d5 c4 e6 Nc3 c6 Nf3 dxc4 a4 Bb4 e3 b5 Bd2 Qb6 
+D31|Queen's Gambit Declined|semi-Slav, Abrahams variation|d4 d5 c4 e6 Nc3 c6 Nf3 dxc4 a4 Bb4 e3 b5 Bd2 a5 
+D31|Queen's Gambit Declined|semi-Slav, Marshall gambit|d4 d5 c4 e6 Nc3 c6 e4 
+D32|Queen's Gambit Declined|Tarrasch defence|d4 d5 c4 e6 Nc3 c5 
+D32|Queen's Gambit Declined|Tarrasch, von Hennig-Schara gambit|d4 d5 c4 e6 Nc3 c5 cxd5 cxd4 
+D32|Queen's Gambit Declined|Tarrasch defence, 4.cd ed|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 
+D32|Queen's Gambit Declined|Tarrasch defence, Tarrasch gambit|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 dxc5 d4 Na4 b5 
+D32|Queen's Gambit Declined|Tarrasch defence, Marshall gambit|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 e4 
+D32|Queen's Gambit Declined|Tarrasch defence|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 
+D33|Queen's Gambit Declined|Tarrasch, Schlechter-Rubinstein system|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 
+D33|Queen's Gambit Declined|Tarrasch, Folkestone (Swedish) variation|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 c4 
+D33|Queen's Gambit Declined|Tarrasch, Schlechter-Rubinstein system, Rey Ardid variation|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 c4 e4 
+D33|Queen's Gambit Declined|Tarrasch, Prague variation|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 
+D33|Queen's Gambit Declined|Tarrasch, Wagner variation|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 Bg2 Bg4 
+D34|Queen's Gambit Declined|Tarrasch, Prague variation, 7...Be7|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 Bg2 Be7 
+D34|Queen's Gambit Declined|Tarrasch, Prague variation, Normal position|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 Bg2 Be7 O-O O-O 
+D34|Queen's Gambit Declined|Tarrasch, Reti variation|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 Bg2 Be7 O-O O-O dxc5 Bxc5 Na4 
+D34|Queen's Gambit Declined|Tarrasch, Prague variation, 9.Bg5|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 Bg2 Be7 O-O O-O Bg5 
+D34|Queen's Gambit Declined|Tarrasch, Bogolyubov variation|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 Bg2 Be7 O-O O-O Bg5 Be6 Rc1 c4 
+D34|Queen's Gambit Declined|Tarrasch, Stoltz variation|d4 d5 c4 e6 Nc3 c5 cxd5 exd5 Nf3 Nc6 g3 Nf6 Bg2 Be7 O-O O-O Bg5 Be6 Rc1 b6 
+D35|Queen's Gambit Declined|3...Nf6|d4 d5 c4 e6 Nc3 Nf6 
+D35|Queen's Gambit Declined|Harrwitz attack|d4 d5 c4 e6 Nc3 Nf6 Bf4 
+D35|Queen's Gambit Declined|exchange variation|d4 d5 c4 e6 Nc3 Nf6 cxd5 
+D35|Queen's Gambit Declined|exchange, Saemisch variation|d4 d5 c4 e6 Nc3 Nf6 cxd5 exd5 Nf3 Nbd7 Bf4 
+D35|Queen's Gambit Declined|exchange, positional line|d4 d5 c4 e6 Nc3 Nf6 cxd5 exd5 Bg5 
+D35|Queen's Gambit Declined|exchange, chameleon variation|d4 d5 c4 e6 Nc3 Nf6 cxd5 exd5 Bg5 Be7 e3 O-O Bd3 Nbd7 Qc2 Re8 Nge2 Nf8 O-O-O 
+D35|Queen's Gambit Declined|exchange, positional line, 5...c6|d4 d5 c4 e6 Nc3 Nf6 cxd5 exd5 Bg5 c6 
+D36|Queen's Gambit Declined|exchange, positional line, 6.Qc2|d4 d5 c4 e6 Nc3 Nf6 cxd5 exd5 Bg5 c6 Qc2 
+D37|Queen's Gambit Declined|4.Nf3|d4 d5 c4 e6 Nc3 Nf6 Nf3 
+D37|Queen's Gambit Declined|classical variation (5.Bf4)|d4 d5 c4 e6 Nc3 Nf6 Nf3 Be7 Bf4 
+D38|Queen's Gambit Declined|Ragozin variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 Bb4 
+D39|Queen's Gambit Declined|Ragozin, Vienna variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 Bb4 Bg5 dxc4 
+D40|Queen's Gambit Declined|Semi-Tarrasch defence|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 
+D40|Queen's Gambit Declined|Semi-Tarrasch, symmetrical variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 e3 Nc6 Bd3 Bd6 O-O O-O 
+D40|Queen's Gambit Declined|Semi-Tarrasch, Levenfish variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 e3 Nc6 Bd3 Bd6 O-O O-O Qe2 Qe7 dxc5 Bxc5 e4 
+D40|Queen's Gambit Declined|Semi-Tarrasch defence, Pillsbury variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 Bg5 
+D41|Queen's Gambit Declined|Semi-Tarrasch, 5.cd|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 cxd5 
+D41|Queen's Gambit Declined|Semi-Tarrasch, Kmoch variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 cxd5 Nxd5 e4 Nxc3 bxc3 cxd4 cxd4 Bb4+ Bd2 Bxd2+ Qxd2 O-O Bb5 
+D41|Queen's Gambit Declined|Semi-Tarrasch, San Sebastian variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 cxd5 Nxd5 e4 Nxc3 bxc3 cxd4 cxd4 Bb4+ Bd2 Qa5 
+D41|Queen's Gambit Declined|Semi-Tarrasch with e3|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 cxd5 Nxd5 e3 
+D42|Queen's Gambit Declined|Semi-Tarrasch, 7.Bd3|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 cxd5 Nxd5 e3 Nc6 Bd3 
+D43|Queen's Gambit Declined semi-Slav||d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 
+D43|Queen's Gambit Declined semi-Slav|Hastings variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 h6 Bxf6 Qxf6 Qb3 
+D44|Queen's Gambit Declined semi-Slav|5.Bg5 dc|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 dxc4 
+D44|Queen's Gambit Declined semi-Slav|Botvinnik system (anti-Meran)|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 dxc4 e4 
+D44|Queen's Gambit Declined semi-Slav|Ekstrom variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 dxc4 e4 b5 e5 h6 Bh4 g5 exf6 gxh4 Ne5 
+D44|Queen's Gambit Declined semi-Slav|anti-Meran gambit|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 dxc4 e4 b5 e5 h6 Bh4 g5 Nxg5 
+D44|Queen's Gambit Declined semi-Slav|anti-Meran, Lilienthal variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 dxc4 e4 b5 e5 h6 Bh4 g5 Nxg5 hxg5 Bxg5 Nbd7 g3 
+D44|Queen's Gambit Declined semi-Slav|anti-Meran, Szabo variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 dxc4 e4 b5 e5 h6 Bh4 g5 Nxg5 hxg5 Bxg5 Nbd7 Qf3 
+D44|Queen's Gambit Declined semi-Slav|anti-Meran, Alatortsev system|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 Bg5 dxc4 e4 b5 e5 h6 Bh4 g5 Nxg5 Nd5 
+D45|Queen's Gambit Declined semi-Slav|5.e3|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 
+D45|Queen's Gambit Declined semi-Slav|stonewall defence|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Ne4 Bd3 f5 
+D45|Queen's Gambit Declined semi-Slav|accelerated Meran (Alekhine variation)|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 a6 
+D45|Queen's Gambit Declined semi-Slav|5...Nd7|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 
+D45|Queen's Gambit Declined semi-Slav|Stoltz variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Qc2 
+D45|Queen's Gambit Declined semi-Slav|Rubinstein (anti-Meran) system|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Ne5 
+D46|Queen's Gambit Declined semi-Slav|6.Bd3|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 
+D46|Queen's Gambit Declined semi-Slav|Bogolyubov variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 Be7 
+D46|Queen's Gambit Declined semi-Slav|Romih variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 Bb4 
+D46|Queen's Gambit Declined semi-Slav|Chigorin defence|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 Bd6 
+D47|Queen's Gambit Declined semi-Slav|7.Bc4|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 
+D47|Queen's Gambit Declined semi-Slav|Meran variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 
+D47|Queen's Gambit Declined semi-Slav|neo-Meran (Lundin variation)|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 b4 
+D47|Queen's Gambit Declined semi-Slav|Meran, Wade variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 Bb7 
+D48|Queen's Gambit Declined semi-Slav|Meran, 8...a6|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 
+D48|Queen's Gambit Declined semi-Slav|Meran, Pirc variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 b4 
+D48|Queen's Gambit Declined semi-Slav|Meran|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 
+D48|Queen's Gambit Declined semi-Slav|Meran, Reynolds' variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 d5 
+D48|Queen's Gambit Declined semi-Slav|Meran, old main line|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 e5 
+D49|Queen's Gambit Declined semi-Slav|Meran, Blumenfeld variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 e5 cxd4 Nxb5 
+D49|Queen's Gambit Declined semi-Slav|Meran, Rabinovich variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 e5 cxd4 Nxb5 Ng4 
+D49|Queen's Gambit Declined semi-Slav|Meran, Sozin variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 e5 cxd4 Nxb5 Nxe5 
+D49|Queen's Gambit Declined semi-Slav|Meran, Stahlberg variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 e5 cxd4 Nxb5 Nxe5 Nxe5 axb5 Qf3 
+D49|Queen's Gambit Declined semi-Slav|Meran, Sozin variation|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 e5 cxd4 Nxb5 Nxe5 Nxe5 axb5 O-O 
+D49|Queen's Gambit Declined semi-Slav|Meran, Rellstab attack|d4 d5 c4 e6 Nc3 Nf6 Nf3 c6 e3 Nbd7 Bd3 dxc4 Bxc4 b5 Bd3 a6 e4 c5 e5 cxd4 Nxb5 Nxe5 Nxe5 axb5 O-O Qd5 Qe2 Ba6 Bg5 
+D50|Queen's Gambit Declined|4.Bg5|d4 d5 c4 e6 Nc3 Nf6 Bg5 
+D50|Queen's Gambit Declined|Been-Koomen variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 c5 
+D50|Queen's Gambit Declined|Semi-Tarrasch, Krause variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 c5 Nf3 cxd4 Nxd4 e5 Ndb5 a6 Qa4 
+D50|Queen's Gambit Declined|Semi-Tarrasch, Primitive Pillsbury variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 c5 Nf3 cxd4 Qxd4 
+D50|Queen's Gambit Declined|Semi-Tarrasch|d4 d5 c4 e6 Nc3 Nf6 Bg5 c5 cxd5 
+D50|Queen's Gambit Declined|Canal (Venice) variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 c5 cxd5 Qb6 
+D51|Queen's Gambit Declined|4.Bg5 Nbd7|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 
+D51|Queen's Gambit Declined|Rochlin variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 Nf3 c6 Rc1 Qa5 Bd2 
+D51|Queen's Gambit Declined|Alekhine variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 Nf3 c6 e4 
+D51|Queen's Gambit Declined||d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 
+D51|Queen's Gambit Declined|Manhattan variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 Bb4 
+D51|Queen's Gambit Declined|5...c6|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 
+D51|Queen's Gambit Declined|Capablanca anti-Cambridge Springs variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 a3 
+D52|Queen's Gambit Declined||d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 
+D52|Queen's Gambit Declined|Cambridge Springs defence|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5 
+D52|Queen's Gambit Declined|Cambridge Springs defence, Bogoljubow variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5 Nd2 Bb4 Qc2 
+D52|Queen's Gambit Declined|Cambridge Springs defence, Argentine variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5 Nd2 Bb4 Qc2 O-O Bh4 
+D52|Queen's Gambit Declined|Cambridge Springs defence, Rubinstein variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5 Nd2 dxc4 
+D52|Queen's Gambit Declined|Cambridge Springs defence, Capablanca variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5 Bxf6 
+D52|Queen's Gambit Declined|Cambridge Springs defence, 7.cd|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5 cxd5 
+D52|Queen's Gambit Declined|Cambridge Springs defence, Yugoslav variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5 cxd5 Nxd5 
+D53|Queen's Gambit Declined|4.Bg5 Be7|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 
+D53|Queen's Gambit Declined|Lasker variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 Ne4 
+D53|Queen's Gambit Declined|4.Bg5 Be7, 5.e3 O-O|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O 
+D54|Queen's Gambit Declined|Anti-neo-orthodox variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Rc1 
+D55|Queen's Gambit Declined|6.Nf3|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 
+D55|Queen's Gambit Declined|Pillsbury attack|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 b6 Bd3 Bb7 cxd5 exd5 Ne5 
+D55|Queen's Gambit Declined|Neo-orthodox variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 
+D55|Queen's Gambit Declined|Neo-orthodox variation, 7.Bxf6|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bxf6 
+D55|Queen's Gambit Declined|Petrosian variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bxf6 Bxf6 Rc1 c6 Bd3 Nd7 O-O dxc4 Bxc4 
+D55|Queen's Gambit Declined|Neo-orthodox variation, 7.Bh4|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 
+D56|Queen's Gambit Declined|Lasker defence|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 Ne4 
+D56|Queen's Gambit Declined|Lasker defence, Teichmann variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 Ne4 Bxe7 Qxe7 Qc2 
+D56|Queen's Gambit Declined|Lasker defence, Russian variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 Ne4 Bxe7 Qxe7 Qc2 Nf6 Bd3 dxc4 Bxc4 c5 O-O Nc6 Rfd1 Bd7 
+D57|Queen's Gambit Declined|Lasker defence, main line|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 Ne4 Bxe7 Qxe7 cxd5 Nxc3 bxc3 
+D57|Queen's Gambit Declined|Lasker defence, Bernstein variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 Ne4 Bxe7 Qxe7 cxd5 Nxc3 bxc3 exd5 Qb3 Qd6 
+D58|Queen's Gambit Declined|Tartakower (Makagonov-Bondarevsky) system|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 b6 
+D59|Queen's Gambit Declined|Tartakower (Makagonov-Bondarevsky) system, 8.cd Nxd5|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 b6 cxd5 Nxd5 
+D59|Queen's Gambit Declined|Tartakower variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 h6 Bh4 b6 cxd5 Nxd5 Bxe7 Qxe7 Nxd5 exd5 Rc1 Be6 
+D60|Queen's Gambit Declined|Orthodox defence|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 
+D60|Queen's Gambit Declined|Orthodox defence, Botvinnik variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Bd3 
+D60|Queen's Gambit Declined|Orthodox defence, Rauzer variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Qb3 
+D61|Queen's Gambit Declined|Orthodox defence, Rubinstein variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Qc2 
+D62|Queen's Gambit Declined|Orthodox defence, 7.Qc2 c5, 8.cd (Rubinstein)|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Qc2 c5 cxd5 
+D63|Queen's Gambit Declined|Orthodox defence, 7.Rc1|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 
+D63|Queen's Gambit Declined|Orthodox defence, Pillsbury attack|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 b6 cxd5 exd5 Bd3 
+D63|Queen's Gambit Declined|Orthodox defence, Capablanca variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 b6 cxd5 exd5 Bb5 
+D63|Queen's Gambit Declined|Orthodox defence, Swiss (Henneberger) variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 a6 
+D63|Queen's Gambit Declined|Orthodox defence, Swiss, Karlsbad variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 a6 cxd5 
+D63|Queen's Gambit Declined|Orthodox defence|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 
+D64|Queen's Gambit Declined|Orthodox defence, Rubinstein attack (with Rc1)|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Qc2 
+D64|Queen's Gambit Declined|Orthodox defence, Rubinstein attack, Wolf variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Qc2 Ne4 
+D64|Queen's Gambit Declined|Orthodox defence, Rubinstein attack, Karlsbad variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Qc2 a6 
+D64|Queen's Gambit Declined|Orthodox defence, Rubinstein attack, Gruenfeld variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Qc2 a6 a3 
+D65|Queen's Gambit Declined|Orthodox defence, Rubinstein attack, main line|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Qc2 a6 cxd5 
+D66|Queen's Gambit Declined|Orthodox defence, Bd3 line|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 
+D66|Queen's Gambit Declined|Orthodox defence, Bd3 line, fianchetto variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 b5 
+D67|Queen's Gambit Declined|Orthodox defence, Bd3 line, Capablanca freeing manoevre|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 
+D67|Queen's Gambit Declined|Orthodox defence, Bd3 line, Janowski variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 h4 
+D67|Queen's Gambit Declined|Orthodox defence, Bd3 line|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 Bxe7 Qxe7 
+D67|Queen's Gambit Declined|Orthodox defence, Bd3 line, Alekhine variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 Bxe7 Qxe7 Ne4 
+D67|Queen's Gambit Declined|Orthodox defence, Bd3 line, 11.O-O|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 Bxe7 Qxe7 O-O 
+D68|Queen's Gambit Declined|Orthodox defence, classical variation|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 Bxe7 Qxe7 O-O Nxc3 Rxc3 e5 
+D68|Queen's Gambit Declined|Orthodox defence, classical, 13.d1b1 (Maroczy)|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 Bxe7 Qxe7 O-O Nxc3 Rxc3 e5 Qb1 
+D68|Queen's Gambit Declined|Orthodox defence, classical, 13.d1c2 (Vidmar)|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 Bxe7 Qxe7 O-O Nxc3 Rxc3 e5 Qc2 
+D69|Queen's Gambit Declined|Orthodox defence, classical, 13.de|d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 Rc1 c6 Bd3 dxc4 Bxc4 Nd5 Bxe7 Qxe7 O-O Nxc3 Rxc3 e5 dxe5 Nxe5 Nxe5 Qxe5 
 D70|Neo-Gruenfeld defence||d4 Nf6 c4 g6 f3 d5 
 D70|Neo-Gruenfeld (Kemeri) defence||d4 Nf6 c4 g6 g3 d5 
 D71|Neo-Gruenfeld, 5.cd||d4 Nf6 c4 g6 g3 d5 Bg2 Bg7 cxd5 Nxd5 
