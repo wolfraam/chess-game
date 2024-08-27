@@ -146,15 +146,15 @@ import io.github.wolfraam.chessgame.pgn.PGNExporter;
 
 ChessGame chessGame = new ChessGame();
 chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3");
-chessGame.setPgnTag(PgnTag.EVENT, "Test Event");
-chessGame.setPgnTag(PgnTag.RESULT, "1/2-1/2");
+chessGame.getPGNData().setPGNTag(PGNTag.EVENT, "Test Event");
+chessGame.getPGNData().setPGNTag(PGNTag.RESULT, "1/2-1/2");
 PGNExporter pgnExporter = new PGNExporter(System.out);
 pgnExporter.write(chessGame);
 // output:
 // [Event "Test Event"]
 // [Result "1/2-1/2"]
 // 
-// 1.e4 c5 2.Nf3 1/2-1/2
+// 1. e4 1... c5 2. Nf3 1/2-1/2
 
 pgnExporter.write(chessGame2); // etc.
 ```
