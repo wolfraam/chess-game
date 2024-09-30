@@ -95,7 +95,7 @@ public class ChessGame implements Serializable, Cloneable {
      */
     public List<Piece> getCapturedPieces() {
         final List<Piece> capturedPieces = new LinkedList<>();
-        final ChessGame replayChessGame = new ChessGame();
+        final ChessGame replayChessGame = new ChessGame(initialFen);
         for (final Move move : moves) {
             final Piece capturedPiece = replayChessGame.playMove(move);
             if (capturedPiece != null) {
