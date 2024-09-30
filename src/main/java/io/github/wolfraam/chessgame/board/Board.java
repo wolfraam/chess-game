@@ -35,16 +35,24 @@ public class Board implements Serializable, Cloneable {
 
         board.sideToMove = "w".equals(fenParts[1]) ? Side.WHITE : Side.BLACK;
 
-        if (fenParts[2].contains("k")) {
+        if (fenParts[2].contains("k")
+                && board.boardData.getPiece(Square.E8) == Piece.BLACK_KING
+                && board.boardData.getPiece(Square.H8) == Piece.BLACK_ROOK) {
             board.allowedCastleMoveTypes.add(CastleMoveType.BLACK_KING_SIDE);
         }
-        if (fenParts[2].contains("q")) {
+        if (fenParts[2].contains("q")
+                && board.boardData.getPiece(Square.E8) == Piece.BLACK_KING
+                && board.boardData.getPiece(Square.A8) == Piece.BLACK_ROOK) {
             board.allowedCastleMoveTypes.add(CastleMoveType.BLACK_QUEEN_SIDE);
         }
-        if (fenParts[2].contains("K")) {
+        if (fenParts[2].contains("K")
+                && board.boardData.getPiece(Square.E1) == Piece.WHITE_KING
+                && board.boardData.getPiece(Square.H1) == Piece.WHITE_ROOK) {
             board.allowedCastleMoveTypes.add(CastleMoveType.WHITE_KING_SIDE);
         }
-        if (fenParts[2].contains("Q")) {
+        if (fenParts[2].contains("Q")
+                && board.boardData.getPiece(Square.E1) == Piece.WHITE_KING
+                && board.boardData.getPiece(Square.A1) == Piece.WHITE_ROOK) {
             board.allowedCastleMoveTypes.add(CastleMoveType.WHITE_QUEEN_SIDE);
         }
 
@@ -54,6 +62,8 @@ public class Board implements Serializable, Cloneable {
 
         board.halfMoveCount = Integer.parseInt(fenParts[4]);
         board.fullMoveCount = Integer.parseInt(fenParts[5]);
+        board.initialFen = board.getFen();
+
         board.updateHistory();
         return board;
     }
@@ -102,6 +112,8 @@ public class Board implements Serializable, Cloneable {
 
         board.halfMoveCount = 0;
         board.fullMoveCount = 1;
+        board.initialFen = board.getFen();
+
         board.updateHistory();
 
         return board;
@@ -113,6 +125,7 @@ public class Board implements Serializable, Cloneable {
     private final Map<String, Integer> fen2Repetitions = new HashMap<>();
     private int fullMoveCount;
     private int halfMoveCount;
+    private String initialFen;
     private Side sideToMove;
 
     private Board(final BoardData boardData) {
@@ -131,6 +144,7 @@ public class Board implements Serializable, Cloneable {
         board.enPassantTarget = enPassantTarget;
         board.fullMoveCount = fullMoveCount;
         board.halfMoveCount = halfMoveCount;
+        board.initialFen = initialFen;
         board.fen2Repetitions.putAll(fen2Repetitions);
         board.sideToMove = sideToMove;
 
@@ -180,6 +194,10 @@ public class Board implements Serializable, Cloneable {
 
     public int getFullMoveCount() {
         return fullMoveCount;
+    }
+
+    public String getInitialFen() {
+        return initialFen;
     }
 
     public Set<Square> getOccupiedSquares() {
@@ -237,8 +255,7 @@ public class Board implements Serializable, Cloneable {
     }
 
     public boolean isDrawThreefoldRepetition() {
-        final Integer repetitions = fen2Repetitions.get(getFen(false));
-        return repetitions != null && 2 < repetitions;
+        return 2 < fen2Repetitions.getOrDefault(getFen(false), 0);
     }
 
     public boolean isEnPassant(final Square from, final Square to) {
@@ -441,11 +458,6 @@ public class Board implements Serializable, Cloneable {
 
     private void updateHistory() {
         final String fen = getFen(false);
-        Integer repetitions = fen2Repetitions.get(fen);
-        if (repetitions == null) {
-            repetitions = 0;
-        }
-        repetitions++;
-        fen2Repetitions.put(fen, repetitions);
+        fen2Repetitions.compute(fen, (s, integer) -> integer == null ? 1 : integer + 1);
     }
 }

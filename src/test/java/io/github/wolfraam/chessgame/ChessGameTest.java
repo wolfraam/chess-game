@@ -14,6 +14,7 @@ import io.github.wolfraam.chessgame.result.ChessGameResultType;
 import io.github.wolfraam.chessgame.result.DrawType;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
@@ -25,6 +26,7 @@ class ChessGameTest {
         final ChessGame chessGame2 = chessGame.clone();
         assertEquals(chessGame2.getFen(), chessGame.getFen());
         assertEquals(chessGame2.getMoves(), chessGame.getMoves());
+        assertEquals(chessGame2.getPGNData().getAvailablePGNTags(), chessGame.getPGNData().getAvailablePGNTags());
     }
 
     @Test
@@ -157,6 +159,13 @@ class ChessGameTest {
     }
 
     @Test
+    void testGetNotationList() {
+        final ChessGame chessGame = new ChessGame("4rr2/2p1n1R1/pq1pkp2/1N6/BpppN1P1/b5B1/8/3K3Q w KQkq - 0 1");
+        chessGame.playMoves(NotationType.SAN, "Nc5+ dxc5 Nxd4+ cxd4 Qe4#");
+        assertEquals(List.of("Ne4-c5+", "d6xc5", "Nb5xd4+", "c5xd4", "Qh1-e4#"), chessGame.getNotationList(NotationType.LAN));
+    }
+
+    @Test
     void testGetOccupiedSquares() {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4");
@@ -201,6 +210,14 @@ class ChessGameTest {
         chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3 g5");
         final ChessGame chessGame2 = chessGame.getSubset(3);
         assertEquals(new Move(Square.G1, Square.F3), chessGame2.getLastMove());
+    }
+
+    @Test
+    void testGetSubset2() {
+        final ChessGame chessGame = new ChessGame("4rr2/2p1n1R1/pq1pkp2/1N6/BpppN1P1/b5B1/8/3K3Q w KQkq - 0 1");
+        chessGame.playMoves(NotationType.SAN, "Nc5+ dxc5 Nxd4+ cxd4 Qe4#");
+        final ChessGame chessGame2 = chessGame.getSubset(3);
+        assertEquals(new Move(Square.B5, Square.D4), chessGame2.getLastMove());
     }
 
     @Test

@@ -36,7 +36,6 @@ public class ChessGame implements Serializable, Cloneable {
     private static final NotationMapping DEFAULT_NOTATION_MAPPING = LanguageSettings.getNotationMapping(DEFAULT_LANGUAGE_CODE);
     public static final String STANDARD_INITIAL_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
     private final Board board;
-    private final String initialFen;
     private final MoveHelper moveHelper;
     private final List<Move> moves = new LinkedList<>();
     private final PGNData pgnData = new PGNData();
@@ -52,16 +51,15 @@ public class ChessGame implements Serializable, Cloneable {
      * Constructs a chess game with the starting position of the fen argument.
      */
     public ChessGame(final String fen) {
-        this(STANDARD_INITIAL_FEN.equals(fen) ? Board.fromInitialPosition() : Board.fromFen(fen), fen);
+        this(STANDARD_INITIAL_FEN.equals(fen) ? Board.fromInitialPosition() : Board.fromFen(fen));
     }
 
     /**
      * Constructs a chess game with the given board.
      */
-    private ChessGame(final Board board, final String initialFen) {
+    private ChessGame(final Board board) {
         this.board = board;
         moveHelper = new MoveHelper(board);
-        this.initialFen = initialFen;
     }
 
     /**
@@ -70,7 +68,7 @@ public class ChessGame implements Serializable, Cloneable {
     @Override
     @SuppressWarnings("all")
     public ChessGame clone() {
-        final ChessGame chessGame = new ChessGame(board.clone(), initialFen);
+        final ChessGame chessGame = new ChessGame(board.clone());
         chessGame.moves.addAll(moves);
         chessGame.pgnData.copyFrom(pgnData);
         return chessGame;
@@ -95,7 +93,7 @@ public class ChessGame implements Serializable, Cloneable {
      */
     public List<Piece> getCapturedPieces() {
         final List<Piece> capturedPieces = new LinkedList<>();
-        final ChessGame replayChessGame = new ChessGame(initialFen);
+        final ChessGame replayChessGame = new ChessGame(getInitialFen());
         for (final Move move : moves) {
             final Piece capturedPiece = replayChessGame.playMove(move);
             if (capturedPiece != null) {
@@ -171,7 +169,7 @@ public class ChessGame implements Serializable, Cloneable {
      * The fen of the board before move 1.
      */
     public String getInitialFen() {
-        return initialFen;
+        return board.getInitialFen();
     }
 
     /**
@@ -251,7 +249,7 @@ public class ChessGame implements Serializable, Cloneable {
     public List<String> getNotationList(final NotationType notationType, final String languageCode) {
         final List<String> list = new LinkedList<>();
         final NotationMapping notationMapping = getNotationMapping(languageCode);
-        final ChessGame replayChessGame = new ChessGame(initialFen);
+        final ChessGame replayChessGame = new ChessGame(getInitialFen());
         final NotationHelper notationHelper = new NotationHelper();
         for (final Move move : moves) {
             list.add(notationHelper.getMoveNotation(notationMapping, replayChessGame.board, notationType, move));
@@ -351,7 +349,7 @@ public class ChessGame implements Serializable, Cloneable {
      * @return a new chess game which a subset of the moves of this game.
      */
     public ChessGame getSubset(final int moveCount) {
-        final ChessGame chessGame = new ChessGame(initialFen);
+        final ChessGame chessGame = new ChessGame(getInitialFen());
         int i = 0;
         for (final Move move : getMoves()) {
             if (i >= moveCount) {
