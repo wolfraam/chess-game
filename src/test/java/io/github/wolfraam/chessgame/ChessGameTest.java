@@ -68,6 +68,13 @@ class ChessGameTest {
     }
 
     @Test
+    void testGetCapturedPiecesWithInitialFen() {
+        final ChessGame chessGame = new ChessGame("rn1q1rk1/pp2bppp/5n2/3p4/2pP2b1/2N1PN1P/PPB2PP1/R1BQ1RK1 w KQkq - 0 1");
+        chessGame.playMoves(NotationType.SAN, "hxg4");
+        assertTrue(chessGame.getCapturedPieces().contains(Piece.BLACK_BISHOP));
+    }
+
+    @Test
     void testGetFen() {
         assertEquals("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", new ChessGame().getFen());
         assertEquals("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", new ChessGame().getInitialFen());
