@@ -1,2 +1,5 @@
-PGNData not serializable
-serializable unit test
+- PGNData not serializable
+- serializable unit test
+- new PGN Tags (chess.com): Tournament, Match
+- pawns first row, https://www.chess.com/game/live/51292209745
+- end of opening

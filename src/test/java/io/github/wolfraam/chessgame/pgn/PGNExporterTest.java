@@ -60,7 +60,7 @@ class PGNExporterTest {
         try (final InputStream inputStream = new ByteArrayInputStream(pgn.getBytes())) {
             final PGNImporter pgnImporter = new PGNImporter();
             pgnImporter.setOnGame(chessGameSet::add);
-            pgnImporter.setOnError(System.out::println);
+            pgnImporter.setOnError((string, e) -> System.out.println(string));
             pgnImporter.setOnWarning(System.out::println);
             pgnImporter.run(inputStream);
             return chessGameSet;

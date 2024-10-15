@@ -16,6 +16,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -31,7 +32,7 @@ public class PGNImporter {
     private boolean inMoveLines = false;
     private int indentLevel = 0;
     private final List<String> lines = new LinkedList<>();
-    private Consumer<String> onError;
+    private BiConsumer<String, RuntimeException> onError;
     private Consumer<ChessGame> onGame;
     private Consumer<String> onWarning;
     private final Map<PGNTag, String> pgnTag2Value = new EnumMap<>(PGNTag.class);
@@ -71,7 +72,7 @@ public class PGNImporter {
     /**
      * Sets a Consumer which will be called with import errors.
      */
-    public void setOnError(final Consumer<String> onError) {
+    public void setOnError(final BiConsumer<String, RuntimeException> onError) {
         this.onError = onError;
     }
 
@@ -196,7 +197,7 @@ public class PGNImporter {
                 if (!line.isEmpty()) {
                     if (line.startsWith("[")) {
                         if (inMoveLines) {
-                            onError.accept(getContext(lineNumber) + "Error: Previous Game did not end properly");
+                            onError.accept(getContext(lineNumber) + "Error: Previous Game did not end properly", null);
                             reset();
                         }
                         final PGNTagAndValue pgnTagAndValue = PGNTagAndValue.fromLine(line);
@@ -208,7 +209,7 @@ public class PGNImporter {
                     } else {
                         inMoveLines = true;
                         if (pgnTag2Value.isEmpty()) {
-                            onError.accept(getContext(lineNumber) + "Expected PGN Tags");
+                            onError.accept(getContext(lineNumber) + "Expected PGN Tags", null);
                             reset();
                         } else {
                             lines.add(line);
@@ -226,7 +227,9 @@ public class PGNImporter {
                                         playMoves(String.join(" ", lines));
                                         onGame.accept(chessGame);
                                     } catch (final IllegalPGNException | IllegalMoveException e) {
-                                        onError.accept(getContext(lineNumber) + e.getMessage());
+                                        onError.accept(getContext(lineNumber) + e.getMessage(), null);
+                                    } catch (final RuntimeException e) {
+                                        onError.accept(getContext(lineNumber) + "Exception", e);
                                     }
                                 }
                                 reset();

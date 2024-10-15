@@ -23,7 +23,7 @@ class PGNImporterTest {
                 assertEquals(lastMove, game.getNotationList(NotationType.SAN).get(game.getMoves().size() - 1));
                 chessGameSet.add(game);
             });
-            pgnImporter.setOnError(System.out::println);
+            pgnImporter.setOnError((string, e) -> System.out.println(string));
             pgnImporter.setOnWarning(System.out::println);
             pgnImporter.run(inputStream);
             return chessGameSet.iterator().next();
@@ -36,7 +36,7 @@ class PGNImporterTest {
         final Set<String> errors = new HashSet<>();
         try (final InputStream inputStream = new ByteArrayInputStream(pgn.getBytes())) {
             final PGNImporter pgnImporter = new PGNImporter();
-            pgnImporter.setOnError(errors::add);
+            pgnImporter.setOnError((string, e) -> errors.add(string));
             pgnImporter.setOnWarning(System.out::println);
             pgnImporter.run(inputStream);
             return errors;
@@ -49,7 +49,7 @@ class PGNImporterTest {
         final Set<String> warnings = new HashSet<>();
         try (final InputStream inputStream = new ByteArrayInputStream(pgn.getBytes())) {
             final PGNImporter pgnImporter = new PGNImporter();
-            pgnImporter.setOnError(System.out::println);
+            pgnImporter.setOnError((string, e) -> System.out.println(string));
             pgnImporter.setOnWarning(warnings::add);
             pgnImporter.setOnGame((game) -> {
             });
@@ -111,7 +111,7 @@ class PGNImporterTest {
         try (final InputStream inputStream = new ByteArrayInputStream(pgn.getBytes())) {
             final PGNImporter pgnImporter = new PGNImporter();
             pgnImporter.setOnGame(chessGameSet::add);
-            pgnImporter.setOnError(System.out::println);
+            pgnImporter.setOnError((string, e) -> System.out.println(string));
             pgnImporter.setOnWarning(System.out::println);
             pgnImporter.setAcceptTagsPredicate(pgnTagStringMap -> !pgnTagStringMap.containsKey(PGNTag.SET_UP));
             pgnImporter.run(inputStream);
@@ -126,7 +126,7 @@ class PGNImporterTest {
         final PGNImporter pgnImporter = new PGNImporter();
         pgnImporter.setOnGame((game) -> {
         });
-        pgnImporter.setOnError(System.out::println);
+        pgnImporter.setOnError((string, e) -> System.out.println(string));
         pgnImporter.setOnWarning(System.out::println);
 
         File tempFile = null;
@@ -275,7 +275,7 @@ class PGNImporterTest {
         pgnImporter.setFen2NewChessGameFunction(ChessGame::new);
         pgnImporter.setOnGame((game) -> {
         });
-        pgnImporter.setOnError(System.out::println);
+        pgnImporter.setOnError((string, e) -> System.out.println(string));
         pgnImporter.setOnWarning(System.out::println);
 
         Assertions.assertThrows(RuntimeException.class, () ->
@@ -285,6 +285,24 @@ class PGNImporterTest {
                         throw new IOException();
                     }
                 }));
+    }
+
+    @Test
+    void testRuntimeException() {
+        final String pgn = """
+                [Event "?"]
+                [Site "?"]
+                [FEN "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/PPPQKPPP w kq - 0 1"]
+
+                1. g3 {[%clk 0:05:00][%timestamp 1]} 1-0""";
+
+        final PGNImporter pgnImporter = new PGNImporter();
+        final Set<RuntimeException> runtimeExceptionSet = new HashSet<>();
+        pgnImporter.setOnError((string, e) -> runtimeExceptionSet.add(e));
+        pgnImporter.setOnWarning(System.out::println);
+        pgnImporter.run(new ByteArrayInputStream(pgn.getBytes()));
+
+        assertEquals(1, runtimeExceptionSet.size());
     }
 
     @Test
