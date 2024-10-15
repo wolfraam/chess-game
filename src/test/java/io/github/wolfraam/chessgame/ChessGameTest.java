@@ -10,8 +10,14 @@ import io.github.wolfraam.chessgame.board.Square;
 import io.github.wolfraam.chessgame.move.Move;
 import io.github.wolfraam.chessgame.notation.NotationType;
 import io.github.wolfraam.chessgame.opening.ChessOpening;
+import io.github.wolfraam.chessgame.pgn.PGNTag;
 import io.github.wolfraam.chessgame.result.ChessGameResultType;
 import io.github.wolfraam.chessgame.result.DrawType;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -24,6 +30,28 @@ class ChessGameTest {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4 e6 d4 d5 Nc3 Nf6 Bg5 dxe4 Nxe4 Be7 Bxf6 gxf6 g3 f5 Nc3 Bf6 Nge2 Nc6 d5 exd5 Nxd5 Bxb2 Bg2 O-O O-O Bh8 Nef4 Ne5 Qh5 Ng6 Rad1 c6 Ne3 Qf6 Kh1 Bg7 Bh3 Ne7 Rd3 Be6 Rfd1 Bh6 Rd4 Bxf4 Rxf4 Rad8 Rxd8 Rxd8 Bxf5 Nxf5 Nxf5 Rd5 g4 Bxf5 gxf5 h6 h3 Kh7 Qe2 Qe5 Qh5 Qf6 Qe2 Re5 Qd3 Rd5");
         final ChessGame chessGame2 = chessGame.clone();
+        assertEquals(chessGame2.getFen(), chessGame.getFen());
+        assertEquals(chessGame2.getMoves(), chessGame.getMoves());
+        assertEquals(chessGame2.getPGNData().getAvailablePGNTags(), chessGame.getPGNData().getAvailablePGNTags());
+    }
+
+    @Test
+    void testSerialize() throws IOException, ClassNotFoundException {
+        final ChessGame chessGame = new ChessGame();
+        chessGame.playMoves(NotationType.SAN, "e4 e6");
+        chessGame.getPGNData().setPGNTag(PGNTag.SITE, "Site");
+
+        final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        final ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
+        objectOutputStream.writeObject(chessGame);
+        objectOutputStream.flush();
+        byteArrayOutputStream.flush();
+
+        final ObjectInputStream objectInputStream = new ObjectInputStream(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()));
+
+        final Object o = objectInputStream.readObject();
+        final ChessGame chessGame2 = (ChessGame) o;
+
         assertEquals(chessGame2.getFen(), chessGame.getFen());
         assertEquals(chessGame2.getMoves(), chessGame.getMoves());
         assertEquals(chessGame2.getPGNData().getAvailablePGNTags(), chessGame.getPGNData().getAvailablePGNTags());

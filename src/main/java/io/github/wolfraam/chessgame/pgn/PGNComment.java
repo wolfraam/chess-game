@@ -1,6 +1,8 @@
 package io.github.wolfraam.chessgame.pgn;
 
-public class PGNComment {
+import java.io.Serializable;
+
+public class PGNComment implements Serializable {
     private final String text;
 
     public PGNComment(final String text) {

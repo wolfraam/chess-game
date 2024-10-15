@@ -1,5 +1,6 @@
 package io.github.wolfraam.chessgame.pgn;
 
+import java.io.Serializable;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -10,7 +11,7 @@ import java.util.Set;
 /**
  * PGN data belonging to the ChessGame.
  */
-public class PGNData {
+public class PGNData implements Serializable {
     private final Map<Integer, List<PGNComment>> pgnMove2CommentAfter = new HashMap<>();
     private final Map<Integer, List<PGNComment>> pgnMove2CommentBefore = new HashMap<>();
     private final Map<PGNTag, String> pgnTag2Value = new EnumMap<>(PGNTag.class);
