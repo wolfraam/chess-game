@@ -45,7 +45,9 @@ public enum PGNTag {
     SET_UP("SetUp"),
     VARIANT("Variant"),
     ANNOTATOR("Annotator"),
-    DEPTH("Depth");
+    DEPTH("Depth"),
+    TOURNAMENT("Tournament"),
+    MATCH("Match");
 
     private final String tag;
 
