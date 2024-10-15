@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.wolfraam:chessgame:2.2")
+    implementation("io.github.wolfraam:chessgame:2.3")
 }
 ```
 
@@ -30,7 +30,7 @@ dependencies {
 <dependency>
   <groupId>io.github.wolfraam</groupId>
   <artifactId>chessgame</artifactId>
-  <version>2.2</version>
+  <version>2.3</version>
 </dependency>
 ```
 
@@ -132,9 +132,9 @@ Determining the opening name of a game:
 ChessGame chessGame = new ChessGame();
 chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6");
 ChessOpening chessOpening = chessGame.getChessOpening();
-System.out.println(chessOpening.eco); // output: B90
-System.out.println(chessOpening.name); // output: Sicilian
-System.out.println(chessOpening.variation); // output: Najdorf
+System.out.println(chessOpening.getEco()); // output: B90
+System.out.println(chessOpening.getName()); // output: Sicilian
+System.out.println(chessOpening.getVariation()); // output: Najdorf
 System.out.println(chessOpening.getFullName()); // output: Sicilian / Najdorf (B90)
 ```
 
@@ -169,7 +169,7 @@ PGNImporter pgnImporter = new PGNImporter();
 pgnImporter.setOnGame((game) -> {
   System.out.println("Imported a game with moves:" + game.getMoves());
 });
-pgnImporter.setOnError(System.out::println);
+pgnImporter.setOnError((message, runtimeException) -> System.out.println(message));
 pgnImporter.setOnWarning(System.out::println);
 
 pgnImporter.run(new File("/temp/games.pgn"));
