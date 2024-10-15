@@ -1,16 +1,15 @@
 package io.github.wolfraam.chessgame.opening;
 
-import io.github.wolfraam.chessgame.ChessGame;
 import java.io.IOException;
 import java.io.InputStream;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class ChessOpeningHelperTest {
+class ChessOpeningDataTest {
 
     @Test
     void testIoException() {
-        final ChessOpeningHelper chessOpeningHelper = new ChessOpeningHelper() {
+        final ChessOpeningData chessOpeningData = new ChessOpeningData() {
             @Override
             protected InputStream getOpeningBookCsvInputStream() {
                 return new InputStream() {
@@ -21,8 +20,7 @@ class ChessOpeningHelperTest {
                 };
             }
         };
-        Assertions.assertThrows(RuntimeException.class, () ->
-                chessOpeningHelper.getChessOpening(new ChessGame()));
+        Assertions.assertThrows(RuntimeException.class, chessOpeningData::getRootChessOpeningElement);
     }
 
 }

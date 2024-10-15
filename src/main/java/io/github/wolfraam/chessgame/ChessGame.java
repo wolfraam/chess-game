@@ -31,7 +31,6 @@ import java.util.StringTokenizer;
  */
 public class ChessGame implements Serializable, Cloneable {
 
-    private static final ChessOpeningHelper CHESS_OPENING_HELPER = new ChessOpeningHelper();
     private static final String DEFAULT_LANGUAGE_CODE = "en";
     private static final NotationMapping DEFAULT_NOTATION_MAPPING = LanguageSettings.getNotationMapping(DEFAULT_LANGUAGE_CODE);
     public static final String STANDARD_INITIAL_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -107,7 +106,7 @@ public class ChessGame implements Serializable, Cloneable {
      * @return the chess opening for this game.
      */
     public ChessOpening getChessOpening() {
-        return CHESS_OPENING_HELPER.getChessOpening(this);
+        return new ChessOpeningHelper().getChessOpening(this);
     }
 
     /**

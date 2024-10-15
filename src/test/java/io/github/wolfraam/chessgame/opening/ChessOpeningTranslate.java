@@ -1,6 +1,6 @@
 package io.github.wolfraam.chessgame.opening;
 
-import static io.github.wolfraam.chessgame.opening.ChessOpeningHelper.SEPARATOR;
+import static io.github.wolfraam.chessgame.opening.ChessOpeningData.SEPARATOR;
 
 import io.github.wolfraam.chessgame.ChessGame;
 import io.github.wolfraam.chessgame.notation.NotationType;

@@ -261,9 +261,9 @@ class ChessGameTest {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "g3 e5 a3 h6");
         final ChessOpening chessOpening = chessGame.getChessOpening();
-        assertEquals("A00", chessOpening.eco);
-        assertEquals("Benko's opening", chessOpening.name);
-        assertNull(chessOpening.variation);
+        assertEquals("A00", chessOpening.getEco());
+        assertEquals("Benko's opening", chessOpening.getName());
+        assertNull(chessOpening.getVariation());
         assertEquals("Benko's opening (A00)", chessOpening.getFullName());
     }
 
@@ -272,9 +272,9 @@ class ChessGameTest {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6");
         final ChessOpening chessOpening = chessGame.getChessOpening();
-        assertEquals("B90", chessOpening.eco);
-        assertEquals("Sicilian", chessOpening.name);
-        assertEquals("Najdorf", chessOpening.variation);
+        assertEquals("B90", chessOpening.getEco());
+        assertEquals("Sicilian", chessOpening.getName());
+        assertEquals("Najdorf", chessOpening.getVariation());
         assertEquals("Sicilian / Najdorf (B90)", chessOpening.getFullName());
     }
 
@@ -282,9 +282,9 @@ class ChessGameTest {
     void testOpeningNoMoves() {
         final ChessGame chessGame = new ChessGame();
         final ChessOpening chessOpening = chessGame.getChessOpening();
-        assertNull(chessOpening.eco);
-        assertNull(chessOpening.name);
-        assertNull(chessOpening.variation);
+        assertNull(chessOpening.getEco());
+        assertNull(chessOpening.getName());
+        assertNull(chessOpening.getVariation());
         assertNull(chessOpening.getFullName());
     }
 
@@ -293,10 +293,30 @@ class ChessGameTest {
         final ChessGame chessGame = new ChessGame();
         chessGame.playMoves(NotationType.SAN, "d4 d5 c4");
         final ChessOpening chessOpening = chessGame.getChessOpening();
-        assertEquals("D06", chessOpening.eco);
-        assertEquals("Queen's Gambit", chessOpening.name);
-        assertNull(chessOpening.variation);
+        assertEquals("D06", chessOpening.getEco());
+        assertEquals("Queen's Gambit", chessOpening.getName());
+        assertNull(chessOpening.getVariation());
         assertEquals("Queen's Gambit (D06)", chessOpening.getFullName());
+    }
+
+    @Test
+    void testEndOfVariant() {
+        final ChessGame chessGame = new ChessGame();
+        chessGame.playMoves(NotationType.SAN, "b4");
+        assertEquals("Polish (Sokolsky) opening (A00)", chessGame.getChessOpening().getFullName());
+        assertFalse(chessGame.getChessOpening().isEndOfVariation());
+
+        chessGame.playMoves(NotationType.SAN, "Nh6");
+        assertEquals("Polish / Tuebingen variation (A00)", chessGame.getChessOpening().getFullName());
+        assertFalse(chessGame.getChessOpening().isEndOfVariation());
+
+        chessGame.playMoves(NotationType.SAN, "e4");
+        assertEquals("Polish / Tuebingen variation (A00)", chessGame.getChessOpening().getFullName());
+        assertTrue(chessGame.getChessOpening().isEndOfVariation());
+
+        chessGame.playMoves(NotationType.SAN, "e6");
+        assertEquals("Polish / Tuebingen variation (A00)", chessGame.getChessOpening().getFullName());
+        assertTrue(chessGame.getChessOpening().isEndOfVariation());
     }
 
     @Test
